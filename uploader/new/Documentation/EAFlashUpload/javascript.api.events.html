@@ -1,0 +1,849 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>JavaScript events</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">JavaScript events</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a>
+	  
+      <p> 
+	  	The EAFlashUpload fires a number of events. These events describe user interaction with EAFlashUpload, indicate changes of upload queue, provide information of upload state.
+		<br />		
+		To handle EAFlashUpload events you can use predefined handlers or assign new handler at the initialization stage. The predefined handlers has the following format:
+		<pre class="code"><div><span style="color: #0000FF;">function</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;</span><span style="color: #000000;">EAFlashUpload_ID</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">_</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">EventName</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">()
+{
+    
+}</span></div></pre>
+		<ul style="padding: 10px;">
+			<li>EAFlashUpload_ID - a value of id attribute defined for EAFlashUpload on the page. Below in the documentation, we assume that id is "EAFlashUpload", but your final solution may have any value.</li>
+			<li>EventName - a name of appropriate event</li>			
+		</ul>
+	  </p>
+	  	  
+	  <br />
+	  
+	  <p><b>List of events</b></p>
+      <table style="width: auto;">
+        <tr>
+          <th> Event name </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td> <a href="#onMovieLoad">onMovieLoad</a> </td>          
+          <td> Fires after EAFlashUpload have been initialized. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onFilesAdded">onFilesAdded</a> </td>          
+          <td> Fires when files are added to the upload queue.
+		   </td>
+        </tr>
+		<tr>
+          <td> <a href="#onFilesRemoved">onFilesRemoved</a> </td>          
+          <td> Fires when files are removed from the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onFilesSorted">onFilesSorted</a> </td>          
+          <td> Fires when files are sorted in the upload queue. </td>
+        </tr>
+        <tr>
+          <td> <a href="#onQueueChanged">onQueueChanged</a> </td>          
+          <td> Fires when upload queue is changed due to some actions. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onItemSelected">onItemSelected</a> </td>          
+          <td> Fires when a different files is selected in the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onUploadStart">onUploadStart</a> </td>          
+          <td> Fires when upload begins. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onUploadEnd">onUploadEnd</a> </td>          
+          <td> Fires when upload is completed. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onUploadCancel">onUploadCancel</a> </td>          
+          <td> Fires when upload is canceled by the user or JavaScript method calling.</td>
+        </tr>
+		<tr>
+          <td> <a href="#onFileLoadStart">onFileLoadStart</a> </td>          
+          <td> Fires when a file upload operation starts. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onFileLoadEnd">onFileLoadEnd</a> </td>          
+          <td> Fires when a file upload is successfully completed. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onUploadProgress">onUploadProgress</a> </td>          
+          <td> Dispatched periodically during the file upload. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onUploadError">onUploadError</a> </td>          
+          <td> Dispatched if errors occur during upload operation. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onQueueError">onQueueError</a> </td>          
+          <td> Fires when files are restricted due to some queue limitations. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onSystemError">onSystemError</a> </td>          
+          <td> Fires when various system error occur. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onAsyncRequestStart">onAsyncRequestStart</a> </td>          
+          <td> Fires when asynchronous request starts. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onAsyncRequestEnd">onAsyncRequestEnd</a> </td>          
+          <td> Fires when asynchronous request is successfully completed. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onAsyncRequestError">onAsyncRequestError</a> </td>          
+          <td> Fires when some error occur during asynchronous request. </td>
+        </tr>
+		
+		<tr>
+          <td> <a href="#onImageViewResize">onImageViewResize</a> </td>          
+          <td> Fires when ImageView is loaded on the page and every time when ImageView sizes are changed dynamically. </td>
+        </tr>
+        <tr>
+          <td> <a href="#onImagesAdded">onImagesAdded</a> </td>          
+          <td> Fires when preview images are added to imagesList. </td>
+        </tr>
+        <tr>
+          <td> <a href="#onResizedImagesUploadStart">onResizedImagesUploadStart</a> </td>          
+          <td> Fires when uploading of resized images is started. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onResizedImagesUploadEnd">onResizedImagesUploadEnd</a> </td>          
+          <td> Fires when uploading of resized images has been finished. </td>
+        </tr>		
+		<tr>
+          <td> <a href="#onOriginalImagesUploadStart">onOriginalImagesUploadStart</a> </td>          
+          <td> Fires when uploading of original images begins. </td>
+        </tr>
+		<tr>
+          <td> <a href="#onOriginalImagesUploadEnd">onOriginalImagesUploadEnd</a> </td>          
+          <td> Fires when uploading of original images is successfully completed. </td>
+        </tr>     
+				
+	  </table>
+	  
+	  <br />
+      <br />
+      
+      <a name="onMovieLoad"></a>
+      <p><b>onMovieLoad(errors)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>errors:Array - a string array containing a string representation of errors occured during control initialization;</li>
+			</ul>
+      	<br />     
+      	<i>Description:</i>
+        	<p>
+            	Fires after EAFlashUpload have been initialized. Any interaction with the EAFlashUpload should be archived after this event only. Inside handler of this event you can define custom events handler if you don't want to use predefined.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onMovieLoad(errors)
+{
+    alert(errors);
+    
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> define a custom event handler for onUploadStart event</span><span style="color: #008000;">
+</span><span style="color: #000000;">    EAFlashUpload.onUploadStart </span><span style="color: #000000;">=</span><span style="color: #000000;"> customHandler;
+}
+
+</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> customHandler()
+{
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> appropriate operations    </span><span style="color: #008000;">
+</span><span style="color: #000000;">}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onFilesAdded"></a>
+      <p><b>onFilesAdded(filesIds:Array)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>filesIds:Array - an array of unique identifiers of added files;</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when the user selects files for upload from the file-browsing dialog box.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFilesAdded(filesIds)
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> addedFiles </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getFiles(filesIds);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> someDivElement </span><span style="color: #000000;">=</span><span style="color: #000000;"> document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_NamesOfFiles</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> filesNames </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000FF;">for</span><span style="color: #000000;">(</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> i </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">; i </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> addedFiles.length; i</span><span style="color: #000000;">++</span><span style="color: #000000;">)
+    {
+        filesNames </span><span style="color: #000000;">+=</span><span style="color: #000000;"> addedFiles[i].name </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">&lt;br /&gt;</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    }
+    
+    someDivElement.innerHTML </span><span style="color: #000000;">=</span><span style="color: #000000;"> filesNames;
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onFilesRemoved"></a>
+      <p><b>onFilesRemoved(files:Array)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>files:Array - an array of <a href="javascript.api.file.html">File</a> objects;</li>
+			</ul>       
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when files are deleted from the upload queue. <i>files</i> array contains removed files.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFilesRemoved(files)
+{
+    alert(files.length </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> files have benn deleted!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onFilesSorted"></a>
+      <p><b>onFilesSorted(fieldName:String, isSortDescending:Boolean)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fieldName:String - a name of the column to be sorted;</li>
+                <li>isSortDescending:Boolean - A value of <i>true</i> indicates that the column is sorted in descending order; a value of <i>false</i> indicates that the column is sorted in ascending order;</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when files are sorted in the upload queue. This event is used to indicate a change in the order of the data, not a change in the data itself.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFilesSorted(fieldName, isSortDescending)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The files have benn sorted by </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> fieldName </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">column in </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> 
+          (isSortDescending)</span><span style="color: #000000;">?</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">descending </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">:</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">ascending</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">order.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onQueueChanged"></a>
+      <p><b>onQueueChanged(changeType:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>
+                changeType:String - a type of changes. Possible values are:
+                    <ul style="list-style: none;">
+                    	<li>"sort" - the upload queue was sorted;</li>
+                        <li>"add" - files were added to the upload queue;</li>
+                        <li>"remove" - files were removed from the upload queue;</li>
+                        <li>"removeAll" - all files were removed from the upload queue;</li>
+                    </ul>                
+                </li>
+			</ul>       
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when upload queue is changed due to some actions. The event is dispatched after appropriate operation was done.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onQueueChanged(changeType)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The upload queue have been changed!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onItemSelected"></a>
+      <p><b>onItemSelected(selectedIndices:Array)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>selectedIndices:Array - an array of selected files indices;</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when a different files is selected in the upload queue. This event is dispatched when user select rows of fileList element of the <a href="tableview.html">TableView</a> or <a href="listview.html">ListView</a> only. 
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onItemSelected(selectedIndices)
+{
+    alert(selectedIndieces.length </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> files have been selected!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onUploadStart"></a>
+      <p><b>onUploadStart()</b></p>
+      <p>
+      	<i>Description:</i>
+        	<p>
+            	Fires when upload begins. Inside handler of this event you can make some additional validations and if, it is demanded, cancel the upload.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadStart()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The upload have been started!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onUploadEnd"></a>
+      <p><b>onUploadEnd()</b></p>
+      <p>
+      	<i>Description:</i>
+        	<p>
+            	Fires when upload is successfully completed and a server response is received. You can get the response data from <a href="javascript.api.file.html">File.serverResponse</a> property.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadEnd()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The upload have been completed!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onUploadCancel"></a>
+      <p><b>onUploadCancel()</b></p>
+      <p>
+      	<i>Description:</i>
+        	<p>
+            	Fires when upload is canceled. The upload can be canceled by pressing a "Cancel" button of the user interface or by calling a <a href="javascript.api.html">cancelUpload</a> method.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadCancel()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The upload have been canceled!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onFileLoadStart"></a>
+      <p><b>onFileLoadStart(fileObj:File)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fileObj:File - an instance of the <a href="javascript.api.file.html">File</a> object;</li>
+			</ul>       
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when a file upload operation starts. This event is dispatched for each uploading file in the upload queue.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFileLoadStart(fileObj)
+{
+    alert(fileObj.name </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> file is being uploaded.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onFileLoadEnd"></a>
+      <p><b>onFileLoadEnd(fileObj:File)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fileObj:File - an instance of the <a href="javascript.api.file.html">File</a> object;</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when file is succeessfully uploaded. This event is dispatched for each uploading file in the upload queue.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFileLoadEnd(fileObj)
+{
+    alert(fileObj.name </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> file has been uploaded.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onUploadProgress"></a>
+      <p><b>onUploadProgress(progressObj:Progress)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>progressObj:Progress - an instance of <a href="javascript.api.progress.html" >Progress</a> object</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Dispatched periodically during the file upload. In some cases, onUploadProgress events are not received. For example, when the file being transmitted is very small or the upload happens very quickly a onUploadProgress event might not be dispatched.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadProgress(progress)
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> str </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000FF;">for</span><span style="color: #000000;">(</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> prop </span><span style="color: #0000FF;">in</span><span style="color: #000000;"> progress)
+    {
+        str </span><span style="color: #000000;">+=</span><span style="color: #000000;"> prop </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> progress[prop] </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">&lt;br /&gt;</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    }
+    
+    document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_ProgressSummary</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">).innerHTML </span><span style="color: #000000;">=</span><span style="color: #000000;"> str;
+    document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_ProgressBar</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">).style.width </span><span style="color: #000000;">=</span><span style="color: #000000;"> progress.percentsDone </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">%</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onUploadError"></a>
+      <p><b>onUploadError(errorObject:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>
+                	errorObject:Object - an error object with the following properties:
+                	<ul style="list-style: none;">
+                    	<li>message:String - an user friendly error message;</li>
+                        <li>file:File - an instance of the <a href="javascript.api.file.html">File</a> object;</li>
+                        <li>systemMessage:String -  a system error message;</li>
+                        <li>type:String - a type of occured error;</li>
+                    </ul>
+                </li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Dispatched if errors occur during upload operation. There are many reasons of error appearance, they are grouped by <i>type</i>:
+                <ul>
+                    <li>HTTP_STATUS_ERROR - an upload fails and an HTTP status code is available to describe the failure</li>
+                    <li>
+                    	IO_ERROR - a file transfer can fail for one of the following reasons:
+                    	<ul style="list-style: none;">
+                        	<li>An input/output error occurs while the player is reading, writing, or transmitting the file;</li>
+                            <li>The SWF file tries to upload a file to a server that requires authentication (such as a user name and password). During upload, Flash Player does not provide a means for users to enter passwords. If a SWF file tries to upload a file to a server that requires authentication, the upload fails;</li>
+                            <li>The value passed to the <a href="objects.core.uploader.html#uploadUrl" >uploader.uploadUrl</a> property contains an invalid protocol. Valid protocols are HTTP and HTTPS;</li>
+                        </ul>
+                    </li>
+                    <li>SECURITY_ERROR - the EAFlashUpload tries to upload a file to a server that is outside the security sandbox. The value of the <i>systemMessage</i> property that describes the specific error that occurred is normally "securitySandboxError". The calling SWF file may have tried to access a SWF file outside its domain and does not have permission to do so. You can try to remedy this error by using a URL policy file. See also <a href="technotes.security.html">Web site controls (policy file)</a></li>
+                    <li>SERVER_CUSTOM_ERROR - response contain &lt;eaferror&gt;&lt;/eaferror&gt; tag. "eaferror" tag is created to provide ability inform EAFlashUpload about server script execution errors. It is much handy way to catch errors instead of return http error codes.</li>
+                </ul>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadError(errorObject)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">An error occured during upload operation: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> errorObject.message);
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onQueueError"></a>
+      <p><b>onQueueError(message:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>message:String - a message describes an error.</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when adding files are restricted due to some queue limitations. The EAFlashUpload has a number of properties allow to define queue restrictions. They are: <a href="objects.core.queue.html#filesCountLimit">filesCountLimit</a>, <a href="objects.core.queue.html#fileSizeLimit">fileSizeLimit</a>, <a href="objects.core.queue.html#totalSizeLimit">totalSizeLimit</a>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onQueueError(message)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">A queue error have occured: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> message);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onSystemError"></a>
+      <p><b>onSystemError(message:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>message:String - a message describes an error.</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Dispatched when various system error occur. This event may be useful on the development stage.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onSystemError(message)
+{
+    alert(message);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onAsyncRequestStart"></a>
+      <p><b>onAsyncRequestStart()</b></p>
+      <p>
+      	<i>Description:</i>
+        	<p>
+            	Fires when asynchronous request starts. The request is initiated by <a href="javascript.api.html#sendAsyncRequest" >sendAsyncRequest</a>. 
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onAsyncRequestStart()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The asynchronous request has been started!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onAsyncRequestEnd"></a>
+      <p><b>onAsyncRequestEnd(response:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>response:Object - the response data returned from the server.</li>
+			</ul>
+        <br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when asynchronous request is successfully completed. The response may contain an url variables, so in this case you can convert they to a JavaScript object by using <a href="javascript.api.html#urlVarsToObject" >urlVarsToObject</a> method.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onAsyncRequestEnd(response)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The asynchronous request has been completed. the response is: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> response);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onAsyncRequestError"></a>
+      <p><b>onAsyncRequestError(message:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>message:String - a message describes an error.</li>
+			</ul>
+        <br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when some error occur during asynchronous request.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onAsyncRequestError(message)
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">An error occured during request: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> message);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onImageViewResize"></a>
+      <p><b>onImageViewResize(width:Number, height:Number)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>width:Number - the actual width of ImageView.</li>
+				<li>height:Number - the actual height of ImageView.</li>
+			</ul>
+        <br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when ImageView is loaded on the page and every time when ImageView sizes are changed dynamically with changing style properties. The size of imagesList depends on the following properties: <a href="imageview.imageslist.html#rowCount" >imagesList.rowCount</a>, <a href="imageview.imageslist.html#columnCount">imagesList.columnCount</a>, <a href="imageview.imageslist.cellstyle.html#maxImageWidth">imagesList.cellStyle.maxImageWidth</a>, <a href="imageview.imageslist.cellstyle.html#maxImageHeight">imagesList.cellStyle.maxImageHeight</a> and is calculated when ImageView is loaded on the page. Therefore to set up the correct size you need to handle <b>onImageViewResize</b> event.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onImageViewResize(width, height)
+{
+    EAFlashUpload.style.width </span><span style="color: #000000;">=</span><span style="color: #000000;"> width;
+    EAFlashUpload.style.height </span><span style="color: #000000;">=</span><span style="color: #000000;"> height;
+}
+</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+      <br />
+	  <a name="onImagesAdded"></a>
+      <p><b>onImagesAdded(imagesIds:Array)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>imagesIds:Array - an array of unique identifiers of added images;</li>
+			</ul>        
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when preview images are added to imagesList.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onFilesAdded(imagesIds)
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> addedImages </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getFiles(imagesIds);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> someDivElement </span><span style="color: #000000;">=</span><span style="color: #000000;"> document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_NamesOfImages</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> imagesNames </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000FF;">for</span><span style="color: #000000;">(</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> i </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">; i </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> addedImages.length; i</span><span style="color: #000000;">++</span><span style="color: #000000;">)
+    {
+        imagesNames </span><span style="color: #000000;">+=</span><span style="color: #000000;"> addedImages[i].name </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">&lt;br /&gt;</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    }
+    
+    someDivElement.innerHTML </span><span style="color: #000000;">=</span><span style="color: #000000;"> imagesNames;
+}</span></div>
+				</pre>
+            </p>
+      </p>      
+	 
+     <br />
+	  <a name="onResizedImagesUploadStart"></a>
+      <p><b>onResizedImagesUploadStart()</b></p>
+      <p>
+      	<br />
+        <i>Description:</i>
+        	<p>
+            	Fires when uploading of resized images is started.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onResizedImagesUploadStart()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Resized images uploading has been started!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onResizedImagesUploadEnd"></a>
+      <p><b>onResizedImagesUploadEnd()</b></p>
+      <p>
+      	<br />
+        <i>Description:</i>
+        	<p>
+            	Fires when uploading of resized images has been finished.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onResizedImagesUploadEnd()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Resized images are successfully uploaded!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onOriginalImagesUploadStart"></a>
+      <p><b>onOriginalImagesUploadStart()</b></p>
+      <p>
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when uploading of original images begins.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onOriginalImagesUploadStart()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Original images uploading has been started!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="onOriginalImagesUploadEnd"></a>
+      <p><b>onOriginalImagesUploadEnd()</b></p>
+      <p>
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Fires when uploading of original images is successfully completed.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to handle the event on the page:
+                <pre class="code">
+                <div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onOriginalImagesUploadEnd()
+{
+    alert(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Resized images uploading has been started!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);    
+}</span></div>
+                </pre>
+            </p>
+      </p>
+      
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

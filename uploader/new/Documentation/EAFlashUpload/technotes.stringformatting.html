@@ -1,0 +1,189 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>String formatting</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">String formatting</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;"> 
+  	<a name="BeginOfThePage"></a>
+    
+    <p> The EAFlashUpload has a flexible way to customize messages with using formatting constants.
+      <br /><br />
+      The following table contains description of allowed constants:
+		<table style="width: auto;">
+		  <tr>
+			<th> Constant name </th>
+			<th> Description </th>
+		  </tr>
+          <tr>
+			<td>FILE_INDEX</td>
+			<td>The index of a file.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_NAME</td>
+			<td>The name of a file.</td>
+		  </tr>
+          <tr>
+			<td>RESIZED_NAME</td>
+			<td>The name of a resized image file.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_SIZE</td>
+			<td> The formatted size of the file. The formatting of the size value is based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>FILE_TYPE</td>
+			<td> The type of the file.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_CREDATE</td>
+			<td>The creation date of the file on the local disk.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_MODDATE</td>
+			<td>The date that the file on the local disk was last modified.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_SERVER_RESP</td>
+			<td>The raw data returned from the server after a successful file upload.</td>
+		  </tr>
+		  <tr>
+			<td>FILE_STATUS</td>
+			<td>The status string of the file. The value depends on <a href="objects.core.uploader.html#fileStatusXXXMsg">fileStatusXXXMsg</a> properties.</td>
+		  </tr>
+		  <tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		  </tr>
+          <tr>
+			<td>FILES_COUNT</td>
+			<td>The count of files that are being contained now in the upload queue.</td>
+		  </tr>
+		  <tr>
+			<td>TOTAL_FILES_SIZE</td>
+			<td>The total size of files that are being contained now in the upload queue. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>FILE_SIZE_LIMIT</td>
+			<td>The maximum size in bytes of each file that can be added to the upload queue. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>FILES_COUNT_LIMIT</td>
+			<td>The maximum count of files which can be added to the upload queue.</td>
+		  </tr>
+		  <tr>
+			<td>TOTAL_FILES_SIZE_LIMIT</td>
+			<td>The maximum total size in bytes of all files that can be added to the upload queue. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>REJ_FILES_COUNT</td>
+			<td>The count of files that were rejected by a defined policy after one selection operation.</td>
+		  </tr>
+          <tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td>UPLOAD_URL</td>
+			<td>The URL of the server script configured to handle upload through HTTP POST calls.</td>
+		  </tr>
+		  <tr>
+			<td>REDIRECT_URL</td>
+			<td>The URL to which user will be redirected after successful upload.</td>
+		  </tr>
+          <tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		  </tr>
+		  <tr>
+			<td>FILE_PERCENTS_DONE</td>
+			<td>The percents progress of current file.</td>
+		  </tr>
+		  <tr>
+			<td>PERCENTS_DONE</td>
+			<td>The percents progress of total upload.</td>
+		  </tr>
+		  <tr>
+			<td>BYTES_TOTAL</td>
+			<td>The size of all files that are being uploaded to the server. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>BYTES_LOADED</td>
+			<td>The uploaded bytes of the current upload. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>FILE_BYTES_LOADED</td>
+			<td>The uploaded bytes of the current uploading file. The value is formatted based on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>TRANSFER_RATE</td>
+			<td>The transfer rate(B/s) of the current upload.</td>
+		  </tr>
+		  <tr>
+			<td>ELAPSED_TIME</td>
+			<td>The time that has elapsed since upload begin. The value is formatted based on <a href="objects.core.html#timeAbbrev">timeAbbrev</a></td>
+		  </tr>
+		  <tr>
+			<td>REMAINING_TIME</td>
+			<td>The remaining time until the end of upload. The value is formatted based on <a href="objects.core.html#timeAbbrev">timeAbbrev</a></td>
+		  </tr>
+		</table>
+    For string formatting you should place name of appropriate cosntant between two # signs. The message may be as follows:
+    "Maximum file size(#FILE_SIZE_LIMIT#) exceeded! #REJ_FILES_COUNT# files has been rejected."	Not at all string properties supports string formatting, see description of demanded property.
+    </p>
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

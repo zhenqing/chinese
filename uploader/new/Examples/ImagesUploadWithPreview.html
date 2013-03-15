@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Multiple images upload with preview them on client-side.</title>
+<style type="text/css">
+#responseContainer
+{
+	overflow: auto;
+	width: 390px;
+	height: 250px;
+	border: 1px solid #cccccc;
+}
+</style>
+<script type="text/javascript">
+// Handles EAFlashUpload's onMovieLoad event and displays existing loading errors.
+	function EAFlashUpload_onMovieLoad(errors)
+	{		
+		if(errors != "")
+			alert(errors);	
+	}
+	
+	function EAFlashUpload_onImageViewResize(width, height)
+	{		
+		EAFlashUpload.style.width = width;
+		EAFlashUpload.style.height = height;
+	}	
+	
+	function EAFlashUpload_onFileLoadEnd(fileObj)
+	{
+		var htmlCode = fileObj.serverResponse;	
+		var rContainer = document.getElementById("responseContainer");
+		
+		rContainer.innerHTML += htmlCode;
+	}
+		
+	function clearList()
+	{
+		var rContainer = document.getElementById("responseContainer");
+		rContainer.innerHTML = "";
+	}
+</script>
+</head>
+<body>
+<p>
+This example demonstrates how to upload multiple images to the server with preview them on client-side. You can specify additional text for each image, just edit value of description label.
+</p>
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of the current html page (for ASP.NET: "ServerScripts/ASP.NET/uploaddescriptions.aspx"; or for PHP: ServerScripts/PHP/uploaddescriptions.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<br /><br />
+
+<table>	
+	<tr>		
+		<td>
+			<div id="EAFlashUpload_holder">
+            	You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+                <br />
+                <a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+			</div>
+		</td>
+		<td style="padding-left: 40px; vertical-align: top;">
+			Server response:<br />
+			<div id="responseContainer"></div>
+			<a href="javascript:clearList();">Clear list</a>			
+		</td>
+	</tr>
+</table>
+
+<!-- Embedding the EAFlashUpload control -->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff",
+		wmode: "window"
+	};
+	
+	// id and name attribute may contain any value. 
+	// You need to use specified below identifier to access to the EAFlashUpload methods and properties.
+	var attributes = {  
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload"								
+	};
+	
+	var flashvars = new Object();
+	
+	//Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	flashvars["viewFile"] = "ImageView.swf";
+	
+	// Define rules for images upload. Only original images will be uploaded.
+	flashvars["uploader.uploadResizedImages"] = false;
+	flashvars["uploader.uploadOriginalImages"] = true;	
+	// Disable rotation buttons for imagesList
+	flashvars["view.imagesList.cellStyle.showRotationButtons"] = false;	
+	// Enable description label
+	flashvars["view.imagesList.cellStyle.enableDescription"] = true;
+
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "498", "546", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+
+</script>
+
+<br />
+<hr />
+<div style="padding: 10px; font-weight: bold;">
+Note: If you have questions regarding this example please let us know <a href="mailto:support%40easyalgo.com?Subject=ImagesUploadWithPreview">support@easyalgo.com</a>. Any assistance is provided for free.
+</div>
+<a href="default.html">Other examples</a>				
+
+</body>
+</html>

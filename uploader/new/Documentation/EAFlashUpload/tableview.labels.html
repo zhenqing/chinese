@@ -1,0 +1,377 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" ></a>
+<META NAME="save" CONTENT="history" ></a>
+<title>Labels</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" ></a>
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" ></a>
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAUpload" ></a>
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" >
+<input type="hidden" id="hiddenScrollOffset" >
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Labels</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" >
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+    <p>
+        This section desctibes a <i>label</i> object and its proprties, default values of properties for different instances of <i>label</i> object.
+        <br /><br />    
+        Structure of section:
+        <ul style="list-style: none;">
+            <li><a style="font-weight: bold" href="#Label" >Properties of label object</a><br /><br /></li>
+            <li>
+                Default values for:                     
+                <p style="line-height: 200%; padding-left: 20px;">
+                    <a style="font-weight: bold;" href="#infoLabel" >infoLabel</a><br />
+                    <a style="font-weight: bold;" href="#statusLabel" >statusLabel</a><br />
+                    <a style="font-weight: bold;" href="#fileListStatusLabel" >fileListStatusLabel</a>                
+                </p>
+                <br />
+            </li>
+            <li><a style="font-weight: bold" href="#buttonStyle" >labelStyle object</a><br /><br /></li>
+        </ul>    
+    </p>	  
+    <br />	  
+	  
+	<a name="Label" ></a>
+    <p><b>List of properties</b></p>
+    <table style="width: auto;">
+        <tr>
+          <th> Property name </th>
+          <th> Type </th>
+          <th> Description </th>
+        </tr>
+          <tr>
+            <td><a name="text" ></a>text*</td>
+            <td>String</td>
+            <td>Gets or sets the text for the label.</td>
+          </tr>
+          <tr>
+            <td><a name="fontName" ></a>fontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the label.</td>
+          </tr>
+          <tr>
+            <td><a name="fontSize" ></a>fontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the label.</td>
+          </tr>
+          <tr>
+            <td><a name="fontBold" ></a>fontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text is boldface.</td>
+          </tr>
+          <tr>
+            <td><a name="fontItalic" ></a>fontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the label is italicized.</td>
+          </tr>
+          <tr>
+            <td><a name="fontUnderline" ></a>fontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the label is underlined.</td>
+          </tr>
+          <tr>
+            <td><a name="fontColor" ></a>fontColor</td>
+            <td>uint</td>
+            <td>Indicates the color of the text when the label is enabled.</td>
+          </tr>
+          <tr>
+            <td><a name="visible" ></a>visible*</td>
+            <td>Boolean</td>
+            <td>Gets or sets a value that indicates whether the label instance is visible.</td>
+          </tr>
+          <tr>
+          <td><a name="x" ></a>x*</td>
+              <td>uint</td>
+              <td>Gets or sets the x coordinate that represents the position of the label along the x axis.</td>
+          </tr>
+          <tr>
+              <td><a name="y" ></a>y*</td>
+              <td>uint</td>
+              <td>Gets or sets the y coordinate that represents the position of the label along the y axis.</td>
+          </tr>
+          
+    </table>
+	<b>*</b> - properties are not supported by <a style="font-weight: bold" href="#labelsStyle" >labelsStyle object</a>.
+    
+    <br />
+    <br />
+    <br />
+    <a name="infoLabel"></a>
+    <p><b>infoLabel</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            It displays a some information required by you at the top of the control by default.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td>Depends on <a href="tableview.html#infoLabelText">infoLabelText</a> property</td>
+              </tr>
+              <tr>
+                <td>fontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>fontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>fontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontColor</td>
+                <td>0x000000</td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>x</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>y</td>
+                <td>2</td>
+              </tr>             
+            </table>
+            <br />
+            Description of appropriate property you can find here <a href="#Label">Properties of label object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the infoLabel is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.infoLabel.fontName</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Arial</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+
+    <br />
+    <br />
+    <a name="statusLabel"></a>
+    <p><b>statusLabel</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            It displays status information of upload process by default.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+                            <tr>
+                <td>text</td>
+                <td>Depends on the following properties:<br />
+                 <a href="tableview.html#statusLabelOnProgressText">statusLabelOnProgressText</a><br />
+                 <a href="tableview.html#statusLabelOnCompleteText">statusLabelOnCompleteText</a><br />
+                 <a href="tableview.html#statusLabelOnCancelText">statusLabelOnCancelText</a><br />
+                 <a href="tableview.html#statusLabelOnErrorText">statusLabelOnErrorText</a>
+                 </td>
+              </tr>
+              <tr>
+                <td>fontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>fontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>fontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontColor</td>
+                <td>0x000000</td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>x</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>y**</td>
+                <td>297</td>
+              </tr>             
+            </table>
+            ** - property has above value when a size of the EAFlashUpload object on the page is 450x350. In other cases the value is changed due to auto resizing.
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Label">Properties of label object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the statusLabel is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.statusLabel.fontName</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Arial</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />
+    <a name="fileListStatusLabel"></a>
+    <p><b>fileListStatusLabel</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            It displays status information of file list by default.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td>Depends on <a href="tableview.html#fileListStatusLabelText">fileListStatusLabelText</a> property</td>
+              </tr>
+              <tr>
+                <td>fontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>fontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>fontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>fontColor</td>
+                <td>0x000000</td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>x</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>y**</td>
+                <td>269</td>
+              </tr>                           
+            </table>
+            ** - property has above value when a size of the EAFlashUpload object on the page is 450x350. In other cases the value is changed due to auto resizing.
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Label">Properties of label object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the fileListStatusLabel is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.fileListStatusLabel.fontName</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Arial</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />
+    <a name="labelsStyle"></a>
+    <p><b>labelsStyle</b></p>      
+    <p>    
+    <i>Description:</i>
+    	<p>
+    		The <i>labelsStyle</i> is a setter object for instances of the label object. It has the same properties as the label object with a small difference they are have setters only. So, you will not be able to retrieve value of labelsStyle object property, you should retrieve the property of appropriate label object instead. Description of appropriate property you can find here <a href="#Label">Properties of label object</a>. Marked with * symbol properties are not supported by the <i>labelsStyle</i>.<br /><br />
+            With <i>labelsStyle</i> you can apply a specific value for all instances of label object such as <a href="#infoLabel" >infoLabel</a>, <a href="#statusLabel" >statusLabel</a>, <a href="#fileListStatusLabel" >fileListStatusLabel</a>.
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The "fontName" property is set for all label instances via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.labelsStyle.fontName</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Arial</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" ></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    </p>
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

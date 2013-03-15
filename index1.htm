@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<link href="css/homepage.css" rel="stylesheet" type="text/css" />
+<title>Young Disciples International</title>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+<!--
+// flashWrite(파일경로, 가로, 세로, 아이디, 배경색, 윈도우모드)
+function flashWrite(url,w,h,id,bg,win){
+
+	// 플래시 코드 정의
+	var flashStr=
+	"<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' width='"+w+"' height='"+h+"' id='"+id+"' align='middle'>"+
+	"<param name='movie' value='"+url+"' />"+
+	"<param name='wmode' value='"+win+"' />"+
+	"<param name='menu' value='false' />"+
+	"<param name='quality' value='high' />"+
+	"<param name='bgcolor' value='"+bg+"' />"+
+	"<embed src='"+url+"' wmode='"+win+"' menu='false' quality='high' bgcolor='"+bg+"' width='"+w+"' height='"+h+"' name='"+id+"' align='middle' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />"+
+	"</object>";
+	// 플래시 코드 출력
+	document.write(flashStr);
+
+}
+-->
+</script>
+</head>
+<body>
+
+<!-- wrap start -->
+<div id="wrap">
+<!-- header start -->
+<? include "templates/header.tpl";?>
+<!-- header end -->
+<!-- main_img start -->
+<div id="main_img">
+  <div id="img">
+    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="994" height="450">
+      <param name="movie" value=<?__DIR__?>+"/flash/flashimg.swf" />
+      <param name="quality" value="high" />
+      <param name="wmode" value="opaque" />
+      <param name="swfversion" value="6.0.65.0" />
+      <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+      <param name="expressinstall" value="Scripts/expressInstall.swf" />
+      <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data=<?echo ROOTPATH?>"/flash/flashimg.swf" width="994" height="450">
+        <!--<![endif]-->
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="swfversion" value="6.0.65.0" />
+        <param name="expressinstall" value="Scripts/expressInstall.swf" />
+        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+        <div>
+          <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+          <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+        </div>
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+    </object>
+  </div>
+  <? include "templates/nav.tpl";?>
+  <div id="map"><script>flashWrite('flash/flashmap.swf',260, 177,'','#ffffff','transparent')</script></div>
+</div>
+<!-- main_img end -->
+<!-- content start -->
+<div id="content">
+<!-- main_content start -->
+<div id="main_content">
+	<!-- wrap_resources start -->
+    <div id="wrap_resources">
+    <!-- tab start --> 
+	<div id="tab_headline"> 
+		<ul> 
+            <li class="current first"><a href="#">Resources</a></li> 
+            <li><a href="#">Developments</a></li> 
+            <li><a href="#">Global Mission</a></li> 
+            <li><a href="#">Christain Life</a></li> 
+		</ul> 
+		<div id="arrow"> 
+			<img id="tab_arrow_left"  src="images/icon_argray_left.gif" /><img id="tab_arrow_right" src="images/icon_argray_right.gif" />		</div> 
+		<div class="clear"></div> 
+	</div> 
+	<!-- tab end -->
+    <div class="clear"></div> 
+    <!-- headline start -->
+    <div id="headline">
+    <ul>
+    	<li><a href="#"><img src="images/pic_main01.gif" /></a></li>
+        <li class="title"><a href="#">Event 32 - Teach and Talk</a></li>
+        <li class="text">God Events The Risen Christ leaves instructions for followers In Galilee Jesus appeared to his eleven disciples.
+<br /><span class="more"><a href="#">Read More</a></span></li>
+    </ul>
+    <ul>
+    	<li><a href="#"><img src="images/pic_main02.gif" /></a></li>
+        <li class="title"><a href="#">Honor for the King</a></li>
+        <li class="text">Deliver me from bloodguiltiness, O God, Thou God of my salvation; and my tongue shall sing aloud of Thy righteousness. (Psalm 51:14 KJV)</li>
+    </ul>
+    <ul>
+    	<li><a href="#"><img src="images/pic_main03.gif" /></a></li>
+        <li class="title"><a href="#">Event 32 - Teach and Talk</a></li>
+        <li class="text">Read: Hosea 2:1-2; 1 Peter 2:1-10 Plead with your mother, plead . . . (v. 2) The Assyrians were a brutal people and by Israelite standards immoral.</li>
+    </ul>
+    <div class="clear"></div>
+    </div>
+    <!-- headline end -->
+    </div>
+    <div class="clear"></div>
+    <!-- wrap_resources end -->
+    <!-- picture start -->
+    <div id="picture">
+    	<a href="#"><img src="images/pic_main04.gif" class="img" /></a> <a href="#"><img src="images/pic_main05.gif" /></a>
+    </div>
+    <!-- picture end -->
+</div>
+<!-- main_content end -->
+<!-- main_sidebar -->
+<div id="main_sidebar">
+	<!-- box_today start -->
+    <div class="box_today">
+    	<!--wrap_title start -->
+        <div class="wrap_title">
+        	<img src="images/icon_rss.gif" alt="RSS" align="right" />
+            <img src="images/title_today.gif" alt="YD Today and Event" />
+            <div class="clear"></div> 
+        </div>
+        <!--  wrap_title end -->
+          <div class="news_con">
+                <a href="#"><img src="images/pic_today.gif" align="left" /></a>
+                <p class="date">13-Aug-10, 13:12</p>
+                <p><a href="#">YD Lunched Short-term Mission Program for the Coming Summer.</a></p>
+                <div class="clear"></div>
+          </div>
+          <div class="news_con">
+                <p class="date">13-Aug-10, 13:12</p>
+                <p><a href="#">YD US members have been attending "Christ, Life of the World" 2008 Christmas Retreat, which was held in San Francisco.</a></p>
+                <div class="clear"></div>
+          </div>
+          <div class="news_con">
+                <p class="date">13-Aug-10, 13:12</p>
+                <p><a href="#">Following the graceful retreat by the end of November, now YD members in San Francisco are running toward ...</a></p>
+                <div class="clear"></div>
+          </div>
+          <div class="clear"></div>
+          <p class="see"><a href="#">See Archives</a></p>
+    </div>
+    <!-- box_today end -->
+    <!-- box_newsletter start -->
+    <div id="box_newsletter">    
+        <div class="title"><img src="images/title_newsletter.gif" /></div>
+        <input type="tex" class="form_subscribe" value="Email" /><input type="button" value="subscribe" class="bt_subscribe" />
+        <br/>Stay in touch with the lastest ministry news and devotionals
+	</div>
+    <!-- box_newsletter end -->
+</div>
+<!-- main_sidebar end -->
+<!-- content end -->
+<div class="clear"></div>
+</div>
+<!-- wrap end -->
+<!-- footer start -->
+<div id="wrap_ft">
+<? include "templates/footer.tpl";?>
+</div>
+<!-- footer end -->
+<script type="text/javascript">
+swfobject.registerObject("FlashID");
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>customFileProperties</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">customFileProperties object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+   	 <a name="BeginOfThePage"></a>
+	 <p>
+     The EAFlashUpload allows to add a some additional text data to an upload request. Because of each file are sent to the server via separate request this additional data was named the <i>customFileProperties</i>. They have the following structure:
+     <ul>
+     	<li>public - the properties available for editing via user interface(see <a>filePropDlg</a>). Additional flag <i>edit</i> indicates whether properties canbe changed.</li>
+        <li>private - internal properties</li>
+     </ul>
+     All properties are sent in the upload request as form fields, property name acts as a name of form field and value as a value of form field.
+     <br />
+     There are a number of ways how custom file properties can be defined:
+     <ul style="list-style:: none;">
+     	<li>
+        	via XML full mode:
+            <pre class="code">
+            <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">customFileProperties</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">public</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">description </span><span style="color: #FF0000;">value</span><span style="color: #0000FF;">=&quot;Photo album files&quot;</span><span style="color: #FF0000;"> edit</span><span style="color: #0000FF;">=&quot;true&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">            
+        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">public</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">private</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">folderToSave </span><span style="color: #FF0000;">value</span><span style="color: #0000FF;">=&quot;UploadedFiles&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">anotherProp </span><span style="color: #FF0000;">value</span><span style="color: #0000FF;">=&quot;somevalue&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">private</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">customFileProperties</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span></div>
+            </pre>        
+        </li>
+        <li>
+        	via XML short mode:
+            <pre class="code">
+            <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">customFileProperties</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">public </span><span style="color: #FF0000;">value</span><span style="color: #0000FF;">=&quot;description:Photo album files&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">private </span><span style="color: #FF0000;">value</span><span style="color: #0000FF;">=&quot;folderToSave:UploadedFiles|anotherProp:somevalue&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">customFileProperties</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span></div></pre>
+            name:value pairs are delimited with a colon.<br />
+            different properties are delimited with "|" vertical line symbol.
+        </li>
+        <li>
+        <br />
+        via flashvars object of <a href="technotes.gettingstarted.html#SWFObject">SWFObject</a> object:
+            <pre class="code">
+            	<div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">customFileProperties.public</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">description:Photo album files</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">customFileProperties.private</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">folderToSave:UploadedFiles|anotherProp:somevalue</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div>
+            </pre>
+        </li>
+        <li>
+        	via EAFlashUpload JavaScript API:
+            <pre class="code">
+            	<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> setCustomProp()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> propertyObj </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    propertyObj.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">description</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.value </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Photo album files</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.isPublic </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;
+    
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> uncomment below code if you need to define property for specific file</span><span style="color: #008000;">
+</span><span style="color: #000000;">    </span><span style="color: #008000;">//</span><span style="color: #008000;"> propertyObj.fileId = &quot;an unique identifier of the file&quot;;</span><span style="color: #008000;">
+</span><span style="color: #000000;">    
+    EAFlashUpload.setCustomProperty(propertyObj);
+    
+    propertyObj </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    propertyObj.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">folderToSave</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.value </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">UploadedFiles</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.isPublic </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+    
+    EAFlashUpload.setCustomProperty(propertyObj);
+    
+    propertyObj </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    propertyObj.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">anotherProp</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.value </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">somevalue</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObj.isPublic </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+    
+    EAFlashUpload.setCustomProperty(propertyObj);
+}</span></div>
+            </pre>
+            See also <a href="javascript.api.html#getCustomProperty">getCustomProperty</a>, <a href="javascript.api.html#setCustomProperty">setCustomProperty</a> methods description.        </li>        
+     </ul>     
+     </p> 
+        
+	     
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

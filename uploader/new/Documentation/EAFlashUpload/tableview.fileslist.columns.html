@@ -1,0 +1,2544 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Columns</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Columns</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+	<p>  
+    This section describes properties of column object and all its instances.
+    <br /><br />    
+        Structure of section:
+        <ul style="list-style: none;">
+            <li><a style="font-weight: bold" href="#Column" >Properties of column object</a><br /><br /></li>
+            <li>
+                Default values for:                     
+                <p style="line-height: 200%; padding-left: 20px;">
+                    <a style="font-weight: bold;" href="#nameColumn" >nameColumn</a><br />
+                    <a style="font-weight: bold;" href="#sizeColumn" >sizeColumn</a><br />
+                    <a style="font-weight: bold;" href="#typeColumn" >typeColumn</a><br />
+                    <a style="font-weight: bold;" href="#statusColumn" >statusColumn</a><br />
+                    <a style="font-weight: bold;" href="#creationDateColumn" >creationDateColumn</a><br />
+                    <a style="font-weight: bold;" href="#modificationDateColumn" >modificationDateColumn</a><br />
+                    <a style="font-weight: bold;" href="#customColumn" >customColumn</a>
+                    <a style="font-weight: bold;" href="#customColumn1-9" >customColumn1-9</a>                
+                </p>
+                <br />
+            </li>
+            <li><a style="font-weight: bold" href="#columnsStyle" >columnsStyle object</a><br /><br /></li>
+        </ul>
+    </p>
+    <br />    
+	  
+      <a name="Column" ></a>
+	  <p><b>List of properties</b></p>
+      <table style="width: auto;">
+          <tr>
+              <th> Property name </th>
+              <th> Type </th>
+              <th> Description </th>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Header</b></td>
+          </tr>
+          <tr>
+            <td><a name="headerBorderUpColor"></a>headerBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerBorderOverColor"></a>headerBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerBorderDownColor"></a>headerBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerBackgroundUpColor"></a>headerBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerBackgroundOverColor"></a>headerBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerBackgroundDownColor"></a>headerBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontColor"></a>headerFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in dialog header (#RRGGBB).</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontSize"></a>headerFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontName"></a>headerFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the header.</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontBold"></a>headerFontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text is boldface.</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontItalic"></a>headerFontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the header is italicized.</td>
+          </tr>
+          <tr>
+            <td><a name="headerFontUnderline"></a>headerFontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the header is underlined.</td>
+          </tr>
+          <tr>
+            <td><a name="headerText"></a>headerText</td>
+            <td>String</td>
+            <td>Gets or sets the text in the header</td>
+          </tr>
+          <tr>
+            <td><a name="headerTextAlign"></a>headerTextAlign</td>
+            <td>String</td>
+            <td>Indicates the alignment of the text in the header. Possible values are: "center", "left", "right"</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Cell</b></td>
+          </tr>
+          <tr>
+            <td><a name="errorBorderUpColor"></a>errorBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorBorderOverColor"></a>errorBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorBorderDownColor"></a>errorBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorBackgroundUpColor"></a>errorBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorBackgroundOverColor"></a>errorBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorBackgroundDownColor"></a>errorBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBorderUpColor"></a>errorSelectedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBorderOverColor"></a>errorSelectedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBorderDownColor"></a>errorSelectedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBackgroundUpColor"></a>errorSelectedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBackgroundOverColor"></a>errorSelectedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="errorSelectedBackgroundDownColor"></a>errorSelectedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the selected error cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBorderUpColor"></a>uploadedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBorderOverColor"></a>uploadedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBorderDownColor"></a>uploadedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBackgroundUpColor"></a>uploadedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBackgroundOverColor"></a>uploadedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedBackgroundDownColor"></a>uploadedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBorderUpColor"></a>uploadedSelectedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBorderOverColor"></a>uploadedSelectedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBorderDownColor"></a>uploadedSelectedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBackgroundUpColor"></a>uploadedSelectedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBackgroundOverColor"></a>uploadedSelectedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="uploadedSelectedBackgroundDownColor"></a>uploadedSelectedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the selected uploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBorderUpColor"></a>unuploadedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBorderOverColor"></a>unuploadedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBorderDownColor"></a>unuploadedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBackgroundUpColor"></a>unuploadedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBackgroundOverColor"></a>unuploadedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedBackgroundDownColor"></a>unuploadedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBorderUpColor"></a>unuploadedSelectedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the selected unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBorderOverColor"></a>unuploadedSelectedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the selected unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBorderDownColor"></a>unuploadedSelectedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the selected unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBackgroundUpColor"></a>unuploadedSelectedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the selected unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBackgroundOverColor"></a>unuploadedSelectedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the selected unuploaded cell.</td>
+          </tr>
+          <tr>
+            <td><a name="unuploadedSelectedBackgroundDownColor"></a>unuploadedSelectedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the selected unuploaded cell.</td>
+          </tr>         
+          <tr>
+            <td><a name="customBorderUpColor"></a>customBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customBorderOverColor"></a>customBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customBorderDownColor"></a>customBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customBackgroundUpColor"></a>customBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customBackgroundOverColor"></a>customBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customBackgroundDownColor"></a>customBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBorderUpColor"></a>customSelectedBorderUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is not over the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBorderOverColor"></a>customSelectedBorderOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse is over the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBorderDownColor"></a>customSelectedBorderDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the border gradient color when the mouse button is clicked on the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBackgroundUpColor"></a>customSelectedBackgroundUpColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is not over the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBackgroundOverColor"></a>customSelectedBackgroundOverColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse is over the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="customSelectedBackgroundDownColor"></a>customSelectedBackgroundDownColor</td>
+            <td>Array</td>
+            <td>Array of numbers for the background gradient color when the mouse button is clicked on the selected custom cell.</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontColor"></a>cellFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in dialog header (#RRGGBB).</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontSize"></a>cellFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the header.</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontName"></a>cellFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the header.</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontBold"></a>cellFontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text is boldface.</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontItalic"></a>cellFontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the header is italicized.</td>
+          </tr>
+          <tr>
+            <td><a name="cellFontUnderline"></a>cellFontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the header is underlined.</td>
+          </tr>
+          <tr>
+            <td><a name="cellTextAlign"></a>cellTextAlign</td>
+            <td>String</td>
+            <td>Indicates the alignment of the text in the header. Possible values are: "center", "left", "right"</td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Others</b></td>
+          </tr>
+          <tr>
+            <td><a name="visible"></a>visible*</td>
+            <td>Boolean</td>
+            <td>Gets or sets a value that indicates whether the column is visible.</td>
+          </tr>
+          <tr>
+            <td><a name="width"></a>width*</td>
+            <td>uint</td>
+            <td>The width of the column, in pixels. </td>
+          </tr>
+          <tr>
+            <td><a name="minWidth"></a>minWidth* </td>
+            <td>uint</td>
+            <td>The minimum width of the column, in pixels. </td>
+          </tr>
+          <tr>
+          	<td colspan="3"><b>Additional property of <i>customColumn</i></b></td>
+          </tr>
+          <tr>
+            <td><a name="propertyNameDataSource"></a>propertyNameDataSource*</td>
+            <td>String</td>
+            <td>Gets or sets the name of custom file property. This property allows to edit value of cells of the customColumn.</td>
+          </tr>
+          <tr>
+            <td><a name="type"></a>type*</td>
+            <td>String</td>
+            <td>
+            	Gets or sets the type of column cells. 
+                <br />
+                Possible values:
+                <ul>
+                	<li>editbox</li>
+                    <li>checkbox</li>
+                    <li>radio - all cells are joined to one group. The name of form field related to this group depends on <a href="#propertyNameDataSource">propertyNameDataSource</a></li>
+                </ul>            
+            </td>
+          </tr>
+          <tr>
+            <td><a name="values"></a>values*</td>
+            <td>Array</td>
+            <td>
+            	Gets or sets an array of possible values associated with cells that have "radio" or "checkbox" type. 
+                <br />
+            	"radio" and "checkbox" has only two logic values: enbaled and disabled. Therefore array that you define for property should have only two elements(the values can be any).
+            </td>
+          </tr>
+          <tr>
+            <td><a name="labels"></a>labels*</td>
+            <td>Array</td>
+            <td>
+            	Gets or sets an array of values associated with <a href="#values">values</a> property. 
+            </td>
+          </tr>
+      </table>  
+       <b>*</b> - properties are not supported by <a style="font-weight: bold" href="#columnsStyle" >columnsStyle object</a>.
+    
+    <br />
+    <br />
+    <br />     
+      
+    <a name="nameColumn"></a>
+    <p><b>nameColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a name of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"File name"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>              
+              <tr>
+                <td>customBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>customBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>customBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>customSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>              
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>width**</td>
+                <td>296</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            ** - property has above value when a size of the EAFlashUpload object on the page is 450x350. In other cases the value is changed due to auto resizing.
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the nameColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.nameColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p> 
+    
+    <br />
+    <br />     
+      
+    <a name="sizeColumn"></a>
+    <p><b>sizeColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a size of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"Size"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>width**</td>
+                <td>98</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            ** - property has above value when a size of the EAFlashUpload object on the page is 450x350. In other cases the value is changed due to auto resizing.
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the sizeColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.sizeColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />     
+      
+    <a name="typeColumn"></a>
+    <p><b>typeColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a type of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"Type"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the typeColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.typeColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />     
+      
+    <a name="statusColumn"></a>
+    <p><b>statusColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a status of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"Status"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>width**</td>
+                <td>98</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            ** - property has above value when a size of the EAFlashUpload object on the page is 450x350. In other cases the value is changed due to auto resizing.
+            <br /><br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the statusColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.statusColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />     
+      
+    <a name="creationDateColumn"></a>
+    <p><b>creationDateColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a creation date property of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"Cr. Date"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the creationDateColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.creationDateColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />     
+      
+    <a name="modificationDateColumn"></a>
+    <p><b>modificationDateColumn</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a modification date property of the file.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>"Mod. Date"</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>visible</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the modificationDateColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.modificationDateColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p> 
+    
+    <br />
+    <br />     
+      
+    <a name="customColumn"></a>
+    <a name="customColumn1-9"></a>
+    <p><b>customColumn (customColumn1-9)</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays a custom property of the file. See also: <a href="objects.core.customprop.html">customFileProperties object</a>
+            <br/>
+            There are ten <b>customColumn</b> objects by default. You can reference to them as follows: "view.filesList.customColumn." , "view.filesList.customColumn1." , "view.filesList.customColumn2." ... "view.filesList.customColumn9."<br/>
+            The <b>customColumn</b> allows you to create a flexible interface that allows custom user actions. <a href="#type">type</a> property allows you to define a behaviour for the cells of the column. They may act as a simple edit box, a checkbox or as a radio button.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Header</b></td>    
+              </tr>
+              <tr>
+                <td>headerBorderUpColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderOverColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBorderDownColor</td>
+                <td>[0xbfced4]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundUpColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundOverColor</td>
+                <td>[0xfdfdfe, 0xBCC8CF]</td>
+              </tr>
+              <tr>
+                <td>headerBackgroundDownColor</td>
+                <td>[0x6dbdd1, 0xf4f8fc]</td>
+              </tr>
+              <tr>
+                <td>headerFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>headerFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>headerFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>headerFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>headerText</td>
+                <td>Depends on <i>propertyNameDataSource</i> property</td>
+              </tr>
+              <tr>
+                <td>headerTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Cell</b></td>
+              </tr>
+              <tr>
+                <td>errorBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundUpColor</td>
+                <td>[0xff1c1c, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundOverColor</td>
+                <td>[0xffaeae, 0xff5757]</td>
+              </tr>
+              <tr>
+                <td>errorBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>errorSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+
+              <tr>
+                <td>uploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundUpColor</td>
+                <td>[0x41c042, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundOverColor</td>
+                <td>[0xbfeac1, 0x88d588]</td>
+              </tr>
+              <tr>
+                <td>uploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>uploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundUpColor</td>
+                <td>[0xffffff, 0xffffff]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundOverColor</td>
+                <td>[0xe6f3f7, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderUpColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderOverColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBorderDownColor</td>
+                <td>[0xe4e4e4]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundUpColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundOverColor</td>
+                <td>[0xadd9e5, 0xe6f3f7]</td>
+              </tr>
+              <tr>
+                <td>unuploadedSelectedBackgroundDownColor</td>
+                <td>[0x7ec4d6, 0xadd9e5]</td>
+              </tr>
+              <tr>
+                <td>cellFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>cellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>cellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>cellFontBold</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>cellTextAlign</td>
+                <td>"left"</td>
+              </tr>
+              <tr>
+                <td colspan="2"><b>Others</b></td>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>"editbox"</td>
+              </tr> 
+              <tr>
+                <td>values</td>
+                <td>"on|off"</td>
+              </tr>
+              <tr>
+                <td>labels</td>
+                <td>""</td>
+              </tr>            
+              <tr>
+                <td>visible</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>minWidth</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <br />
+            Description of appropriate property you can find here <a href="#Column">Properties of column object</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the customDateColumn is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.customColumn.unuploadedBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+    <br />
+    <br />
+    <a name="columnsStyle"></a>
+    <p><b>columnsStyle</b></p>      
+    <p>    
+    <i>Description:</i>
+    	<p>
+    		The <i>columnsStyle</i> is a setter object for instances of the column object. It has the same properties as the column object with a small difference they are have a setters only. So, you will not be able to retrieve value of columnsStyle object property, you should retrieve the property of appropriate column object instead. Description of appropriate property you can find here <a href="#Column">Properties of column object</a>. Marked with * symbol properties are not supported by the <i>columnsStyle</i>.<br /><br />
+            With <i>columnsStyle</i> you can apply a specific value for all instances of column object such as <a href="#nameColumn" >nameColumn</a>, <a href="#sizeColumn" >sizeColumn</a>, <a href="#typeColumn" >typeColumn</a>, <a href="#statusColumn" >statusColumn</a>, <a href="#creationDateColumn" >creationDateColumn</a>, <a href="#modificationDateColumn" >modificationDateColumn</a>, <a href="#customColumn" >customColumn</a>.
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The "headerBackgroundUpColor" property is set for all column instances via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.columnsStyle.headerBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    </p>
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Upload multiple files with custom user's actions.</title>
+<meta CONTENT="flash file upload, upload multiple files, flash upload control" NAME="keywords" />
+<style type="text/css">
+#responseContainer
+{
+	overflow: auto;
+	width: 390px;
+	height: 250px;
+	border: 1px solid #cccccc;
+}
+</style>
+<script type="text/javascript">
+// Handles EAFlashUpload's onMovieLoad event and displays existing loading errors.
+	function EAFlashUpload_onMovieLoad(errors)
+	{		
+		if(errors != "")
+			alert(errors);	
+	}	
+	
+	function EAFlashUpload_onUploadStart()
+	{
+		//here you can place various validations
+		
+		// author's name validation
+		if(document.Form1.author.value == "")
+		{
+			alert("You have not specified an author's name.");
+			EAFlashUpload.cancelUpload();
+			return;
+		}
+		
+		// descriptions validation
+		var propertyObject = new Object();
+    	propertyObject.name = "Description";    
+	    propertyObject.isPublic = true;
+	    var files = EAFlashUpload.getFiles();
+		
+		for(var i = 0; i < files.length; i++)
+		{
+			propertyObject.fileId = files[i].id;	    
+	    	propertyObject = EAFlashUpload.getCustomProperty(propertyObject);
+			
+			if (propertyObject.value == "") 
+			{
+				alert("Please define a description for file: " + files[i].name);
+				EAFlashUpload.cancelUpload();
+				return;
+			}
+			
+		}
+								
+	}
+	
+	function EAFlashUpload_onFileLoadEnd(fileObj)
+	{
+		var htmlCode = fileObj.serverResponse;	
+		var rContainer = document.getElementById("responseContainer");
+		
+		rContainer.innerHTML += htmlCode;
+	}
+		
+	function clearList()
+	{
+		var rContainer = document.getElementById("responseContainer");
+		rContainer.innerHTML = "";
+	}
+</script>
+</head>
+<body>
+<p>
+This example demonstrates how to add custom properties for files, display them as a custom columns and send they values to the server. "Description", "Share", "Cover" custom properties are defined for demonstration purpose. Actually names can be any.
+<br />
+The cells of custom column may act as a simple edit box, a checkbox or as a radio button. Read more about custom columns in the documentation.
+<br />
+The example contains one limitiation. Keep in mind that it is limitations of this example, not of EAFlashUpload itself:
+	<ul>
+		<li>Only image files are allowed for selection;</li>
+	</ul>
+</p>
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of current html page (ex: for ASP.NET: "ServerScripts/ASP.NET/uploadwithcustomcolumns.aspx"; or for PHP: ServerScripts/PHP/uploadwithcustomcolumns.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<br /><br />
+<form name="Form1" >
+<table>
+	<tr>
+		<td colspan="2">
+			Some menu:&nbsp;
+            <select name="menu" style="width: 100px;">
+              <option value="item1" selected="selected">Item 1</option>
+              <option value="item2">Item 2</option>
+              <option value="item3">Item 3</option>
+              <option value="item4">Item 4</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;
+            Author:&nbsp;
+            <input type="text" name="author" value="" />
+            
+            <p>
+            You can use Request.Form["field name"] object for ASP.NET or $_REQUEST["field name"] for PHP to retrieve values on the server side.
+            </p>
+			<br />
+		</td>
+	</tr>
+	<tr>		
+		<td>
+			<div id="EAFlashUpload_holder">
+            	You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+                <br />
+                <a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+			</div>
+		</td>
+		<td style="padding-left: 40px; vertical-align: top;">
+			Server response:<br />
+			<div id="responseContainer"></div>
+			<a href="javascript:clearList();">Clear list</a>			
+		</td>
+	</tr>
+</table>
+</form>
+
+<!-- Embedding the EAFlashUpload control -->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff",
+		wmode: "window"
+	};
+	
+	// id and name attribute may contain any value. 
+	// You need to use specified below identifier to access to the EAFlashUpload methods and properties.
+	var attributes = {  
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload"								
+	};
+	
+	var flashvars = new Object();
+	
+	//Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	flashvars["viewFile"] = "TableView.swf";
+	
+	flashvars["queue.allowedExtentions"] = "Images (*.jpg, *.gif, *.png):*.jpg;*.gif;*.png";
+	
+	// Specify form name for parsing
+	flashvars["uploader.formToSend"] = "Form1";
+		
+	// hide size column and change file name pattern for displaying size	
+	flashvars["queue.fileNamePattern"] 				= "#FILE_NAME# (#FILE_SIZE#)";	
+	flashvars["view.filesList.sizeColumn.visible"]  = false;
+	flashvars["view.filesList.nameColumn.width"] 	= 250;
+	flashvars["view.filesList.statusColumn.width"]  = 50;
+	
+	// define custom file property
+	flashvars["customFileProperties.public"] = "Description:put a description|Share:true|Cover:on";
+	
+	// set data source for custom columns
+	flashvars["view.filesList.customColumn.propertyNameDataSource"]  = "Description";
+	flashvars["view.filesList.customColumn.visible"] 				 = true;
+		
+	flashvars["view.filesList.customColumn1.propertyNameDataSource"] = "Share";
+	flashvars["view.filesList.customColumn1.visible"] 				 = true;
+	flashvars["view.filesList.customColumn1.type"]                   = "checkbox";
+	flashvars["view.filesList.customColumn1.values"]                 = "true|false";
+	flashvars["view.filesList.customColumn1.labels"]                 = "public";
+	flashvars["view.filesList.customColumn1.width"]          		 = 70;
+	
+	flashvars["view.filesList.customColumn2.propertyNameDataSource"] = "Cover";
+	flashvars["view.filesList.customColumn2.visible"] 				 = true;
+	flashvars["view.filesList.customColumn2.type"]                   = "radio";
+	flashvars["view.filesList.customColumn2.values"]                 = "on|off";
+	flashvars["view.filesList.customColumn2.width"]          		 = 55;	
+	
+	
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "520", "350", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+	
+</script>
+
+<br />
+<hr />
+<div style="padding: 10px; font-weight: bold;">
+Note: If you have questions regarding this example please let us know <a href="mailto:support%40easyalgo.com?Subject=UploadWithCustomColumns">support@easyalgo.com</a>. Any assistance is provided for free.
+</div>
+<a href="default.html">Other examples</a>			
+
+</body>
+</html>

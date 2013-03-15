@@ -1,0 +1,580 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Properties of queue object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Properties of <i>queue</i> object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>	 
+	 <p><b>List of properties</b></p>
+      <table style="width: auto;">
+        <tr>
+          <th> Property name </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td> <a href="#length">length</a> </td>          
+          <td> The count of files that are being contained now in the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#fileNamePattern">fileNamePattern</a> </td>          
+          <td> The pattern that is used for the <i>name</i> column in the TableView user interface and for the column in the ListView interface.</td>
+        </tr>
+        <tr>
+          <td> <a href="#fileFormFieldName">fileFormFieldName</a> </td>          
+          <td> The field name that precedes the file data in the upload POST operation. </td>
+        </tr>
+        <tr>
+          <td> <a href="#filteredFileSelection">filteredFileSelection</a> </td>          
+          <td> Defines whether all selected files should be rejected if at least one of them doesn't conform to defined limitations. </td>
+        </tr>
+        <tr>
+          <td> <a href="#allowedExtentions">allowedExtentions</a> </td>          
+          <td> An array of file filter objects that are used to indicate what files on the user's system are shown in the file-browsing dialog box. </td>
+        </tr>        
+        <tr>
+          <td> <a href="#filesCountLimit">filesCountLimit</a> </td>          
+          <td> Indicates the maximum count of files which can be added to the upload queue. </td>
+        </tr>
+        
+        <tr>
+          <td> <a href="#allowMultipleSelection">allowMultipleSelection</a> </td>          
+          <td> Determines whether browse dialog will allow multiple selection. </td>
+        </tr>
+        <tr>
+          <td> <a href="#renewQueueAfterSelection">renewQueueAfterSelection</a> </td>          
+          <td> Determines whether queue should be cleared after new files have been selected. </td>
+        </tr>
+        
+        <tr>
+          <td> <a href="#fileSizeLimit">fileSizeLimit</a> </td>          
+          <td> Indicates the maximum size(in bytes) of each file that can be added to the upload queue. </td>
+        </tr>
+        <tr>
+          <td> <a href="#totalSizeLimit">totalSizeLimit</a> </td>          
+          <td> Indicates the maximum size(in bytes) of all files that can be added to the upload queue. </td>
+        </tr>
+        <tr>
+          <td> <a href="#totalSize">totalSize</a> </td>          
+          <td> The total size(in bytes) of files that are being contained now in the upload queue. </td>
+        </tr>
+        <tr>
+          <td> <a href="#totalSizeString">totalSizeString</a> </td>          
+          <td> The formatted string of totalSize property value. </td>
+        </tr>
+        <tr>
+          <td> <a href="#filesCountLimitMsg">filesCountLimitMsg</a> </td>          
+          <td> The text of message that is generated when the count of selcted files exceeds allowed limit. </td>
+        </tr>       
+        <tr>
+          <td> <a href="#fileSizeLimitMsg">fileSizeLimitMsg</a> </td>          
+          <td> The text of message that is generated when the size of at least one of selcted files exceeds allowed limit. </td>
+        </tr>
+        <tr>
+          <td> <a href="#totalSizeLimitMsg">totalSizeLimitMsg</a> </td>          
+          <td> The text of message that is generated when total size of selected files exceeds allowed limit. </td>
+        </tr>
+        <tr>
+          <td> <a href="#fileTypeRestrictionMsg">fileTypeRestrictionMsg</a> </td>          
+          <td> The text of message that is generated when at least one of selcted files has unallowed extention.  </td>
+        </tr>      
+        <tr>
+          <td> <a href="#rejectedFilesCount">rejectedFilesCount</a> </td>          
+          <td> The count of files that were rejected by a defined policy after one selection operation. </td>
+        </tr>        
+        <tr>
+          <td> <a href="#deleteUploadedFiles">deleteUploadedFiles</a> </td>          
+          <td> Indicates whether uploaded files should be automatically deleted from the queue. </td>
+        </tr>                
+      </table>
+      <br />
+      <br />
+      
+	  <a name="length"></a>
+      <p><b>length</b> (Read only)</p>
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"queue.length"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The count of files that are being contained now in the upload queue.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is got via <a href="javascript.api.html#getProperty">getProperty</a> method of EAFlashUpload JavaScript API:
+                <pre class="codeInLine"><div><span style="color: #000000;">EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.length</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);</span></div></pre>
+            </p>
+      </p>
+		
+      <br />
+	  <a name="fileNamePattern"></a>
+      <p><b>fileNamePattern</b></p>
+      <p>
+      	<i>Default value: </i>"#FILE_NAME#"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.fileNamePattern"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string pattern that is used as a value of <i>name</i> column of the TableView and ListView interface. This property provides a possibility to add some additional information such as size or midification date to the file name and display this value for the user. The property supports formatting constants, see <a href="technotes.stringformatting.html">String formatting</a> for more information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.fileNamePattern</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#FILE_NAME# (#FILE_SIZE#)</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="fileFormFieldName"></a>
+      <p><b>fileFormFieldName</b></p>
+      <p>
+      	<i>Default value: </i>"Filedata"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.fileFormFieldName"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The field name that precedes the file data in the upload POST operation. The fileFormFieldName value must be a non-empty string. By default, the value of fileFormFieldName is "Filedata", as shown in the following sample POST request: 
+ <pre class="code">
+ Content-Type: multipart/form-data; boundary=AaB03x
+ --AaB03x 
+ Content-Disposition: form-data; name="Filedata"; filename="example.jpg" 
+ Content-Type: application/octet-stream
+ ... contents of example.jpg ... 
+ --AaB03x--
+ </pre>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.fileFormFieldName</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Filedata</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="filteredFileSelection"></a>
+      <p><b>filteredFileSelection</b></p>
+      <p>
+      	<i>Default value: </i>true
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"queue.filteredFileSelection"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Defines whether all selected files should be rejected if at least one of them doesn't conform to defined limitations. If property is set to "true" then the files are conform to existing limitation are added to the queue, otherwise all files is rejected.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.filteredFileSelection</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="allowedExtentions"></a>
+      <p><b>allowedExtentions</b></p>
+      <p>
+      	<i>Default value: </i>["All files:*.*"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"queue.allowedExtentions"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	An array of file filter objects that are used to indicate what files on the user's system are shown in the file-browsing dialog box.
+                <br />
+                The file filter object has the following structure:<br />
+                &lt;Description&gt;:&lt;Extention&gt;
+                <ul>
+                	<li>Description - The description string for the filter. The description is visible to the user in the dialog box. The description string contains a string, such as "Images (*.gif, *.jpg, *.png)", that can help instruct the user on what file types can be uploaded. Note that the actual file types that are allowed for selection are stored in the extension part.</li>
+                    <li>Extention - A list of file extensions. This list indicates the types of files that you want to show in the file-browsing dialog box. (The list is not visible to the user; the user sees only the value of the description part.) The extension property contains a semicolon-delimited list of Windows file extensions, with a wildcard (*) preceding each extension, as shown in the following string: "*.jpg;*.gif;*.png".</li>                    
+                </ul>
+				This property is predefined for <a href="imageview.intro.html">ImageView</a> user interface. The value is "Image files (*.jpg, *.jpeg, *.png, *.gif):*.jpg;*.jpeg;*.png;*.gif;*.giff".
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.allowedExtentions</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">All files:*.*|Images (*.gif, *.jpg, *.png):*.jpg;*.gif;*.png</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="filesCountLimit"></a>
+      <p><b>filesCountLimit</b></p>
+      <p>
+      	<i>Default value: </i>0 (unlimited)
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"queue.filesCountLimit"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the maximum count of files wich can be added to the upload queue. If <a href="#filteredFileSelection">filteredFileSelection</a> property is set to "true" and count of queue items are lower than allowed limit then when you try to add new files only part of files is added to the queue and other files is rejected. If <i>filteredFileSelection</i> is set to "false" and count of selected files plus count of existed in the queue files greater than allowed limit then all files is rejected.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.filesCountLimit</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      
+      <br /> 
+      <a name="allowMultipleSelection"></a>
+      <p><b>allowMultipleSelection</b></p>
+      <p>
+      	<i>Default value: </i>true
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"queue.allowMultipleSelection"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Determines whether browse dialog will allow multiple selection. This property may be useful if you want to limit users to choose files one by one. If <a href="#filesCountLimit">filesCountLimit</a> property is defined as 1 then <a href="#renewQueueAfterSelection">renewQueueAfterSelection</a> is switched to <i>true</i> and <b>allowMultipleSelection</b> property is switched to <i>false</i> automatically.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.allowMultipleSelection</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="renewQueueAfterSelection"></a>
+      <p><b>renewQueueAfterSelection</b></p>
+      <p>
+      	<i>Default value: </i>false
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"queue.renewQueueAfterSelection"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Determines whether queue should be cleared after new files have been selected. If property is defined as <i>true</i> then queue is cleared before adding new selected files. If <a href="#filesCountLimit">filesCountLimit</a> property is defined as 1 then <b>renewQueueAfterSelection</b> is switched to <i>true</i> and <a href="#allowMultipleSelection">allowMultipleSelection</a> property is switched to <i>false</i> automatically.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.renewQueueAfterSelection</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />      
+      <a name="fileSizeLimit"></a>
+      <p><b>fileSizeLimit</b></p>
+      <p>
+      	<i>Default value: </i>0 (unlimited)
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"queue.fileSizeLimit"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates a maximum size(in bytes) of each file that can be added to the upload queue. If <a href="#filteredFileSelection">filteredFileSelection</a> property is set to "true" then when you try to add new files only files with allowed size is added to the queue and other files is rejected. If <i>filteredFileSelection</i> is set to "false" and at least one of files doesn't conform to allowed limit then all files is rejected.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.fileSizeLimit</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="totalSizeLimit"></a>
+      <p><b>totalSizeLimit</b></p>
+      <p>
+      	<i>Default value: </i>0 (unlimited)
+      	<br />
+        <i>Type: </i>
+        <br />
+        <i>String reference: </i>"queue.totalSizeLimit"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the maximum size(in bytes) of all files that can be added to the upload queue. If <a href="#filteredFileSelection">filteredFileSelection</a> property is set to "true" and size of all files in the queue are lower than allowed limit then new files are being added while general size does not exceed the allowed limit. If <i>filteredFileSelection</i> is set to "false" and size of selected files plus size of existed in the queue files are greater than allowed limit then all files is rejected.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.totalSizeLimit</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="totalSize"></a>
+      <p><b>totalSize</b> (Read only)</p>
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"queue.totalSize"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The total size(in bytes) of files that are being contained now in the upload queue.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is got via <a href="javascript.api.html#getProperty">getProperty</a> method of EAFlashUpload JavaScript API:
+                <pre class="codeInLine"><div><span style="color: #000000;">EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.totalSize</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="totalSizeString"></a>
+      <p><b>totalSizeString</b> (Read only)</p>
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.totalSizeString"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string contains formatted value of totalSize property. The formatting bases on <a href="objects.core.html#sizeAbbrev">sizeAbbrev</a> property.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is got via <a href="javascript.api.html#getProperty">getProperty</a> method of EAFlashUpload JavaScript API:
+                <pre class="codeInLine"><div><span style="color: #000000;">EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.totalSizeString</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="filesCountLimitMsg"></a>
+      <p><b>filesCountLimitMsg</b></p>
+      <p>
+      	<i>Default value: </i>"Files count limit(#FILES_COUNT_LIMIT#) exceeded! #REJ_FILES_COUNT# files has been rejected."
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.filesCountLimitMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The text of message that is generated when the count of selcted files exceeds allowed limit. The mentioned message is displayed in an alert dialog of the user interface and is returned as a parameter of JavaScript error event handler on the page. The property supports formatting constants, see <a href="technotes.stringformatting.html">String formatting</a> for more information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.filesCountLimitMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Files count limit(#FILES_COUNT_LIMIT#) exceeded!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="fileSizeLimitMsg"></a>
+      <p><b>fileSizeLimitMsg</b></p>
+      <p>
+      	<i>Default value: </i>"Maximum file size(#FILE_SIZE_LIMIT#) exceeded! #REJ_FILES_COUNT# files has been rejected."
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.fileSizeLimitMsg"
+        <br />
+      	<br />      	
+        <i>Description:</i>
+        	<p>
+            	The text of message that is generated when the size of at least one of selcted files exceeds allowed limit. The mentioned message is displayed in an alert dialog of the user interface and is returned as a parameter of JavaScript error event handler on the page. The property supports formatting constants, see <a href="technotes.stringformatting.html">String formatting</a> for more information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.fileSizeLimitMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Maximum file size(#FILE_SIZE_LIMIT#) exceeded!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="totalSizeLimitMsg"></a>
+      <p><b>totalSizeLimitMsg</b></p>
+      <p>
+      	<i>Default value: </i>"Total size limit(#TOTAL_FILES_SIZE_LIMIT#) exceeded! #REJ_FILES_COUNT# files has been rejected."
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.totalSizeLimitMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The text of message that is generated when total size of selected files exceeds allowed limit. The mentioned message is displayed in an alert dialog of the user interface and is returned as a parameter of JavaScript error event handler on the page. The property supports formatting constants, see <a href="technotes.stringformatting.html">String formatting</a> for more information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.totalSizeLimitMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Total size limit(#TOTAL_FILES_SIZE_LIMIT#) exceeded!</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="fileTypeRestrictionMsg"></a>
+      <p><b>fileTypeRestrictionMsg</b></p>
+      <p>
+      	<i>Default value: </i>"There are files with unallowed type! #REJ_FILES_COUNT# files has been rejected."
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"queue.fileTypeRestrictionMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The text of message that is generated when at least one of selcted files has an unallowed extention. The mentioned message is displayed in an alert dialog of the user interface and is returned as a parameter of JavaScript error event handler on the page. The property supports formatting constants, see <a href="technotes.stringformatting.html">String formatting</a> for more information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.fileTypeRestrictionMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> There are files </span><span style="color: #0000FF;">with</span><span style="color: #000000;"> unallowed type</span><span style="color: #000000;">!</span><span style="color: #000000;"> #REJ_FILES_COUNT# files has been rejected.;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="rejectedFilesCount"></a>
+      <p><b>rejectedFilesCount</b> (Read only)</p>
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"queue.rejectedFilesCount"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The count of files that were rejected by a defined policy after one selection operation. The value of property is renewed after each files addition. See also <a href="#filteredFileSelection">filteredFileSelection</a> property.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is got via <a href="javascript.api.html#getProperty">getProperty</a> method of EAFlashUpload JavaScript API:
+                <pre class="codeInLine"><div><span style="color: #000000;">EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.rejectedFilesCount</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="deleteUploadedFiles"></a>
+      <p><b>deleteUploadedFiles</b></p>
+      <p>
+      	<i>Default value: </i>false
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"queue.deleteUploadedFiles"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates whether uploaded files should be automatically deleted from the queue. "true" if uploaded files should be deleted, otherwise "false". The files are automatically deleted after successful upload only. If the user will press a "Cancel" button or upload will be stopped by JavaScript API then files will not be deleted regardless of property value.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.deleteUploadedFiles</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+    
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2005-2008, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

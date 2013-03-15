@@ -1,0 +1,581 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Root properties</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Root properties</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>	 
+	 <p><b>List of properties</b></p>
+      <table style="width: auto;">
+        <tr>
+          <th> Property name </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td> <a href="#viewFile">viewFile</a> </td>          
+          <td> The name of .swf file that contains appropriate user interface. </td>
+        </tr>
+        <tr>
+          <td> <a href="#view">view</a> </td>          
+          <td> An object provides an access to properties of loaded user interface. </td>
+        </tr>
+        <tr>
+          <td> <a href="#configFile">configFile</a> </td>          
+          <td> The name of xml configuration file. </td>
+        </tr>        
+        <tr>
+          <td> <a href="#overlayModePlaceholder">overlayModePlaceholder</a> </td>          
+          <td> The name of html element that will be used as a placeholder of transparent flash movie. </td>
+        </tr>
+        <tr>
+          <td> <a href="#activeLanguage">activeLanguage</a> </td>          
+          <td> The name of active language that detrmines what kind of texts will be used for user interface. </td>
+        </tr>
+        <tr>
+          <td> <a href="#dateFormatString">dateFormatString</a> </td>          
+          <td> The string pattern for DateTime values formatting.  </td>
+        </tr>
+        <tr>
+          <td> <a href="#daysAbbrev">daysAbbrev</a> </td>          
+          <td> The string array contains the names abbreviations of the days of the week. </td>
+        </tr>
+        <tr>
+          <td> <a href="#fullDays">fullDays</a> </td>          
+          <td> The string array contains the names of the days of the week. </td>
+        </tr>
+        <tr>
+          <td> <a href="#monthsAbbrev">monthsAbbrev</a> </td>          
+          <td> The string array contains the names abbreviations of the months of the year. </td>
+        </tr>
+        <tr>
+          <td> <a href="#fullMonths">fullMonths</a> </td>          
+          <td> The string array contains the names of the months of the year. </td>
+        </tr>
+        <tr>
+          <td> <a href="#sizeAbbrev">sizeAbbrev</a> </td>          
+          <td> The string array contains the names abbreviations of the size unit. </td>
+        </tr>
+        <tr>
+          <td> <a href="#timeAbbrev">timeAbbrev</a> </td>          
+          <td> The string array contains the names abbreviations of the time unit. </td>
+        </tr>
+        <tr>
+          <td> <a href="#showRotator">showRotator</a> </td>          
+          <td> Indicates whether or not loading indicator should be displayed. </td>
+        </tr>        
+      </table>
+      <br />
+      <br />     
+      
+      <a name="viewFile"></a>
+      <p><b>viewFile</b></p>      
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"viewFile"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The name of .swf file that contains appropriate user interface. EAFlashUpload includes four types of user interface (<a href="tableview.intro.html">TableView.swf</a>, <a href="listview.intro.html" >ListView.swf</a>, <a href="shortview.intro.html">ShortView.swf</a>, <a href="imageview.intro.html">ImageView.swf</a>). EAFUpload.swf doesn't have user interface but can load it from the file that specified by this property. The names of the files can be changed for your needs.
+                <br />
+                Here is a main differences among provided user interfaces.
+                <ul>
+                	<li>TableView.swf - visual list of files is represented as a table with possibility customizing of collumns.</li>
+                    <li>ListView.swf - visual list of files is represented as a list control.</li>
+                    <li>ShortView.swf - visual list of files doesn't exist.</li>
+                    <li>ImageView.swf - visual list is presented as table of thumbnails. This view was developed especially for image upload solutions.</li>
+                </ul>
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">viewFile</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">TableView.swf</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br>
+      <a name="view"></a>
+      <p><b>view</b></p>      
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>Object
+        <br />
+        <i>String reference: </i>"view"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The objects provides an access to properties of loaded user interface. The EAFlashUpload includes four types of user interface (<a href="tableview.intro.html">TableView</a>, <a href="listview.intro.html" >ListView</a>, <a href="shortview.intro.html">ShortView</a>, <a href="imageview.intro.html">ImageView.swf</a>). See decription of existing properties in the appropriate interface description.            </p>
+         <i>Examples:</i>
+         	<p>
+            	The value of backgrond property of the TableView interface is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="code">
+                <div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">viewFile</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">TableView.swf</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> background is drew with gradient.</span><span style="color: #008000;">
+</span><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#000000|#ffffff</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div>
+                </pre>
+            </p>
+      </p>
+      
+      <br />      
+      <a name="configFile"></a>
+      <p><b>configFile</b></p>      
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"configFile"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The name of xml file that contains configuration of EAFlashUpload component. EAFlashUpload can be fully configured via xml. Syntax and tags description you can find in the <a href="technotes.configuration.html" >Configuration</a> section. If you define full configuration in the xml file then "configFile" property should be defined on the page.                  
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">configFile</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">configuration.xml</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="overlayModePlaceholder"></a>
+      <p><b>overlayModePlaceholder</b></p>
+      <p>
+      	<i>Default value: </i>none
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"overlayModePlaceholder"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            The name of html element that will be used as a placeholder of transparent flash movie. The Flash Player 10 has a security restriction: "Browse Dialog" cannot be open without user interaction with flash object. If <i>overlayModePlaceholder</i> property set the EAFlashUpload will be created as a transparent movie and will be placed over specified html element. JavaScript DOM is used for overlay placeholder. Overlay mode was created for creating "pure" JavaScript + DHTML user interface. There are two important points: <i>wmode</i> parameter should be set to "transparent" and style attribute <i>position</i> should be set "absolute". 
+            <br />
+            <br />
+            In the overlay mode  EAFUpload.swf is used only and <a href="#viewFile">viewFile</a> property <b>should be omitted</b>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject. After movie will be loaded on the page it is placed over specified html element with "OverlayPlaceholder" id:
+                <pre class="code"><div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html </span><span style="color: #FF0000;">xmlns</span><span style="color: #0000FF;">=&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #FF0000;">http-equiv</span><span style="color: #0000FF;">=&quot;Content-Type&quot;</span><span style="color: #FF0000;"> content</span><span style="color: #0000FF;">=&quot;text/html; charset=utf-8&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">JavaScript interface</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #FF0000;"> src</span><span style="color: #0000FF;">=&quot;swfobject.js&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload_holder&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">Alternate content</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">a </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;OverlayPlaceholder&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">Browse files</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> params </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {  
+        wmode: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">transparent</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">
+    };    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> attributes </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {        
+        id: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">,  
+        name: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">,
+        style: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">position: absolute;</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">                            
+    };    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> flashvars </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">new</span><span style="background-color: #F5F5F5; color: #000000;"> Object();      
+    flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploader.uploadUrl</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploadfiles.php</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">;
+    flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">overlayModePlaceholder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">OverlayPlaceholder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">;    
+
+    swfobject.embedSWF(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFUpload.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload_holder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">100</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">100</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">9.0.0</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">expressInstall.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, flashvars, params, attributes);    
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+...
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span></div></pre>
+            </p>
+      </p>
+      <br />
+      <a name="activeLanguage"></a>
+      <p><b>activeLanguage</b></p>      
+      <p>
+      	<i>Default value: </i>"eng"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"activeLanguage"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The name of active language that determines what kind of texts will be used for user interface. The EAFlashUpload has a flexible localization behavior. Via <a href="technotes.configuration.html">XML configuration file</a> you can define texts of buttons, messages etc. for as languages as you need for you solution.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>xml</i> configuration file:
+                <pre class="code"><div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">EAFlashUpload </span><span style="color: #FF0000;">activeLanguage</span><span style="color: #0000FF;">=&quot;spanish&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">localization</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">eng 
+            </span><span style="color: #FF0000;">....
+            view.addButton.label</span><span style="color: #0000FF;">=&quot;Choose files&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">spanish
+            </span><span style="color: #FF0000;">....
+            view.addButton.label</span><span style="color: #0000FF;">=&quot;Elegir los files&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">localization</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    ...
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span></div></pre>
+            </p>
+      </p>
+      <br />    
+      <a name="dateFormatString"></a>
+      <p><b>dateFormatString</b></p>      
+      <p>
+      	<i>Default value: </i>"d/m/Y H:i"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"dateFormatString"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string pattern for DateTime values formatting. The following table describes list of symbols which can be included to the pattern:
+                <table style="width: auto;">
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Description</th>
+                    <th>Example returned values</th>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td>Lowercase Ante meridiem and Post meridiem</td>
+                    <td>am or pm</td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Uppercase Ante meridiem and Post meridiem</td>
+                    <td>AM or PM</td>
+                  </tr>
+                  <tr>
+                    <td>d</td>
+                    <td>Day of the month, 2 digits with leading zeros</td>
+                    <td>01 to 31</td>
+                  </tr>
+                  <tr>
+                    <td>D</td>
+                    <td>Textual representation of a day, three letters</td>
+                    <td>Mon through Sun*</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>Full textual representation of a month</td>
+                    <td>January through December*</td>
+                  </tr>
+                  <tr>
+                    <td>g</td>
+                    <td>12-hour format of an hour without leading zeros</td>
+                    <td>1 through 12</td>
+                  </tr>
+                  <tr>
+                    <td>G</td>
+                    <td>24-hour format of an hour without leading zeros</td>
+                    <td>0 through 23</td>
+                  </tr>
+                  <tr>
+                    <td>h</td>
+                    <td>12-hour format of an hour with leading zeros</td>
+                    <td>01 through 12</td>
+                  </tr>
+                  <tr>
+                    <td>H</td>
+                    <td>24-hour format of an hour with leading zeros</td>
+                    <td>00 through 23</td>
+                  </tr>
+                  <tr>
+                    <td>i</td>
+                    <td>Minutes with leading zeros</td>
+                    <td>00 to 59</td>
+                  </tr>
+                  <tr>
+                    <td>j</td>
+                    <td>Day of the month without leading zeros</td>
+                    <td>1 to 31</td>
+                  </tr>
+                  <tr>
+                    <td>l</td>
+                    <td>Full textual representation of the day of the week (lowercase 'L')</td>
+                    <td>Sunday through Saturday*</td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td>Whether it's a leap year</td>
+                    <td>1 if it is a leap year, 0 otherwise</td>
+                  </tr>
+                  <tr>
+                    <td>m</td>
+                    <td>Numeric representation of a month, with leading zeros</td>
+                    <td>01 through 12</td>
+                  </tr>
+                  <tr>
+                    <td>M</td>
+                    <td>Short textual representation of a month, three letters</td>
+                    <td>Jan through Dec*</td>
+                  </tr>
+                  <tr>
+                    <td>n</td>
+                    <td>Numeric representation of a month, without leading zeros</td>
+                    <td>1 through 12</td>
+                  </tr>
+                  <tr>
+                    <td>O</td>
+                    <td>Difference to Greenwich time (GMT) in hours</td>
+                    <td>Example: 5 (for EST )</td>
+                  </tr>
+                  <tr>
+                    <td>s</td>
+                    <td>Seconds, with leading zeros</td>
+                    <td>00 throguh 59</td>
+                  </tr>
+                  <tr>
+                    <td>t</td>
+                    <td>Number of days in the given month</td>
+                    <td>28 through 31</td>
+                  </tr>
+                  <tr>
+                    <td>U</td>
+                    <td>Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>w</td>
+                    <td>Numeric representation of the day of the week</td>
+                    <td>0 (for Sunday) through 6 (for Saturday)</td>
+                  </tr>
+                  <tr>
+                    <td>Y</td>
+                    <td>Full numeric representation of a year, 4 digits</td>
+                    <td>Examples: 1999 or 2003</td>
+                  </tr>
+                  <tr>
+                    <td>y</td>
+                    <td>Two digit representation of a year</td>
+                    <td>Examples: 99 or 03</td>
+                  </tr>
+                </table>
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">dateFormatString</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">d/m/Y H:i</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br />      
+      <a name="daysAbbrev"></a>
+      <p><b>daysAbbrev</b></p>
+      <p>
+      	<i>Default value: </i>["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"daysAbbrev"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains the names abbreviations of the days of the week. This property is used for date time values formatting. You can define different abbreviations for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">daysAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Sun|Mon|Tue|Wed|Thu|Fri|Sat</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br />
+      <a name="fullDays"></a>
+      <p><b>fullDays</b></p>
+      <p>
+      	<i>Default value: </i>["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"fullDays"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains full textual representation of the days of the week. This property is used for date time values formatting. You can define different texts for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">fullDays</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br /> 
+      <a name="monthsAbbrev"></a>
+      <p><b>monthsAbbrev</b></p>
+      <p>
+      	<i>Default value: </i>["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"monthsAbbrev"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains the names abbreviations of the months of the year. This property is used for date time values formatting. You can define different abbreviations for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">monthsAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br />
+      <a name="fullMonths"></a>
+      <p><b>fullMonths</b></p>
+      <p>
+      	<i>Default value: </i>["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"fullMonths"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains full textual representation of the months of the year. This property is used for date time values formatting. You can define different texts for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">fullMonths</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">January|February|March|April|May|June|July|August|September|October|November|December</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br /> 
+      <a name="sizeAbbrev"></a>
+      <p><b>sizeAbbrev</b></p>
+      <p>
+      	<i>Default value: </i>[" B", " KB", " MB", " GB"]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"sizeAbbrev"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains the names abbreviations of the size unit. This property is used for size values formatting. You can define different abbreviations for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">sizeAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> B| KB| MB| GB</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      <br /> 
+      <a name="timeAbbrev"></a>
+      <p><b>timeAbbrev</b></p>
+      <p>
+      	<i>Default value: </i>[" h", " m", " s]
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"timeAbbrev"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The string array contains the names abbreviations of the time unit. This property is used for time values formatting. You can define different abbreviations for different languages.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">timeAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;"> h| m| s</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br /> 
+      <a name="showRotator"></a>
+      <p><b>showRotator</b></p>
+      <p>
+      	<i>Default value: </i>true
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"showRotator"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates whether or not loading indicator should be displayed. The rotator is displayed while all content of EAFlashUpload control will not be loaded (loading of UI may take some time on slow intenet connections). This property should be defined on the page via <i>flashvars</i> object of SWFObject or via &lt;object&gt;/&lt;embed&gt; objects. The rotator does not displayed if <a href="#overlayModePlaceholder">overlayModePlaceholder</a> property has a value.
+        	</p>
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">showRotator</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>            
+     
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

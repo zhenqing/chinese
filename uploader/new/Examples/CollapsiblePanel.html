@@ -1,0 +1,167 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Embed EAflashUpload into collapsible panel.</title>
+<style type="text/css">
+
+.Panel
+{
+	width: 455px;
+	text-align:center;
+}
+
+.Caption
+{
+	width: 439px;	
+}
+
+.LeftCorner
+{
+	margin: 0px;
+	padding: 0px;
+	background: url(images/leftcorner.gif) bottom left no-repeat;	
+}
+
+.RightCorner
+{
+	margin: 0px;
+	background: url(images/rightcorner.gif) bottom right no-repeat;		
+}
+
+.Center
+{
+	margin: 0px 8px 0px 8px;
+	pading: 5px 0px 5px 0px;
+	background: url(images/centerbg.gif) bottom repeat-x;		
+}
+
+.UploaderBorder
+{
+	margin: 0px;
+	border: 1px solid #a4c0e8;
+	border-top: 5px solid #a4c0e8;
+}
+
+.Arrow
+{
+	border: none;
+	cursor: pointer;
+}
+
+</style>
+
+<script type="text/javascript">
+function EAFlashUpload_onFilesAdded()
+{
+	var progressElement = document.getElementById("caption");
+	
+	progressElement.innerHTML = "Ready for upload...";
+}
+
+function EAFlashUpload_onUploadProgress(progress)
+{
+	var progressElement = document.getElementById("caption");
+	
+	progressElement.innerHTML = progress.percentsDone + "% uploaded...";
+	
+}
+
+function EAFlashUpload_onUploadEnd()
+{
+	var progressElement = document.getElementById("caption");
+	
+	progressElement.innerHTML = "Upload is completed...";
+}
+
+function ExpandCollapse(sender, newAction)
+{
+	sender.style.display = "none";
+	document.getElementById(newAction).style.display = "inline";
+	
+	if(newAction == 'expand')
+	{
+		EAFlashUpload.style.width = 0 + 'px';
+		EAFlashUpload.style.height = 0 + 'px';
+	}
+	else
+	{
+		EAFlashUpload.style.width = 450 + 'px';
+		EAFlashUpload.style.height = 350 + 'px';
+	}	
+}
+
+</script>
+</head>
+<body>
+<p>
+ This example demonstrate how to place EAFlashUpload inside collapsible panel.
+</p>
+
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of current html page (for ASP.NET: "ServerScripts/ASP.NET/uploadwiththumbnails.aspx"; or for PHP: ServerScripts/PHP/uploadwiththumbnails.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<noscript>
+<h3>JavaScript should be enabled in your browser for successful work of this example.</h3>
+</noscript>
+
+<br />
+
+<div class="Panel">	
+    	<div class="LeftCorner">
+        	<div class="RightCorner">
+				<div class="Center">
+					<table class="Caption">
+						<tr>
+							<td>
+								<span id="caption">Ready for upload</span>
+							</td>
+							<td style="text-align:right;">
+								<span><img class="Arrow" id="collapse" src="images/collapse.gif" onClick="ExpandCollapse(this, 'expand');"/><img class="Arrow" style="display:none;" id="expand" src="images/expand.gif" onClick="ExpandCollapse(this, 'collapse');"/></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+        </div>
+		<div class="UploaderBorder">
+			<div id="EAFlashUpload_holder">
+				You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+				<br />
+				<a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+			</div>
+		</div>     
+</div>
+
+<br />
+<br />
+<hr />
+
+<a href="default.html">Other examples</a>
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff"
+	};
+	
+	var attributes = {  
+		data: "EAFUpload.swf",
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload"								
+	};
+	
+	var flashvars = new Object();
+	  
+	  //Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	  flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	  flashvars["viewFile"] = "TableView.swf";
+
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "450", "350", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+	
+</script>
+</body>
+</html>

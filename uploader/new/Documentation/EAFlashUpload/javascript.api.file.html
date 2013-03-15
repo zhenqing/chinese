@@ -1,0 +1,217 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>File object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle"><i>File</i> object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a>
+	  The File object is a JavaScript object with set of properties. All properties are read only. This object is returned by couple of JavaScript methods and as a parameter of event handlers.
+      
+	  <p><b>List of properties</b></p>			
+	  <table>
+        <tr>
+          <th> Property name </th>
+		  <th> Type </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td><a name="id"></a> id </td> 
+		  <td> string </td>         
+          <td> The unique identifier of the file. This property is very usefull when order(indexes) of files is changed because of a sorting.</td>
+        </tr>
+		<tr>
+          <td><a name="index"></a> index </td>
+		  <td> Number </td>          
+          <td> The index of the file in the upload queue.</td>
+        </tr>
+		<tr>
+          <td><a name="name"></a> name </td>
+		  <td> string </td>          
+          <td> The name of the file on the local disk.</td>
+        </tr>		
+		<tr>
+          <td><a name="type"></a> type </td>
+		  <td> string </td>          
+          <td> The file type. In Windows, this property is the file extension. On the Macintosh, this property is the four-character file type, which is only used in Mac OS versions prior to Mac OS X.</td>
+        </tr>
+		<tr>
+          <td><a name="size"></a> size </td>
+		  <td> Number </td>          
+          <td> The size of the file on the local disk in bytes. </td>
+        </tr>
+		<tr>
+          <td><a name="creator"></a> creator </td>
+		  <td> string </td>          
+          <td> The Macintosh creator type of the file, which is only used in Mac OS versions prior to Mac OS X. In Windows, this property is null. </td>
+        </tr>
+		<tr>
+          <td><a name="creationDate"></a> creationDate </td>
+		  <td> Date </td>          
+          <td> The creation date of the file on the local disk. </td>
+        </tr>
+		<tr>
+          <td><a name="modificationDate"></a> modificationDate </td>
+		  <td> Date </td>          
+          <td> The date that the file on the local disk was last modified. </td>
+        </tr>
+		<tr>
+          <td><a name="fieldName"></a> fieldName </td>
+		  <td> string </td>          
+          <td> The field name that precedes the file data in the upload POST operation. By default, the value of fieldName is "Filedata" </td>
+        </tr>
+		<tr>
+          <td><a name="statusString"></a> statusString </td>
+		  <td> string </td>          
+          <td> The formatted status string of the file. See <a href="objects.core.uploader.html#fileStatusXXXMsg" >fileStatusXXXMsg</a> properties for more information. </td>
+        </tr>
+		<tr>
+          <td><a name="status"></a> status </td>
+		  <td> Number </td>          
+          <td> 
+		  	The status of the file. Possible values are:
+			<ul style="list-style:none;">
+				<li>0 - READY</li>
+				<li>1 - UPLOADING</li>
+				<li>2 - UPLOADED</li>
+				<li>3 - ERROR</li>
+				<li>4 - CANCELED</li>
+                <li>5 - CUSTOM</li>
+                <li>6 - RESIZED_UPLOADED</li>
+                <li>7 - RESIZED_UPLOADING</li>
+			</ul>	  
+		  </td>
+        </tr>
+		<tr>
+          <td><a name="serverResponse"></a> serverResponse </td> 
+		  <td> string </td>         
+          <td> The raw data returned from the server after a successful file upload. </td>
+        </tr>
+		<tr>
+          <td><a name="httpStatusCode"></a> httpStatusCode </td>
+		  <td> string </td>          
+          <td> 
+		  	The HTTP status code returned by the server. Possible values are:
+			<ul style="list-style:none;">
+				<li>200 - The request has succeeded.</li>
+				<li>4xx - There is a client-side error.</li>
+				<li>5xx - There is a server-side error.</li>
+			</ul>		  
+		  </td>
+        </tr>
+		<tr>
+          <td><a name="width"></a> width </td> 
+		  <td> Number </td>         
+          <td> The width of image file. This property is available for <a href="imageview.intro.html">ImageView</a> only. </td>
+        </tr>
+		<tr>
+          <td><a name="height"></a> height </td> 
+		  <td> Number </td>         
+          <td> The height of image file. This property is available for <a href="imageview.intro.html">ImageView</a> only. </td>
+        </tr>
+        
+        <tr>
+          <td><a name="resizedName"></a> resizedName </td> 
+		  <td> string </td>         
+          <td> The name of resized image file. This property is available when <a href="imageview.intro.html">ImageView</a> is used and <a href="objects.core.uploader.html#uploadResizedImages">uploader.uploadResizedImages</a> is set to <i>true</i>. </td>
+        </tr>
+		<tr>
+          <td><a name="resizedSize"></a> resizedSize </td> 
+		  <td> Number </td>         
+          <td> The size(in bytes) of resized image file. This property is available when <a href="imageview.intro.html">ImageView</a> is used and <a href="objects.core.uploader.html#uploadResizedImages">uploader.uploadResizedImages</a> is set to <i>true</i>. </td>
+        </tr>
+        <tr>
+          <td><a name="resizedWidth"></a> resizedWidth </td> 
+		  <td> Number </td>         
+          <td> The width of resized image file. This property is available when <a href="imageview.intro.html">ImageView</a> is used and <a href="objects.core.uploader.html#uploadResizedImages">uploader.uploadResizedImages</a> is set to <i>true</i>. </td>
+        </tr>
+		<tr>
+          <td><a name="resizedHeight"></a> resizedHeight </td> 
+		  <td> Number </td>         
+          <td> The height of resized image file. This property is available when <a href="imageview.intro.html">ImageView</a> is used and <a href="objects.core.uploader.html#uploadResizedImages">uploader.uploadResizedImages</a> is set to <i>true</i>. </td>
+        </tr>        		
+	  </table>
+	 
+	 <br />
+	 <i>Examples:</i>
+		<p>
+			The following example desribes how to get all files and display their attributes:
+			<pre class="codeInLine">
+			<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> getFiles()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> fileObject;
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> queueLength </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">queue.length</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> str </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000FF;">for</span><span style="color: #000000;">(</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> i </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;">; i </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> queueLength; i</span><span style="color: #000000;">++</span><span style="color: #000000;">)
+    {
+        fileObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getFiles(i);
+        str </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">File name: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> fileObject.name </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">; </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+        str </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">File size: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> fileObject.size;
+        str </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">&lt;br /&gt;</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    }
+    
+    document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_FilesInQueue</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">).innerHTML </span><span style="color: #000000;">=</span><span style="color: #000000;"> str;
+}</span></div>
+			</pre>
+		</p>
+    	
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

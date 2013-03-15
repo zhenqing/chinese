@@ -1,0 +1,500 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Dialogs</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Dialogs</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+  	<a name="BeginOfThePage"></a>
+    
+    <p>
+    	The TableView user interface has a number of user dialogs. This section desribes properties and objects of the dialogs.
+        <br /><br />    
+        Structure of section:
+        <ul style="list-style: none;">
+            <li><a style="font-weight: bold" href="#CommonDialog" >Common properties of dialogs</a><br /><br /></li>
+            <li><a style="font-weight: bold" href="#FileDialog" >Properties of <i>filePropDlg</i> dialog</a><br /><br /></li>
+            <li><a style="font-weight: bold" href="#alertDlg" ><i>alertDlg</i> dialog</a><br /><br /></li>
+            <li><a style="font-weight: bold" href="#retryDlg" ><i>retryDlg</i> dialog</a><br /><br /></li>
+            <li><a style="font-weight: bold" href="#filePropDlg" ><i>filePropDlg</i> dialog</a><br /><br /></li>            
+        </ul> 
+    </p>
+	  
+    <a name="CommonDialog" ></a>
+	  <p><b>Common properties of dialogs:</b></p>
+      <table style="width: auto;">
+          <tr>
+              <th> Property name </th>
+              <th> Type </th>
+              <th> Description </th>
+          </tr>
+          <tr>
+            <td><a name="backgroundColor"></a>backgroundColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the background.</td>
+          </tr>
+          <tr>
+            <td><a name="borderColor"></a>borderColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the border of the dialog.</td>
+          </tr>
+          <tr>
+            <td><a name="captionText"></a>captionText</td>
+            <td>string</td>
+            <td>Gets or sets caption text o the dialog</td>
+          </tr>
+          <tr>
+            <td><a name="captionColor"></a>captionColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the dialog header.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontName"></a>captionFontName</td>
+            <td>Boolean</td>
+            <td>The name of the font for text in the dialog header.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontSize"></a>captionFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the dialog header.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontBold"></a>captionFontBold</td>
+            <td>Boolean</td>
+            <td>Boolean value that indicates that the caption font is boldface.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontItalic"></a>captionFontItalic</td>
+            <td>Boolean</td>
+            <td>Boolean value that indicates that the caption font is italicized.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontUnderline"></a>captionFontUnderline</td>
+            <td>Boolean</td>
+            <td>Boolean value that indicates that the caption font is underlined.</td>
+          </tr>
+          <tr>
+            <td><a name="captionFontColor"></a>captionFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in dialog header (#RRGGBB).</td>
+          </tr>
+      </table>
+      
+      <a name="FileDialog" ></a>
+	  <p><b>Additional properties of <i>filePropDlg</i> dialog:</b></p>
+      <table style="width: auto;">
+          <tr>
+              <th> Property name </th>
+              <th> Type </th>
+              <th> Description </th>
+          </tr>
+          <tr>
+            <td><a name="gridHeaderFontName"></a>gridHeaderFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the file properties grid header.</td>
+          </tr>
+          <tr>
+            <td><a name="gridHeaderFontSize"></a>gridHeaderFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the file properties grid header.</td>
+          </tr>
+          <tr>
+            <td><a name="gridHeaderFontColor"></a>gridHeaderFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in file properties grid header (#RRGGBB).</td>
+          </tr>
+          <tr>
+            <td><a name="gridCellFontName"></a>gridCellFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the grid cell.</td>
+          </tr>
+          <tr>
+            <td><a name="gridCellFontSize"></a>gridCellFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the grid cell.</td>
+          </tr>
+          <tr>
+            <td><a name="nonEditPropertyFontColor"></a>nonEditPropertyFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in file properties grid cell for not editable property (#RRGGBB).</td>
+          </tr>
+          <tr>
+            <td><a name="editPropertyFontColor"></a>editPropertyFontColor</td>
+            <td>uint</td>
+            <td>The color of the text in file properties grid cell for editable property (#RRGGBB).</td>
+          </tr>
+          <tr>
+            <td><a name="gridHeaderColor"></a>gridHeaderColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the grid header.</td>
+          </tr>
+          <tr>
+            <td><a name="gridHeaderBorderColor"></a>gridHeaderBorderColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the border of the grid header.</td>
+          </tr>
+          <tr>
+            <td><a name="nonEditPropertyBorderColor"></a>nonEditPropertyBorderColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the cell border of not editable property.</td>
+          </tr>
+          <tr>
+            <td><a name="nonEditPropertyRowColor"></a>nonEditPropertyRowColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the cell background of not editable property.</td>
+          </tr>
+          <tr>
+            <td><a name="editPropertyBorderColor"></a>editPropertyBorderColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the cell border of editable property.</td>
+          </tr>
+          <tr>
+            <td><a name="editPropertyRowColor"></a>editPropertyRowColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the cell background of editable property.</td>
+          </tr>
+      </table>
+      
+    <br />    
+    <a name="alertDlg"></a>
+    <p><b>alertDlg</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays various alert and error messages.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td>backgroundColor</td>
+                <td>[#efefef]</td>
+              </tr>
+              <tr>
+                <td>borderColor</td>
+                <td>[#848284]</td>
+              </tr>
+              <tr>
+                <td>captionText</td>
+                <td>The value is the same as an alert message.</td>
+              </tr>
+              <tr>
+                <td>captionColor</td>
+                <td>[#e7ebe7, #cec3ce]</td>
+              </tr>
+              <tr>
+                <td>captionFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>captionFontSize</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>captionFontBold</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>captionFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontColor</td>
+                <td>#000000</td>
+              </tr>
+            </table>
+            <br /><br />
+            Description of appropriate property you can find here <a href="#CommonDialog">Common properties of dialogs</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the alertDlg is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.alertDlg.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        The falert dialog has two button objects. Description of these objects you can find here <a href="tableview.buttons.html#Button">button object</a>. The default values are the same except the following:
+            <ul style="list-style: none;">
+            	<li>okButton.label = "Ok"</li>
+                <li>cancelButton.label = "Cancel"</li>
+            </ul>            
+            The <a href="tableview.buttons.html#buttonsStyle" >buttonsStyle object</a> is also supported.
+            <br /><br />
+            The property of the filePropDlg.okButton is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.alertDlg.okButton.label</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Ok</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+    </p>
+    
+    <br />
+    <br />    
+    <a name="retryDlg"></a>
+    <p><b>retryDlg</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays retry dialog when error occur during upload process.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td>backgroundColor</td>
+                <td>[#efefef]</td>
+              </tr>
+              <tr>
+                <td>borderColor</td>
+                <td>[#848284]</td>
+              </tr>
+              <tr>
+                <td>captionText</td>
+                <td>"Retry file upload?"</td>
+              </tr>
+              <tr>
+                <td>captionColor</td>
+                <td>[#e7ebe7, #cec3ce]</td>
+              </tr>
+              <tr>
+                <td>captionFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>captionFontSize</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>captionFontBold</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>captionFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontColor</td>
+                <td>#000000</td>
+              </tr>
+            </table>
+            <br /><br />
+            Description of appropriate property you can find here <a href="#CommonDialog">Common properties of dialogs</a>.            
+        </p>
+     <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the retryDlg is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.retryDlg.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        The retry dialog has three button objects. Description of these objects you can find here <a href="tableview.buttons.html#Button">button object</a>: retryButton, cancelButton, skipButton. The default values are the same except the following:
+            <ul style="list-style: none;">
+            	<li>retryButton.label = "Retry"</li>
+                <li>cancelButton.label = "Cancel"</li>
+                <li>skipButton.label = "Skip"</li>
+            </ul>            
+            The <a href="tableview.buttons.html#buttonsStyle" >buttonsStyle object</a> is also supported.
+            <br /><br />
+            The property of the retryDlg.okButton is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.retryDlg.retryButton.label</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Ok</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+    </p>
+    
+    <br />
+    <br />    
+    <a name="filePropDlg"></a>
+    <p><b>filePropDlg</b></p>      
+    <p>    
+    <i>Description:</i>
+        <p>
+            Displays retry dialog when error occur during upload process.
+            <br />
+            <br />
+            List of default values:
+            <table style="width: auto;">
+              <tr>
+                  <th> Property name </th>
+                  <th> Default value </th>
+              </tr>
+              <tr>
+                <td>backgroundColor</td>
+                <td>[#efefef]</td>
+              </tr>
+              <tr>
+                <td>borderColor</td>
+                <td>[#848284]</td>
+              </tr>
+              <tr>
+                <td>captionText</td>
+                <td>"File(s) properties"</td>
+              </tr>
+              <tr>
+                <td>captionColor</td>
+                <td>[#e7ebe7, #cec3ce]</td>
+              </tr>
+              <tr>
+                <td>captionFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>captionFontSize</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>captionFontBold</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>captionFontItalic</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontUnderline</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>captionFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>gridHeaderFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>gridHeaderFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>gridHeaderFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>gridCellFontName</td>
+                <td>"_sans"</td>
+              </tr>
+              <tr>
+                <td>gridCellFontSize</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>nonEditPropertyFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>editPropertyFontColor</td>
+                <td>#000000</td>
+              </tr>
+              <tr>
+                <td>gridHeaderColor</td>
+                <td>[#fdfdfe, #bcc8cf]</td>
+              </tr>
+              <tr>
+                <td>gridHeaderBorderColor</td>
+                <td>[#bfced4]</td>
+              </tr>
+              <tr>
+                <td>nonEditPropertyBorderColor</td>
+                <td>[#e4e4e4]</td>
+              </tr>
+              <tr>
+                <td>nonEditPropertyRowColor</td>
+                <td>[#cccccc]</td>
+              </tr>
+              <tr>
+                <td>editPropertyBorderColor</td>
+                <td>[#e4e4e4]</td>
+              </tr>
+              <tr>
+                <td>editPropertyRowColor</td>
+                <td>[#ffffff]</td>
+              </tr>
+            </table>
+            <br /><br />
+            Description of appropriate property you can find here <a href="#CommonDialog">Common properties of dialogs</a> and <a href="#FileDialog">Properties of <i>filePropDlg</i> dialog</a>.
+            <br />
+            <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the filePropDlg is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filePropDlg.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+            The file properties dialog has two button objects. Description of these objects you can find here <a href="tableview.buttons.html#Button">button object</a>. The default values are the same except the following:
+            <ul style="list-style: none;">
+            	<li>okButton.label = "Ok"</li>
+                <li>cancelButton.label = "Cancel"</li>
+            </ul>            
+            The <a href="tableview.buttons.html#buttonsStyle" >buttonsStyle object</a> is also supported.
+            <br /><br />
+            The property of the filePropDlg.okButton is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filePropDlg.okButton.label</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Ok</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>     
+        </p>
+     
+    </p>  
+    
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

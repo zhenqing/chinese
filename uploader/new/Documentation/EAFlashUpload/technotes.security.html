@@ -1,0 +1,127 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Web site controls (policy file)</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Web site controls (policy file)</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+	  
+      <p>
+      	Uploading operations can access files only within its own domain and within any domains that a URL policy file specifies.
+        <br />
+      	To make data from your web server available to SWF files from other domains, you can create a policy file on your server. A policy file is an XML file placed in a specific location on your server.
+      </p>	  
+	  
+	  <p><b>URL policy file</b></p>
+      <p>
+     	A URL policy file applies only to the directory from which it is loaded and to its child directories. A policy file in the root directory applies to the whole server; a policy file loaded from an arbitrary subdirectory applies only to that directory and its subdirectories.
+      </p>
+      
+      <p>
+      	A policy file contains a single &lt;cross-domain-policy&gt; tag, which in turn contains zero or more &lt;allow-access-from&gt; tags. Each &lt;allow-access-from&gt; tag contains an attribute, domain, which specifies either an exact IP address, an exact domain, or a wildcard domain (any domain). Wildcard domains are indicated in one of two ways: 
+By a single asterisk (*), which matches all domains and all IP addresses
+
+By an asterisk followed by a suffix, which matches only those domains that end with the specified suffix
+
+Suffixes must begin with a dot. However, wildcard domains with suffixes can match domains that consist of only the suffix without the leading dot. For example, xyz.com is considered to be part of *.xyz.com. Wildcards are not allowed in IP domain specifications.
+The following example shows a URL policy file that permits access to SWF files that originate from *.example.com, www.friendOfExample.com and 192.0.34.166:
+		<pre class="code"><div><span style="color: #0000FF;">&lt;?</span><span style="color: #FF00FF;">xml version=&quot;1.0&quot;</span><span style="color: #0000FF;">?&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">cross-domain-policy</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">allow-access-from </span><span style="color: #FF0000;">domain</span><span style="color: #0000FF;">=&quot;*.example.com&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">allow-access-from </span><span style="color: #FF0000;">domain</span><span style="color: #0000FF;">=&quot;www.friendOfExample.com&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">allow-access-from </span><span style="color: #FF0000;">domain</span><span style="color: #0000FF;">=&quot;192.0.34.166&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">cross-domain-policy</span><span style="color: #0000FF;">&gt;</span></div></pre>
+      </p>
+      <p>
+      	If you specify an IP address, access is granted only to SWF files loaded from that IP address using IP syntax (for example, http://65.57.83.12/flashmovie.swf). Access isn’t granted to SWF files using domain-name syntax. Flash Player does not perform DNS resolution.
+		<br />
+        <br />
+		You can permit access to documents originating from any domain, as shown in the following example:
+		<pre class="code"><div><span style="color: #0000FF;">&lt;?</span><span style="color: #FF00FF;">xml version=&quot;1.0&quot;</span><span style="color: #0000FF;">?&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> http://www.foo.com/crossdomain.xml </span><span style="color: #008000;">--&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">cross-domain-policy</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">allow-access-from </span><span style="color: #FF0000;">domain</span><span style="color: #0000FF;">=&quot;*&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">cross-domain-policy</span><span style="color: #0000FF;">&gt;</span></div></pre>
+      </p>
+      <p>
+        Each &lt;allow-access-from&gt; tag also has the optional secure attribute, which defaults to true. If your policy file is on an HTTPS server and you want to allow SWF files on a non-HTTPS server to upload data to the HTTPS server, you can set the attribute to false.
+        <br />
+        <br />
+        Setting the secure attribute to false could compromise the security offered by HTTPS. In particular, setting this attribute to false opens secure content to snooping and spoofing attacks. Adobe strongly recommends that you not set the secure attribute to false.
+        <br />
+        <br />
+        If data to be loaded is on an HTTPS server, but the SWF file loading it is on an HTTP server, Adobe recommends that you move the loading SWF file to an HTTPS server. Doing so lets you keep all copies of your secure data under the protection of HTTPS. However, if you decide that you must keep the loading SWF file on an HTTP server, add the secure="false" attribute to the &lt;allow-access-from&gt; tag, as shown in the following code:
+		<pre class="code">       	
+        <div>        
+<span style="color: #0000FF;">&lt;</span><span style="color: #800000;">allow-access-from </span><span style="color: #FF0000;">domain</span><span style="color: #0000FF;">=&quot;www.example.com&quot;</span><span style="color: #FF0000;"> secure</span><span style="color: #0000FF;">=&quot;false&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span>        
+        </div>        
+        </pre>
+      </p>
+      
+      <p><b>Additional Adobe links:</b></p>
+      <ul style="list-style:none;">
+      	<li><a href="http://help.adobe.com/en_US/ActionScript/3.0_ProgrammingAS3/WS5b3ccc516d4fbf351e63e3d118a9b90204-7e08.html">Website controls (policy files)</a></li>
+        <li><a href="http://www.adobe.com/devnet/flashplayer/articles/cross_domain_policy.html" >Cross-domain policy file usage recommendations for Flash Player</a></li>
+        <li><a href="http://www.adobe.com/devnet/flashplayer/articles/fplayer9_security.html" >Policy file changes in Flash Player 9 and Flash Player 10
+</a></li>      	
+      </ul>
+   
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

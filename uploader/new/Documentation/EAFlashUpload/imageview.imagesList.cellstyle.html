@@ -1,0 +1,396 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>imagesList object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">cellStyle object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+	  
+    <p>
+    	This section describes properties of <i>cellStyle</i> object. This object is created for customizing view of imagesList cells.
+    </p>
+    
+    <br />
+    <br />
+    
+    <p><b>List of properties</b></p>
+      <table style="width: auto;">
+          <tr>
+              <th> Property name </th>
+              <th> Type </th>
+              <th style="width: 400px;"> Description </th>
+              <th> Default values </th>
+          </tr>          
+          <tr>
+            <td><a name="maxImageWidth"></a>maxImageWidth</td>
+            <td>uint</td>
+            <td>Indicates the maximum width of preview image. All images are resized with saving proportions therefore the final width of preview image will be lower or equal to defined value. The blank space is filled up with <a href="#imageBackgroundColor" >imageBackgroundColor</a> color. This property affects to sizes of whole ImageView.</td>
+            <td>160</td>
+          </tr>
+		  <tr>
+            <td><a name="maxImageHeight"></a>maxImageHeight</td>
+            <td>uint</td>
+            <td>Indicates the maximum height of preview image. All images are resized with saving proportions therefore the final height of preview image will be lower or equal to defined value. The blank space is filled up with <a href="#imageBackgroundColor" >imageBackgroundColor</a> color. This property affects to sizes of whole ImageView.</td>
+            <td>160</td>
+          </tr>		  	  
+		  <tr>
+            <td><a name="imageBackgroundColor"></a>imageBackgroundColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the background. After resizing the preview image may have a blank space due to proportion saving. The imageBackgroundColor property is used for filling this emptiness.</td>
+            <td>[0x000000]</td>
+          </tr>		  
+		  <tr>
+            <td><a name="imageBackgroundAlpha"></a>imageBackgroundAlpha</td>
+            <td>uint</td>
+            <td>Indicates the alpha transparency value of the preview image background. Valid values are 0 (fully transparent) to 1 (fully opaque).</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td><a name="enableDescription"></a>enableDescription</td>
+            <td>Boolean</td>
+            <td>Indicates whether description edit box is enabled.</td>
+            <td>true</td>
+          </tr>
+		  <tr>
+            <td><a name="emptyDescriptionText"></a>emptyDescriptionText</td>
+            <td>string</td>
+            <td>Gets or sets default caption for description edit box. The value of this property is not sent to the server.</td>
+            <td>"Input image description here"</td>
+          </tr>
+          <tr>
+            <td><a name="showRotationButtons"></a>showRotationButtons</td>
+            <td>Boolean</td>
+            <td>Indicates whether rotation buttons are displayed in the cell.</td>
+            <td>true</td>
+          </tr>
+          <tr>
+            <td><a name="showRemoveButton"></a>showRemoveButton</td>
+            <td>Boolean</td>
+            <td>Indicates whether remove button is displayed at the right corner of cell.</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><a name="showNavigationButtons"></a>showNavigationButtons</td>
+            <td>Boolean</td>
+            <td>Indicates whether navigation buttons are displayed in the cell.</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><a name="buttonsUpAlpha"></a>buttonsUpAlpha</td>
+            <td>Number</td>
+            <td>Indicates the alpha transparency value of the button inside cell when the mouse is not over the button. Valid values are 0 (fully transparent) to 1 (fully opaque).</td>
+            <td>0</td>
+          </tr>
+		  <tr>
+            <td><a name="buttonsOverAlpha"></a>buttonsOverAlpha</td>
+            <td>Number</td>
+            <td>Indicates the alpha transparency value of the button inside cell when the mouse is over the button. Valid values are 0 (fully transparent) to 1 (fully opaque).</td>
+            <td>0.8</td>
+          </tr>
+		  <tr>
+            <td><a name="buttonsDownAlpha"></a>buttonsDownAlpha</td>
+            <td>Number</td>
+            <td>Indicates the alpha transparency value of the button inside cell when the mouse is over the button and the mouse button is pressed. Valid values are 0 (fully transparent) to 1 (fully opaque).</td>
+            <td>0.7</td>
+          </tr>
+          <tr>
+            <td><a name="buttonsBorderUpColor"></a>buttonsBorderUpColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the button border when the mouse is not over the button inside cell.</td>
+            <td>[0xffffff]</td>
+          </tr>
+		  <tr>
+            <td><a name="buttonsBorderOverColor"></a>buttonsBorderOverColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the button border when the mouse is over the button inside cell.</td>
+            <td>[0xffffff, 0xefefef]</td>
+          </tr>
+          <tr>
+            <td><a name="buttonsBorderDownColor"></a>buttonsBorderDownColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the button border when the mouse is over the button inside cell and the mouse button is pressed.</td>
+            <td>[0x6dbdd1]</td>
+          </tr>          
+          <tr>
+            <td><a name="buttonsUpColor"></a>buttonsUpColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the buttons background when the mouse is not over the component.</td>
+            <td>[0xffffff]</td>
+          </tr>
+		  <tr>
+            <td><a name="buttonsOverColor"></a>buttonsOverColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the buttons background when the mouse is over the component.</td>
+            <td>[0xffffff, 0xefefef]</td>
+          </tr>
+          <tr>
+            <td><a name="buttonsDownColor"></a>buttonsDownColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the buttons background when the mouse is over the component and the mouse button is pressed.</td>
+            <td>[0x6dbdd1]</td>
+          </tr>
+		  
+          <tr>
+            <td><a name="buttonsIconColor"></a>buttonsIconColor</td>
+            <td>Array</td>
+            <td>An array of RGB hexadecimal color values to be used in the gradient for the icon inside buttons.</td>
+            <td>[0x000000]</td>
+          </tr>
+          <tr>
+            <td><a name="buttonsRoundUp"></a>buttonsRoundUp</td>
+            <td>uint</td>
+            <td>Indicates whether the button have rounded corners. The value should be an unsigned integer in pixels.</td>
+            <td>3</td>
+          </tr>
+		  
+		  <tr>
+            <td><a name="smoothing"></a>smoothing</td>
+            <td>Boolean</td>
+            <td>Controls whether or not the preview image is smoothed.</td>
+            <td>false</td>
+          </tr>
+          <tr>
+            <td><a name="borderColor"></a>borderColor</td>
+            <td>Array</td>
+            <td>An array of numbers for the cell border gradient color when cell is not selected.</td>
+            <td>[0xcccccc]</td>
+          </tr>
+          <tr>
+            <td><a name="backgroundColor"></a>backgroundColor</td>
+            <td>Array</td>
+            <td>An array of numbers for the cell background gradient color when cell is not selected.</td>
+            <td>[0xd7e0e7]</td>
+          </tr>
+          <tr>
+            <td><a name="selectedBorderColor"></a>selectedBorderColor</td>
+            <td>Array</td>
+            <td>An array of numbers for the cell border gradient color when cell is selected.</td>
+            <td>[0x0000ff]</td>
+          </tr>
+          <tr>
+            <td><a name="selectedBackgroundColor"></a>selectedBackgroundColor</td>
+            <td>Array</td>
+            <td>An array of numbers for the cell background gradient color when cell is selected.</td>
+            <td>[0x6dbdfc,0x6dbdd1]</td>
+          </tr>
+		  
+		  <tr>
+            <td><a name="descLblFontName" ></a>descLblFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the descLbl* label.</td>
+			<td>"Times New Roman"</td>
+          </tr>
+          <tr>
+            <td><a name="descLblFontSize" ></a>descLblFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the descLbl* label.</td>
+			<td>"12"</td>
+          </tr>
+          <tr>
+            <td><a name="descLblFontBold" ></a>descLblFontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text in the descLbl* label is boldface.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="descLblFontItalic" ></a>descLblFontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the descLbl* label is italicized.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="descLblFontUnderline" ></a>descLblFontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the descLbl* label is underlined.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="descLblFontColor" ></a>descLblFontColor</td>
+            <td>string</td>
+            <td>Indicates the color of the text inside descLbl* label</td>
+			<td>"0x000000"</td>
+          </tr>
+		  <tr>
+            <td><a name="descLblHeight" ></a>descLblHeight</td>
+            <td>uint</td>
+            <td>Indicates the height of the descLbl* label.</td>
+			<td>22</td>
+          </tr>
+		  <tr>
+            <td><a name="descLblTextAlign" ></a>descLblTextAlign</td>
+            <td>string</td>
+            <td>Indicates the alignment of the text in the descLbl* label.</td>
+			<td>"left"</td>
+          </tr>
+		  
+		  <tr>
+            <td><a name="notImageLblText" ></a>notImageLblText</td>
+            <td>String</td>
+            <td>Gets or sets the text for the notImageLbl** label.</td>
+			<td>"Not image"</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontName" ></a>notImageLblFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the notImageLbl** label.</td>
+			<td>"Arial"</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontSize" ></a>notImageLblFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the notImageLbl** label.</td>
+			<td>20</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontBold" ></a>notImageLblFontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text in the notImageLbl** label is boldface.</td>
+			<td>"true"</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontItalic" ></a>notImageLblFontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the notImageLbl** label is italicized.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontUnderline" ></a>notImageLblFontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the notImageLbl** label is underlined.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="notImageLblFontColor" ></a>notImageLblFontColor</td>
+            <td>String</td>
+            <td>The color of the font for text in the notImageLbl** label.</td>
+			<td>"0x555555"</td>
+          </tr>
+		  <tr>
+            <td><a name="notImageLblAlpha" ></a>notImageLblAlpha</td>
+            <td>Number</td>
+            <td>Indicates the alpha transparency value of the text of notImageLbl** label. Valid values are 0 (fully transparent) to 1 (fully opaque).</td>
+			<td>0.5</td>
+          </tr>
+		  
+		  <tr>
+            <td><a name="nameLblFontName" ></a>nameLblFontName</td>
+            <td>String</td>
+            <td>The name of the font for text in the nameLbl*** label.</td>
+			<td>"Times New Roman"</td>
+          </tr>
+          <tr>
+            <td><a name="nameLblFontSize" ></a>nameLblFontSize</td>
+            <td>uint</td>
+            <td>The size of the font for text in the nameLbl*** label.</td>
+			<td>"12"</td>
+          </tr>
+          <tr>
+            <td><a name="nameLblFontBold" ></a>nameLblFontBold</td>
+            <td>Boolean</td>
+            <td>Specifies whether the text in the nameLbl*** label is boldface.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="nameLblFontItalic" ></a>nameLblFontItalic</td>
+            <td>Boolean</td>
+            <td>Indicates whether text in the nameLbl*** label is italicized.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="nameLblFontUnderline" ></a>nameLblFontUnderline</td>
+            <td>Boolean</td>
+            <td>Indicates whether the text in the nameLbl*** label is underlined.</td>
+			<td>"false"</td>
+          </tr>
+          <tr>
+            <td><a name="nameLblFontColor" ></a>nameLblFontColor</td>
+            <td>String</td>
+            <td>Indicates the color of the text when the nameLbl*** label is enabled.</td>
+			<td>"0x000000"</td>
+          </tr>
+		  <tr>
+            <td><a name="nameLblHeight" ></a>nameLblHeight</td>
+            <td>uint</td>
+            <td>Indicates the height of the nameLbl*** label.</td>
+			<td>22</td>
+          </tr>
+		  <tr>
+            <td><a name="nameLblTextAlign" ></a>nameLblTextAlign</td>
+            <td>string</td>
+            <td>Indicates the alignment of the text in the nameLbl*** label.</td>
+			<td>"center"</td>
+          </tr>          
+      </table>
+	  <br />
+	  descLbl* - label provides a possibility to edit description of each image. It is placed over the image preview area. Default value depends on <a href="#emptyDescriptionText">emptyDescriptionText</a> property.
+	  <br /><br />
+	  notImageLbl** - label is placed inside image preview area and is displayed for non image files.
+	  <br /><br />
+	  nameLbl*** - label is placed under image preview area and displays the name of corresponding file.
+      <br /><br />
+	    
+     <i>Examples:</i>
+        <p>
+            The property of the cellStyle is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.imagesList.cellStyle.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Upload multiple image files and thumbnails creation.</title>
+<style type="text/css">
+
+#thumbContainer
+{
+	overflow: auto;
+	width: 390px;
+	height: 250px;
+	border: 1px solid #cccccc;
+}
+
+.thumbImage
+{
+	border: none; 
+	cursor: pointer;
+}
+
+.thumbImageCont
+{
+	float: left;
+	width: 120px; 
+	border: none;	
+	margin-left: 3px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+function EAFlashUpload_onMovieLoad(errors)
+{		
+	if(errors != "")
+		alert(errors);	
+}
+
+function EAFlashUpload_onFileLoadEnd(fileObj)
+{
+	var response = EAFlashUpload.urlVarsToObject(fileObj.serverResponse);	
+	var uniqueId = (new Date()).getTime();
+	addImageToContainer(uniqueId, response.thumbUrl);
+}
+
+function EAFlashUpload_onUploadEnd()
+{
+
+}
+
+function EAFlashUpload_onSystemError(msg)
+{		
+	alert(msg);				
+}
+
+function EAFlashUpload_onUploadError(errorObj)
+{
+	alert(errorObj.message);
+}
+
+// --- Image displaying --- //
+function addImageToContainer(thumbId, thumbUrl)
+{
+	var imageContainer = document.getElementById("thumbContainer");
+	var image = document.getElementById("imageTemplate");	
+	image = image.cloneNode(image);
+	var divImage = document.getElementById("imageContTemplate");
+	divImage = divImage.cloneNode(divImage);
+	
+	image.setAttribute("id", thumbId);
+	image.setAttribute("src", thumbUrl);	
+	divImage.setAttribute("id", "div" + thumbId);
+	
+	divImage.appendChild(image);
+	imageContainer.appendChild(divImage);
+	
+	divImage.style.display = "inline";
+	image.style.display = "inline";
+	
+}
+
+function clearList()
+{
+	var imageContainer = document.getElementById("thumbContainer");
+	imageContainer.innerHTML = "";
+}
+// --- Image displaying --- //
+</script>
+</head>
+<body>
+<p>
+This example demonstrates how to upload multiple image files to the server and display thumbnails. The thumbnails are created and loaded from the server.
+<br />
+The example contains a number of limitiations. Keep in mind that it is limitations of this example, not of EAFlashUpload itself:
+	<ul>
+		<li>Only image files are allowed for selection;</li>
+		<li>Size of each file cannot be greater than 5MB;</li>	
+	</ul>
+</p>
+
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of the current html page (for ASP.NET: "ServerScripts/ASP.NET/imagesupload.aspx"; or for PHP: ServerScripts/PHP/imagesupload.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<br /><br />
+<table>
+	<tr>
+		<td>
+			<div id="EAFlashUpload_holder">
+            	You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+                <br />
+                <a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+			</div>
+		</td>
+		<td style="padding-left: 40px; vertical-align: top;">
+			Thumbnails container:<br />
+			<div id="thumbContainer"></div>
+			<a href="javascript:clearList();">Clear list</a>
+			<!-- image placeholder template -->
+			<div class="thumbImageCont" style="display:none;" id="imageContTemplate"></div>						
+			<img class="thumbImage" style="display:none;" id="imageTemplate" src="" />
+			<!-- image placeholder template -->
+		</td>
+	</tr>
+</table>
+
+<!-- Embedding the EAFlashUpload control -->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff",
+		wmode: "window"
+	};
+	
+	// id and name attribute may contain any value. 
+	// You need to use specified below identifier to access to the EAFlashUpload methods and properties.
+	var attributes = {  
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload"								
+	};
+	
+	var flashvars = new Object();
+	
+	//Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	flashvars["viewFile"] = "TableView.swf";
+	flashvars["queue.allowedExtentions"] = "Images (*.jpg, *.gif, *.png):*.jpg;*.gif;*.png"; 
+	flashvars["queue.fileSizeLimit"] = 5242880; // 5 MB
+
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "450", "350", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+</script>
+		
+<br />
+<hr />
+<a href="default.html">Other examples</a>
+</body>
+</html>

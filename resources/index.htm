@@ -1,0 +1,25 @@
+<?
+    if(!class_exists('MDconfig')){
+       require(dirname(__FILE__).'/../base.php');
+       $header_script  = '';
+       define('PAGESTATUS',"COMMON");                                         
+    }
+    require_once(MDconfig::CLASSPATH."/sections.class.php");
+    $Sections   = new Sections();
+    $skin       = 'common';
+
+    
+    $curfolder = dirname(__FILE__).'/';
+    require($curfolder."resources_setting.php");
+    
+
+    $toptpl         = "img_resources.tpl";
+    $leftinner      = 'resources_left.php';
+    $maininner      = 'resources_main.php';
+    
+    
+    //$header_script  = '';
+    require_once(MDconfig::SKINPATH.'/'.$skin.'/layout.php');
+    
+
+?>

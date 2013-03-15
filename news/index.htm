@@ -1,0 +1,27 @@
+<?
+    if(!class_exists('MDconfig')){
+       require(dirname(__FILE__).'/../base.php');
+       $header_script  = '';
+       define('PAGESTATUS',"COMMON");                                         
+    }
+    require_once(MDconfig::CLASSPATH."/sections.class.php");
+    $Sections   = new Sections();
+    $skin       = 'common';
+
+    
+    $curfolder = dirname(__FILE__).'/';
+    require($curfolder."news_setting.php");
+    
+
+    $toptpl         = "img_news.tpl";
+    $leftinner      = 'news_left.php';
+    $maininner      = 'news_main.php';
+    
+    
+    //$header_script  = '';
+    $specialid      = 33;
+    $section_title  = 'Science';
+    require_once(MDconfig::SKINPATH.'/'.$skin.'/layout.php');
+    
+
+?>

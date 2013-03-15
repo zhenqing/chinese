@@ -1,0 +1,1 @@
+<iframe frameborder="0" marginheight="0" marginwidth="0" src="./?r=articleimages/ajaxadd&articleid=<?=$articleid ?>" width="500" height="400" ><iframe>

@@ -1,0 +1,203 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>TableView root properties</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">TableView root properties</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+	  
+    <p>
+		This section describes root properties of the TableView user interface. Use the following string reference "view.&lt;propertyName&gt;" to access to below properties.
+	</p>	  
+	  
+	<br />
+    <br />
+    
+    <p><b>List of properties</b></p>
+      <table style="width: auto;">
+          <tr>
+              <th> Property name </th>
+              <th> Type </th>
+              <th style="width: 400px;"> Description </th>
+              <th> Default values </th>
+          </tr>
+		  <tr>
+			<td><a name="progressAllText"></a>progressAllText</td>
+			<td>string</td>
+			<td>Gets or set text in the <a href="tableview.progressbars.html">progressAll</a> progress bar. Formatting constants are supported.</td>
+			<td >""</td>
+		  </tr>
+		  <tr>
+			<td><a name="progressFileText"></a>progressFileText</td>
+			<td>string</td>
+			<td>Gets or set text in the <a href="tableview.progressbars.html">progressFile</a> progress bar. Formatting constants are supported.</td>
+			<td >""</td>
+		  </tr>
+          <tr>
+			<td><a name="resizedProgressText"></a>resizedProgressText</td>
+			<td>string</td>
+			<td>Gets or set text in the <a href="tableview.progressbars.html">resizedProgress</a> progress bar. Formatting constants are supported.</td>
+			<td >""</td>
+		  </tr>
+		  <tr>
+			<td><a name="fileListStatusLabelText"></a>fileListStatusLabelText</td>
+			<td>string</td>
+			<td>Gets or sets text for <a href="tableview.labels.html#fileListStatusLabel">fileListStatusLabel</a> label. Formatting constants are supported.</td>
+			<td >"Total size is #TOTAL_FILES_SIZE#"</td>
+		  </tr>
+		  <tr>
+			<td><a name="infoLabelText"></a>infoLabelText</td>
+			<td>string</td>
+			<td>Gets or sets text for <a href="tableview.labels.html#infoLabel">infoLabel</a> label. Formatting constants are supported.</td>
+			<td >"Choose files to upload. Use hot keys for multiple selection."</td>
+		  </tr>
+		  <tr>
+			<td><a name="retryDialogMessage"></a>retryDialogMessage</td>
+			<td>string</td>
+			<td>Gets or sets message that will be displayed in the <a href="tableview.dialogs.html#retryDlg" >retryDlg</a> dialog. Formatting constants are supported.</td>
+			<td >"Retry file upload?"</td>
+		  </tr>
+		  <tr>
+			<td><a name="statusLabelOnPrepareResizedImagesText"></a>statusLabelOnPrepareResizedImagesText</td>
+			<td>string</td>
+			<td>Gets or sets text for <a href="tableview.labels.html#statusLabel">statusLabel</a> label. The text is displayed during preparation of upload resized images. Formatting constants are supported.</td>
+			<td>"Images are being prepared for upload..."</td>
+		  </tr>
+		  <tr>
+			<td><a name="statusLabelOnProgressResizedText"></a>statusLabelOnProgressResizedText</td>
+			<td>string</td>
+			<td>Gets or sets text for <a href="tableview.labels.html#statusLabel">statusLabel</a> label. The text is displayed during resized images uploading. Formatting constants are supported.</td>
+			<td>"#PERCENTS_DONE#% done (#FILE_INDEX# of #FILES_COUNT# images uploaded)"</td>
+		  </tr>
+          <tr>
+			<td><a name="statusLabelOnProgressText"></a>statusLabelOnProgressText</td>
+			<td>string</td>
+			<td>Gets or sets message that will be displayed in the <a href="tableview.labels.html#statusLabel">statusLabel</a> label when upload is in progress. Formatting constants are supported.</td>
+			<td >"#PERCENTS_DONE#% uploaded(#BYTES_LOADED# of #BYTES_TOTAL#)\nTime left: #REMAINING_TIME#\nTransfer rate: #TRANSFER_RATE#"</td>
+		  </tr>
+		  <tr>
+			<td><a name="statusLabelOnCompleteText"></a>statusLabelOnCompleteText</td>
+			<td>string</td>
+			<td>Gets or sets message that will be displayed in the <a href="tableview.labels.html#statusLabel">statusLabel</a> label when upload will be completed. Formatting constants are supported.</td>
+			<td >"Upload has been completed."</td>
+		  </tr>
+		  <tr>
+			<td><a name="statusLabelOnCancelText"></a>statusLabelOnCancelText</td>
+			<td>string</td>
+			<td>Gets or sets message that will be displayed in the <a href="tableview.labels.html#statusLabel">statusLabel</a> label when upload is in progress. Formatting constants are supported.</td>
+			<td >"Upload has been cancelled."</td>
+		  </tr>
+		  <tr>
+			<td><a name="statusLabelOnErrorText"></a>statusLabelOnErrorText</td>
+			<td>string</td>
+			<td>Gets or sets message that will be displayed in the <a href="tableview.labels.html#statusLabel">statusLabel</a> label when upload is in progress. Formatting constants are supported.</td>
+			<td >"Upload has failed"</td>
+		  </tr>
+		  <tr>
+			<td><a name="backgroundColor"></a>backgroundColor</td>
+			<td>Array</td>
+			<td>Array of numbers for the background gradient color of the main area.</td>
+			<td >[#EFEFEF]</td>
+		  </tr>
+		  <tr>
+			<td><a name="borderColor"></a>borderColor</td>
+			<td>Array</td>
+			<td>Array of numbers for the border gradient color of the main area.</td>
+			<td >[#ebe9e9]</td>
+		  </tr>
+		  <tr>
+			<td><a name="displayHttpStatusMessages"></a>displayHttpStatusMessages</td>
+			<td>Boolean</td>
+			<td>Indicates whether or not messages related to http errors should be displayed.</td>
+			<td >true</td>
+		  </tr>
+		  <tr>
+			<td><a name="displayQueueErrorMessages"></a>displayQueueErrorMessages</td>
+			<td>Boolean</td>
+			<td>Indicates whether or not messages related to queue errors should be displayed.</td>
+			<td >true</td>
+		  </tr>
+		  <tr>
+			<td><a name="displaySystemMessages"></a>displaySystemMessages</td>
+			<td>Boolean</td>
+			<td>Indicates whether or not messages related to system errors should be displayed.</td>
+			<td >true</td>
+		  </tr>
+		  <tr>
+			<td><a name="showRetryDialog"></a>showRetryDialog</td>
+			<td>Boolean</td>
+			<td>Indicates whether or not retryDlg should be displayed when an error occurs during file upload.</td>
+			<td >true</td>
+		  </tr>
+		  <tr>
+			<td><a name="autopositionMode"></a>autopositionMode</td>
+			<td>Boolean</td>
+			<td>Turns on an auto position mode. If true all UI elements is auto scaled due to control resizing.</td>
+			<td >true</td>
+		  </tr>
+	  </table>  
+    <br />   
+     <i>Examples:</i>
+        <p>
+            The property of the TableView is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.backgroundColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#fdfdfe|#d7e0e7</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

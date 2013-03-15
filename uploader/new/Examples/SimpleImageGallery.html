@@ -1,0 +1,202 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Upload multiple image files and create simple image gallery.</title>
+<script src="jslibraries/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="jslibraries/jquery.lightbox-0.5.min.js" type="text/javascript"></script>
+<link media="screen" href="jslibraries/css/jquery.lightbox-0.5.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+
+#thumbContainer
+{
+	overflow: auto;
+	width: 230px;
+	height: 350px;
+	border: 1px solid #cccccc;
+}
+
+.thumbImage
+{
+	border: none; 
+	cursor: pointer;
+}
+
+.thumbImageCont
+{
+	float: left;
+	width: 200px; 
+	border: none;	
+	margin-left: 3px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+</style>
+<script type="text/javascript">
+var isResizedUploading = true;
+
+function EAFlashUpload_onMovieLoad(errors)
+{		
+	if(errors != "")
+		alert(errors);	
+}
+
+function EAFlashUpload_onFileLoadEnd(fileObj)
+{
+	if (isResizedUploading) {
+		var response = EAFlashUpload.urlVarsToObject(fileObj.serverResponse);
+		addImageToContainer(fileObj.id, response.thumbUrl);
+	}
+	else
+	{
+		
+		var response = EAFlashUpload.urlVarsToObject(fileObj.serverResponse);
+		$('#cont' + fileObj.id).attr({
+										href: response.origImageUrl,
+										title: response.description
+									 });
+	}
+}
+
+function EAFlashUpload_onResizedImagesUploadEnd()
+{
+    isResizedUploading = false;    
+}
+
+function EAFlashUpload_onUploadEnd()
+{
+	$('.thumbImageCont').lightBox({
+		imageLoading:  'jslibraries/images/lightbox-ico-loading.gif',
+		imageBtnClose: 'jslibraries/images/lightbox-btn-close.gif',
+		imageBtnPrev:  'jslibraries/images/lightbox-btn-prev.gif',
+		imageBtnNext:  'jslibraries/images/lightbox-btn-next.gif',
+		imageBlank:	   'jslibraries/images/lightbox-blank.gif'
+	});   
+    $('.thumbImageCont').css('display', 'inline');
+	
+	// set an initial value for future uploads. 
+	isResizedUploading = true;    
+}
+
+function EAFlashUpload_onSystemError(msg)
+{		
+	alert(msg);				
+}
+
+function EAFlashUpload_onUploadError(errorObj)
+{
+	alert(errorObj.message);
+}
+
+// --- Image displaying --- //
+function addImageToContainer(thumbId, thumbUrl)
+{
+	var image = $('<img></img>').attr({
+										id: thumbId,
+										src: thumbUrl
+										})
+								.css('display', 'inline')
+								.addClass('thumbImage');
+	
+	var imageContainer = $('<a></a>').attr('id', 'cont' + thumbId)
+									 .css('display', 'none')
+									 .addClass('thumbImageCont');
+	
+	imageContainer.append(image);	
+	$("#thumbContainer").append(imageContainer);	
+}
+
+function clearList()
+{
+	$("#thumbContainer").html('');
+}
+// --- Image displaying --- //
+</script>
+</head>
+<body>
+<p>
+This example demonstrates how to upload multiple image files to the server and organize them as simple gallery. The image resizing is archived on the client's side. 
+<a href="http://leandrovieira.com/projects/jquery/lightbox/">jQuery lightBox plugin</a> is used for images displaying.
+<br />
+The example contains a number of limitiations. Keep in mind that it is limitations of this example, not of EAFlashUpload itself:
+	<ul>
+		<li>Only image files are allowed for selection;</li>
+		<li>Size of each file cannot be greater than 5MB;</li>	
+	</ul>
+</p>
+
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of current html page (ex: for ASP.NET: "ServerScripts/ASP.NET/simpleimagegallery.aspx"; or for PHP: ServerScripts/PHP/simpleimagegallery.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<br /><br />
+<table>
+	<tr>
+		<td>
+			<div id="EAFlashUpload_holder">
+            	You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+                <br />
+                <a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+			</div>
+		</td>
+		<td style="padding-left: 40px; vertical-align: top;">
+			Resized images container:<br />
+			<div id="thumbContainer"></div>
+			<a href="javascript:clearList();">Clear list</a>
+		</td>
+	</tr>
+</table>
+
+<!-- Embedding the EAFlashUpload control -->
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff",
+		wmode: "window"
+	};
+	
+	// id and name attribute may contain any value. 
+	// You need to use specified below identifier to access to the EAFlashUpload methods and properties.
+	var attributes = {  
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload"								
+	};
+	
+	var flashvars = new Object();
+	
+	//Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	flashvars["viewFile"] = "TableView.swf";
+	flashvars["queue.allowedExtentions"] = "Images (*.jpg, *.gif, *.png):*.jpg;*.gif;*.png"; 
+	flashvars["queue.fileSizeLimit"] = 5242880; // 5 MB
+	
+	flashvars["uploader.uploadResizedImages"] = true;
+	flashvars["uploader.uploadOriginalImages"] = true;
+	flashvars["uploader.resizedImageMaxWidth"] = 200;
+	flashvars["uploader.resizedImageMaxHeight"] = 200;
+	
+	// hide size column and change file name pattern for displaying size	
+	flashvars["queue.fileNamePattern"] 				= "#FILE_NAME# (#FILE_SIZE#)";	
+	flashvars["view.filesList.sizeColumn.visible"]  = false;
+	flashvars["view.filesList.nameColumn.width"] 	= 250;
+	flashvars["view.filesList.statusColumn.width"]  = 70;
+	
+	flashvars["customFileProperties.public"] = "Description:put a description";
+	flashvars["view.filesList.customColumn.propertyNameDataSource"] = "Description";
+	flashvars["view.filesList.customColumn.visible"] = true;
+
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "500", "350", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+</script>
+		
+<br />
+<hr />
+<div style="padding: 10px; font-weight: bold;">
+Note: If you have questions regarding this example please let us know <a href="mailto:support%40easyalgo.com?Subject=SimpleImageGallery">support@easyalgo.com</a>. Any assistance is provided for free.
+</div>
+<a href="default.html">Other examples</a>
+</body>
+</html>

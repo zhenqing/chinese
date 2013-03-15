@@ -1,0 +1,149 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Objects structure</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Objects structure</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    <a name="BeginOfThePage"></a>
+	<p>
+    Current documentation section desribes list of properties which can be used for EAFlashUpload configuration. They are orginazed as tree of objects properties. It is done for structuring and for better undestending how to configure EAFlashUpload control. In fact, properties and objects is desribed as they are presented in EAFlashUpload actionscript classes architecture.
+    </p>
+    <p>
+    So how to set a value to appropriate property?! Reference to property looks like object reference but should be defined as a string. For example: you need to specify url which will be received uploading files. It can be archive by setting uploadUrl property of uploader object and the string reference will be as follows: <i>"uploader.uploadUrl"</i>
+    <br /><br />
+    As desribed in <a href="technotes.configuration.html">Configuration of EAFlashUpload</a> section, property value can be assigned by four ways:
+     
+    <ul style="list-style-type:decimal; margin-left:40px;">
+    	<li>
+        As a <i>flashvars</i> parameter of &lt;OBJECT&gt; and &lt;EMBED&gt; elements
+        <pre class="code">
+			<div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">object </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload&quot;</span><span style="color: #FF0000;"> codeBase</span><span style="color: #0000FF;">=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0&quot;</span><span style="color: #FF0000;">
+width</span><span style="color: #0000FF;">=&quot;450&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;350&quot;</span><span style="color: #FF0000;"> classid</span><span style="color: #0000FF;">=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;</span><span style="color: #FF0000;"> VIEWASTEXT</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+...
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">param </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;FlashVars&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl=uploadfiles.aspx&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+...
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">embed </span><span style="color: #FF0000;">flashvars</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl=uploadfiles.aspx&quot;</span><span style="color: #FF0000;"> ... </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">object</span><span style="color: #0000FF;">&gt;</span></div>
+		</pre>	  	
+        </li>
+        <li>
+        	As a property of flashvars object. This type implies using of SWFObject JavaScript library:
+        	<pre class="code">
+				<div><span style="color: #000000;">&lt;</span><span style="color: #000000;">script type</span><span style="color: #000000;">=</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">text/javascript</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> params </span><span style="color: #000000;">=</span><span style="color: #000000;"> {  
+        wmode: </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">window</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">
+    };
+    <br />
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> attributes </span><span style="color: #000000;">=</span><span style="color: #000000;"> {        
+        id: </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFlashUpload</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">,  
+        name: </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFlashUpload</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">                            
+    };
+    <br />    
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> flashvars </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();      
+    flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploadfiles.aspx</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    <br />
+    swfobject.embedSWF(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFUpload.swf</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFlashUpload_holder</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">450</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">350</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">9.0.0</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">expressInstall.swf</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, flashvars, params, attributes);
+    
+</span><span style="color: #000000;">&lt;/script&gt;</span></div>
+			</pre> 
+        </li>
+        <li>
+        	Via XML configuration file:
+            <pre class="code">
+            	<div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+  ...
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">uploader </span><span style="color: #FF0000;">uploadUrl</span><span style="color: #0000FF;">=&quot;uploadfile.aspx&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+  ...
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span></div>
+            </pre>
+        </li>
+        <li>
+        	Via EAFlashUpload <a href="javascript.api.html">JavaScript API</a> after control has been loaded on the page.
+            <div>
+            <pre class="code">
+            	<div>
+<span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onMovieLoad()
+{
+    EAFlashUpload.setProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploadfile.aspx</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+}</span>
+</div>
+            </pre>
+            </div>
+        </li>
+    </ul>
+    </p>
+    
+    <b>TableView, ShortView, ListView</b>
+    <p>
+    Objects contain list of properties related to appropriate user interface. To get a reference to the object properties you should to use <i>"view"</i> object and the string reference would be as follows: <i>"view.addButton.text"</i>.
+    </p>
+    <br />
+    <b>Data types</b>
+    <p>
+    The types of properties is described as they are defined in ActionScript objects structure and you can opperate with such types only via JavaScript API or SWFObject in other cases all properties values should be defined as a string. Property with "Array" type can be assigned as an array only by using EAFlashUpload JavaScript API.
+    <pre class="code"><div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onMovieLoad()
+{
+    EAFlashUpload.setProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">daysAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, [</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Sun1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Mon1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Tue1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Wed1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Thu1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Fri1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Sat1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">]);
+}
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> in other case</span><span style="color: #008000;">
+</span><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">daysAbbrev</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Sun|Mon|Tue|Wed|Thu|Fri|Sat</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+    </p>   
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Progress object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle"><i>Progress</i> object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a>
+	  The Progress object is a JavaScript object with set of properties. All properties are read only. This object is returned as a parameter of <a href="javascript.api.events.html#onUploadProgress">onUploadProgress</a> event handler.
+      
+	  <p><b>List of properties</b></p>	
+	  <table style="width: auto;">
+        <tr>
+          <th> Property name </th>
+		  <th> Type </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td><a name="percentsDone"></a> percentsDone </td> 
+		  <td> int </td>         
+          <td> The percents progress of total upload. </td>
+        </tr>
+		<tr>
+          <td><a name="currentFilePercentsDone"></a> currentFilePercentsDone </td> 
+		  <td> int </td>         
+          <td> The percents progress of current uploading file. </td>
+        </tr>
+		<tr>
+          <td><a name="bytesTotal"></a> bytesTotal </td> 
+		  <td> int </td>         
+          <td> The size in bytes of all files that are being uploaded to the server. </td>
+        </tr>
+		<tr>
+          <td><a name="bytesLoaded"></a> bytesLoaded </td> 
+		  <td> int </td>         
+          <td> The uploaded bytes of the current upload. </td>
+        </tr>
+		<tr>
+          <td><a name="currentFileBytesTotal"></a> currentFileBytesTotal </td> 
+		  <td> int </td>         
+          <td> The size in bytes of the current uploading file. </td>
+        </tr>
+		<tr>
+          <td><a name="currentFileBytesLoaded"></a> currentFileBytesLoaded </td> 
+		  <td> int </td>         
+          <td> The uploaded bytes of the current uploading file. </td>
+        </tr>
+		<tr>
+          <td><a name="currentFileId"></a> currentFileId </td> 
+		  <td> string </td>         
+          <td> The unique identifier of the current uploading file. </td>
+        </tr>
+		<tr>
+          <td><a name="startTime"></a> startTime </td> 
+		  <td> Date </td>         
+          <td> The start time of the upload. </td>
+        </tr>
+		<tr>
+          <td><a name="elapsedTime"></a> elapsedTime </td> 
+		  <td> int </td>         
+          <td> The time that has elapsed since upload begin. </td>
+        </tr>
+		<tr>
+          <td><a name="remainingTime"></a> remainingTime </td> 
+		  <td> int </td>         
+          <td> The remaining time until the end of the upload. </td>
+        </tr>
+		<tr>
+          <td><a name="transferRate"></a> transferRate </td> 
+		  <td> int </td>         
+          <td> The transfer rate(B/s) of the current upload. </td>
+        </tr>						
+	  </table>
+	  
+	 <br />
+	 <i>Examples:</i>
+		<p>
+			The Progress object is returned as a parameter of <a href="javascript.api.events.html#onUploadProgress">onUploadProgress</a> event handler. The status information is displayed on the page:
+			<pre class="code">
+			<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadProgress(progress)
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> str </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000FF;">for</span><span style="color: #000000;">(</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> prop </span><span style="color: #0000FF;">in</span><span style="color: #000000;"> progress)
+    {
+        str </span><span style="color: #000000;">+=</span><span style="color: #000000;"> prop </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> progress[prop] </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">&lt;br /&gt;</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    }
+    
+    document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_ProgressSummary</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">).innerHTML </span><span style="color: #000000;">=</span><span style="color: #000000;"> str;
+    document.getElementById(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">DIV_ProgressBar</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">).style.width </span><span style="color: #000000;">=</span><span style="color: #000000;"> progress.percentsDone </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">%</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+}</span></div>
+</pre>
+		</p>
+    
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

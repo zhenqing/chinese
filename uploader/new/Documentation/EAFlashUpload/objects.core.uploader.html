@@ -1,0 +1,998 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Properties of uploader object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Properties of <i>uploader</i> object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a> 
+	  <p><b>List of properties</b></p>
+      <table style="width: auto;">
+        <tr>
+          <th> Property name </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td> <a href="#uploadUrl">uploadUrl</a> </td>          
+          <td> Contains the URL of the server script configured to handle upload through HTTP POST calls. </td>
+        </tr>
+        <tr>
+          <td> <a href="#retryCount">retryCount</a> </td>          
+          <td> Defines a count of attempts that unsuccessful upload will be repeated. </td>
+        </tr>
+        <tr>
+          <td> <a href="#macOsServerResponseTime">macOsServerResponseTime</a> </td>          
+          <td> Defines a server response timeout in milliseconds for MAC OS platforms. </td>
+        </tr>        
+        <tr>
+          <td> <a href="#sendFileAttributes">sendFileAttributes</a> </td>          
+          <td> Indicates whether file attributes should be included as form fields in the upload request.</td>
+        </tr>
+		<tr>
+          <td> <a href="#fileAttributesToSend">fileAttributesToSend</a> </td>          
+          <td> Indicates names of file attributes that should be included as form fields in the upload request.</td>
+        </tr>
+        <tr>
+          <td> <a href="#formToSend">formToSend</a> </td>          
+          <td> Name of &lt;FORM&gt; element that should be parsed and which elements values should be included as form fields in the upload request.  </td>
+        </tr>
+        <tr>
+          <td> <a href="#retrieveBrowserCookie">retrieveBrowserCookie</a> </td>          
+          <td> Indicates whether browser cookie should be included in the upload request. </td>
+        </tr>
+        <tr>
+          <td> <a href="#redirectUrl">redirectUrl</a> </td>          
+          <td> The URL to which user will be redirected after successful upload. </td>
+        </tr>
+        <tr>
+          <td> <a href="#redirectTarget">redirectTarget</a> </td>          
+          <td> Specifies where to open the redirectURL. </td>
+        </tr>
+        <tr>
+          <td> <a href="#redirectMethod">redirectMethod</a> </td>          
+          <td> The HTTP method that will be used for redirection. </td>
+        </tr>
+        <tr>
+          <td> <a href="#fileStatusXXXMsg">&lt;fileStatusXXXMsg&gt;</a> </td>          
+          <td> Group of properties which contain messages for various status of file. </td>
+        </tr>
+		<tr>
+          <td> <a href="#fileLoadIOErrorMsg">fileLoadIOErrorMsg</a> </td>          
+          <td> The message is shown when IOError occured during upload request. </td>
+        </tr>
+		<tr>
+          <td> <a href="#fileLoadSecurityErrorMsg">fileLoadSecurityErrorMsg</a> </td>          
+          <td> The message is shown when SecurityError occured during upload request. </td>
+        </tr>
+		<tr>
+          <td> <a href="#httpDefaultMsg">httpDefaultMsg</a> </td>          
+          <td> The message is shown when Http error occured during upload request. </td>
+        </tr>
+		<tr>
+          <td> <a href="#httpXXXMsg">&lt;httpXXXMsg&gt;</a> </td>          
+          <td> Group of properties which contain various http error messages. </td>
+        </tr>
+        <tr>
+          <td><a href="#resizedFilenamePattern">resizedFilenamePattern</a></td>
+          <td>Gets or set pattern for names of resized images which will be uploaded to the server. Formatting constants are supported.</td>
+        </tr>        
+        <tr>
+          <td><a href="#uploadResizedImages">uploadResizedImages</a></td>
+          <td>Determines whether resized images should be uploaded to the server.</td>
+        </tr>
+        <tr>
+          <td><a href="#uploadOriginalImages">uploadOriginalImages</a></td>
+          <td>Determines whether original images should be uploaded to the server.</td>
+        </tr>
+        <tr>
+          <td><a href="#increaseOriginalImageSize">increaseOriginalImageSize</a></td>
+          <td>Determines component behaviour when original image smaller than required resizing size. If false then original image will not be changed.</td>
+        </tr>
+        <tr>
+          <td><a href="#resizedImageMaxWidth">resizedImageMaxWidth</a></td>
+          <td>Indicates the maximum width of resized image. All images are resized with saving proportions therefore the final width of resized image will be lower or equal to defined value.									          </td>
+        </tr>
+        <tr>
+          <td><a href="#resizedImageMaxHeight">resizedImageMaxHeight</a></td>
+          <td>Indicates the maximum height of resized image. All images are resized with saving proportions therefore the final height of resized image will be lower or equal to defined value.</td>
+        </tr>
+        <tr>
+          <td><a href="#resizedImageType">resizedImageType</a></td>
+          <td>Indicates the type of resized image.</td>
+        </tr>
+        <tr>
+          <td><a href="#resizedJpgQuality">resizedJpgQuality</a></td>
+          <td>Indicates the &quot;quality&quot; setting for resized JPEG images.</td>
+        </tr>                		
+      </table>
+      
+      <br />
+      <br />
+      
+      <a name="uploadUrl"></a>
+      <p><b>uploadUrl</b></p>
+      <p>
+      	<i>Default value: </i>""
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.uploadUrl"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Contains the URL of the server script configured to handle upload through HTTP POST calls. On some browsers, URL strings are limited in length. Lengths greater than 256 characters may fail on some browsers or servers. If this property is an empty string, an exception is thrown. The URL can be HTTP or, for secure uploads, HTTPS. To use HTTPS, use an HTTPS url in the url parameter. If you do not specify a port number in the url parameter, port 80 is used for HTTP and port 443 us used for HTTPS, by default. On some Non-IE browser HTTPS protocol prefix doesn't work properly, so in this case the following url format for upload via SSL is recomended: http://www.somewebsite.com:443/somepage.php. Relative URLs are also supported.
+                <p>
+                Note: Uploading operations can access files only within its own domain and within any domains that a URL policy file specifies. Put a policy file on the file server if the content initiating the upload doesn't come from the same domain as the file server. See more here <a href="technotes.security.html">Web site controls (policy file)</a>
+                </p>
+                <p>Note: &amp; symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2</p>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">filesreceiver.php</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="retryCount"></a>
+      <p><b>retryCount</b></p>
+      <p>
+      	<i>Default value: </i>0
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"uploader.retryCount"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Defines a count of attempts that unsuccessful upload will be repeated. On some platforms unexpected IO error occured during getting an access to the file and this behavior stops an upload. Therefore, EAFlashUpload can retry to upload file "retryCount" times.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.retryCount</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">3</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="macOsServerResponseTime"></a>
+      <p><b>macOsServerResponseTime</b></p>
+      <p>
+      	<i>Default value: </i>200
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"uploader.macOsServerResponseTime"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Defines a server response timeout in milliseconds for MAC OS platforms. Sometimes upload complete event doesn't fire on Flash Player on MAC OS. The EAFlashUpload waits defined time, recieves the server resposne and starts a new file upload process.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.macOsServerResponseTime</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">200</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="sendFileAttributes"></a>
+      <p><b>sendFileAttributes</b></p>
+      <p>
+      	<i>Default value: </i>true
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"uploader.sendFileAttributes"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates whether file attributes should be included as form fields in the upload request.							
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.sendFileAttributes</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+	  
+	  <br />
+      <a name="fileAttributesToSend"></a>
+      <p><b>fileAttributesToSend</b></p>
+      <p>
+      	<i>Default value: </i>["index", "name", "type", "size"]. The following value is used for <a href="imageview.intro.html">ImageView</a> by default: ["index", "name", "type", "size", "width", "height"]. 
+      	<br />
+        <i>Type: </i>Array
+        <br />
+        <i>String reference: </i>"uploader.fileAttributesToSend"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the names of file attributes that should be included as form fields in the upload request.<br />
+				The name of form field has the following format:
+				<ul>
+					<li><i>file_&lt;name of property&gt;</i> (Ex: file_size)</li>
+					<li>when the resized images(<a href="imageview.intro.html">ImageView</a>) are sent:
+                    	<ul>
+                        	<li><i>file&lt;counter&gt;_&lt;name of property&gt;</i> (Ex: file0_width)</li>
+                            <li><i>resized&lt;counter&gt;_&lt;name|width|height&gt;</i> (Ex: resized0_width)</li>
+                        </ul>
+                    </li>
+				</ul>	
+				<br />
+				<br />
+				Below is described avalable file attributes:
+				<table style="width: auto;">
+					<tr>
+					  <th> File's attribute </th>					  
+					  <th> Description </th>
+					</tr>
+					<tr>
+						<td>id</td>						
+						<td> The unique identifier of the file in the upload queue. </td>
+					</tr>
+					<tr>
+						<td>index</td>						
+						<td> The index of the file in the upload queue. </td>
+					</tr>
+					<tr>
+						<td>name</td>						
+						<td> The name of the file on the local disk. The full path is not included. </td>
+					</tr>
+					<tr>
+						<td>type</td>				
+						<td> In Windows or Linux, this attribute is the file extension. On the Macintosh, this attribute is the four-character file type, which is only used in Mac OS versions prior to Mac OS X. </td>						
+					</tr>
+					<tr>
+						<td>size</td>
+						<td> The size of the file on the local disk in bytes. </td>						
+					</tr>
+					<tr>
+						<td>creation date</td>						
+						<td> The creation date of the file on the local disk. </td>						
+					</tr>
+					<tr>
+						<td>modification date</td>						
+						<td> The date that the file on the local disk was last modified. </td>						
+					</tr>
+					<tr>
+						<td>creator</td>						
+						<td> The Macintosh creator type of the file, which is only used in Mac OS versions prior to Mac OS X. In Windows or Linux, this attribute is null. </td>					
+					</tr>
+					<tr>
+						<td>width</td>						
+						<td> The width of oroginal image in the queue. This property is available for <a href="imageview.intro.html">ImageView</a> only. </td>						
+					</tr>
+					<tr>
+						<td>height</td>						
+						<td> The height of original image in the queue. This property is available for <a href="imageview.intro.html">ImageView</a> only. </td>						
+					</tr>
+				</table>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.fileAttributesToSend</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">size|width|height</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+	  
+	 	  
+      <br />
+      <a name="formToSend"></a>
+      <p><b>formToSend</b></p>
+      <p>
+      	<i>Default value: </i>""
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.formToSend"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Name of &lt;FORM&gt; element that should be parsed and which elements values should be included as form fields in the upload request. The EAFlashUpload parses specified form via JavaScript and includes values of elements to the each upload request.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.formToSend</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Form1</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="retrieveBrowserCookie"></a>
+      <p><b>retrieveBrowserCookie</b></p>
+      <p>
+      	<i>Default value: </i>true
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"uploader.retrieveBrowserCookie"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates whether browser cookie should be included in the upload request. The Flash Player plug-in for Non-IE (FireFox, Safari etc.) browsers doesn’t send browser cookies with upload request. Therefore, server-side applications that use cookies (ex: authentication, session tracking (state maintenance)) doesn’t work properly. EAFlashUpload retrieves browser cookies via JavaScript(document.cookie property) and sends it as a value of form field(the name of form field is "browser_cookie"). There is no way to retrieve cookie via javascript if server adds to cookie value HttpOnly flag.
+				<br />
+				<span><i>Note:</i> Described problem does not exist when you upload only resized images. </span>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.retrieveBrowserCookie</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="redirectUrl"></a>
+      <p><b>redirectUrl</b></p>
+      <p>
+      	<i>Default value: </i>""
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.redirectUrl"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The URL to which user will be redirected after successful upload. The name and size of each file will be sent to redirect location. If <i>redirectMethod</i> is set to "GET" then all vlaues is sent as the query string variables. If <i>redirectMethod</i> is set to "POST" then all values is sent in the request body.
+                <br />
+                <br />
+                The following variables are sent for each file:
+                <br />
+                <a href="#redirectMethod">redirectMethod</a> = "GET":
+                <ul>
+                	<li>UploadedFilesCount</li>
+                    <li>UploadedFilesSize</li>
+                </ul>
+                <br />
+                <a href="#redirectMethod">redirectMethod</a> = "POST":
+                <ul>
+                	<li>UploadedFilesCount</li>
+                    <li>All form fields values of <a href="#formToSend">formToSend</a> form</li>
+                    <li>File attributes:
+                        <br /><br />
+                        <i>file&lt;counter&gt;_&lt;each value of <a href="#fileAttributesToSend">fileAttributesToSend</a> and all <a href="objects.core.customprop.html">customFileProperties</a>&gt;</i> (Ex: file_size)
+                        <br /><br />
+                        when the resized images(<a href="imageview.intro.html">ImageView</a>) are sent:
+                                <ul>
+                                    <li><i>file&lt;counter&gt;_&lt;each value of <a href="#fileAttributesToSend">fileAttributesToSend</a> and all <a href="objects.core.customprop.html">customFileProperties</a>&gt;</i> (Ex: file0_width)</li>
+                                    <li><i>resized&lt;counter&gt;_&lt;name|size|width|height&gt;</i> (Ex: resized0_width)</li>
+                                </ul>                           
+                     </li>
+                </ul>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.redirectUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">redirecturl.php</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="redirectTarget"></a>
+      <p><b>redirectTarget</b></p>
+      <p>
+      	<i>Default value: </i>"_blank"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.redirectTarget"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The browser window or HTML frame in which to display the document indicated by the <i>redirectUrl</i> property. You can enter the name of a specific window or use one of the following values:
+                <ul>
+                	<li>"_self" specifies the current frame in the current window.</li>
+                    <li>
+                    	"_blank" specifies a new window.
+                        <br />
+                        Various browsers (and browser configurations) may block pop-up windows at any time; it is not possible to guarantee any pop-up window will appear.                    
+                    </li>
+                    <li>"_parent" specifies the parent of the current frame.</li>
+                    <li>"_top" specifies the top-level frame in the current window.</li>
+                </ul>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.redirectTarget</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">_self</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="redirectMethod"></a>
+      <p><b>redirectMethod</b></p>
+      <p>
+      	<i>Default value: </i>"GET"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.redirectMethod"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The HTTP method (POST or GET) that will be used for redirection.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.redirectMethod</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">POST</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="fileStatusXXXMsg"></a>
+      <p><b>fileStatusXXXMsg group of properties</b></p>
+      <p>      	
+      	<i>Description:</i>
+        	<p>
+            	Group of properties that contain messages for various status of file. This messages are being used to describe different upload state of each file. <a href="javascript.api.file.html">File.statusString</a> property is populated on basis of this messages. Also they are shown in the statusColumn column of filesList table(see <a  href="tableview.fileslist.html">TableView.filesList</a>). The values of properties support formatting constants(see <a href="technotes.stringformatting.html">String formatting</a>).
+        	</p>
+			<table style="width: auto;">
+					<tr>
+					  <th> Property name </th>
+					  <th> Default value </th>
+					  <th> Type </th>
+					  <th> String reference </th>
+					</tr>
+					<tr>
+						<td>fileStatusREADYMsg</td>
+						<td> "Ready" </td>
+						<td>string</td>
+						<td>uploader.fileStatusREADYMsg</td>
+					</tr>
+					<tr>
+						<td>fileStatusUPLOADINGMsg</td>
+						<td> "#FILE_PERCENTS_DONE#%" </td>
+						<td>string</td>
+						<td>uploader.fileStatusUPLOADINGMsg</td>
+					</tr>
+					<tr>
+						<td>fileStatusUPLOADEDMsg</td>
+						<td> "Uploaded" </td>
+						<td>string</td>
+						<td>uploader.fileStatusUPLOADEDMsg</td>
+					</tr>
+                    <tr>
+						<td>fileStatusRESIZED_UPLOADINGMsg</td>
+						<td> "Uploading resized image" </td>
+						<td>string</td>
+						<td>uploader.fileStatusRESIZED_UPLOADINGMsg</td>
+					</tr>
+					<tr>
+						<td>fileStatusRESIZED_UPLOADEDMsg</td>
+						<td> "Resized image uploaded" </td>
+						<td>string</td>
+						<td>uploader.fileStatusRESIZED_UPLOADEDMsg</td>
+					</tr>
+					<tr>
+						<td>fileStatusERRORMsg</td>
+						<td> "Error" </td>
+						<td>string</td>
+						<td>uploader.fileStatusERRORMsg</td>
+					</tr>
+					<tr>
+						<td>fileStatusCANCELEDMsg</td>
+						<td> "Canceled" </td>
+						<td>string</td>
+						<td>uploader.fileStatusCANCELEDMsg</td>
+					</tr>
+                    <tr>
+						<td>fileStatusCUSTOMMsg</td>
+						<td> "Custom" </td>
+						<td>string</td>
+						<td>uploader.fileStatusCUSTOMMsg</td>
+					</tr>					
+			</table>
+				
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.fileStatusUPLOADINGMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#FILE_PERCENTS_DONE#% uploaded</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="fileLoadIOErrorMsg"></a>
+      <p><b>fileLoadIOErrorMsg</b></p>
+      <p>
+      	<i>Default value: </i>"The IOError occured"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.fileLoadIOErrorMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The message is shown when IOError occured during upload request.
+                <br />
+                The IOError occured in any of the following situations:
+                <ul>
+                	<li>The upload fails because of an input/output error while Flash Player is reading, or transmitting the file.</li>
+    				<li>The upload fails because an attempt to upload a file to a server that requires authentication (such as a user name and password). During upload, no mean is provided for users to enter passwords.</li>
+    				<li> The upload fails because the url parameter contains an invalid protocol. HTTP and HTTPS are allowed.</li>                    
+                </ul>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.fileLoadIOErrorMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The IOError occured</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="fileLoadSecurityErrorMsg"></a>
+      <p><b>fileLoadSecurityErrorMsg</b></p>
+      <p>
+      	<i>Default value: </i>"The SecurityError occured."
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.fileLoadSecurityErrorMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The message is shown when SecurityError occured during upload request.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.fileLoadSecurityErrorMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The SecurityError occured.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="httpDefaultMsg"></a>
+      <p><b>httpDefaultMsg</b></p>
+      <p>
+      	<i>Default value: </i>""
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.httpDefaultMsg"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The message is shown when HTTP error occured during upload request. If you wish to display the same message for all HTTP error populate this property with appropriate message, if you not, populate this property with empty string.  
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.httpDefaultMsg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The HTTP error occured during upload request.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="httpXXXMsg"></a>
+      <p><b>httpXXXMsg group</b></p>
+      <p>
+      	<i>Description:</i>
+        	<p>
+            	<i>uploader</i> object has group of properties which contain various http error messages. This messages are shown if <a href="#httpDefaultMsg">httpDefaultMsg</a> is an empty string. The values of properties support formatting constants.
+				<br />				
+				<br />
+				The following table describes mentioned properties:
+				<table style="width: auto;">
+					<tr>
+					  <th> Property name </th>
+					  <th> Default value </th>
+					  <th> Type </th>
+					  <th> String reference </th>
+					</tr>
+					<tr>
+						<td>http400Msg</td>
+						<td>"400 Bad request. The request could not be understood by the server due to malformed syntax."</td>
+						<td>string</td>
+						<td>uploader.http400Msg</td>
+					  </tr>
+					<tr>
+						<td>http401Msg</td>
+						<td>"401 Unauthorized. The request requires user authentication."</td>
+						<td>string</td>
+						<td>uploader.http401Msg</td>
+					  </tr>
+					<tr>
+						<td>http403Msg</td>
+						<td>"403 Forbidden. The server understood the request, but is refusing to fulfill it. Probably authentication access is enabled for upload script(value of uploader.uploadUrl parameter) or uploader.uploadUrl parameter has the wrong value."</td>
+						<td>string</td>
+						<td>uploader.http403Msg</td>
+					  </tr>
+					<tr>
+						<td>http404Msg</td>
+						<td>"404 Not Found. The server has not found anything matching the Request-URI. Please check uploader.uploadUrl has the correct value"</td>
+						<td>string</td>
+						<td>uploader.http404Msg</td>
+					  </tr>
+					<tr>
+						<td>http405Msg</td>
+						<td>"405 Method Not Allowed. The method specified in the Request-Line is not allowed for the resource identified by the Request-URI."</td>
+						<td>string</td>
+						<td>uploader.http405Msg</td>
+					  </tr>
+					<tr>
+						<td>http406Msg</td>
+						<td>"406 Not Acceptable. The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to the accept headers sent in the request."</td>
+						<td>string</td>
+						<td>uploader.http406Msg</td>
+					  </tr>
+					<tr>
+						<td>http407Msg</td>
+						<td>"407 Proxy Authentication Required. This error is similar to 401 (Unauthorized), but indicates that the client must first authenticate itself with the proxy."</td>
+						<td>string</td>
+						<td>uploader.http407Msg</td>
+					  </tr>
+					<tr>
+						<td>http408Msg</td>
+						<td>"408 Request Timeout. The client did not produce a request within the time that the server was prepared to wait."</td>
+						<td>string</td>
+						<td>uploader.http408Msg</td>
+					  </tr>
+					<tr>
+						<td>http409Msg</td>
+						<td>"409 Conflict. The request could not be completed due to a conflict with the current state of the resource."</td>
+						<td>string</td>
+						<td>uploader.http409Msg</td>
+					  </tr>
+					<tr>
+						<td>http410Msg</td>
+						<td>"410 Gone. The requested resource is no longer available at the server and no forwarding address is known."</td>
+						<td>string</td>
+						<td>uploader.http410Msg</td>
+					  </tr>
+					<tr>
+						<td>http411Msg</td>
+						<td>"411 Length Required. The server refuses to accept the request without a defined Content-Length."</td>
+						<td>string</td>
+						<td>uploader.http411Msg</td>
+					  </tr>
+					<tr>
+						<td>http412Msg</td>
+						<td>"412 Precondition Failed. The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server."</td>
+						<td>string</td>
+						<td>uploader.http412Msg</td>
+					  </tr>
+					<tr>
+						<td>http413Msg</td>
+						<td>"413 Request Entity Too Large. The server is refusing to process a request because the request entity is larger than the server is willing or able to process."</td>
+						<td>string</td>
+						<td>uploader.http413Msg</td>
+					  </tr>
+					<tr>
+						<td>http414Msg</td>
+						<td>"414 Request-URI Too Long. The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret."</td>
+						<td>string</td>
+						<td>uploader.http414Msg</td>
+					  </tr>
+					<tr>
+						<td>http415Msg</td>
+						<td>"415 Unsupported Media Type. The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method."</td>
+						<td>string</td>
+						<td>uploader.http415Msg</td>
+					  </tr>
+					<tr>
+						<td>http416Msg</td>
+						<td>"416 Requested Range Not Satisfiable."</td>
+						<td>string</td>
+						<td>uploader.http416Msg</td>
+					  </tr>
+					<tr>
+						<td>http417Msg</td>
+						<td>"417 Expectation Failed. The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server."</td>
+						<td>string</td>
+						<td>uploader.http417Msg</td>
+					  </tr>
+					<tr>
+						<td>http500Msg</td>
+						<td>"500 Internal Server Error. Please check uploader.uploadUrl has the correct value. Check also that folder for storing files exists on the server and has read-write permissions. If you use ASP.NET as server platform please check ASP.NET application is created for folder which contains upload script."</td>
+						<td>string</td>
+						<td>uploader.http500Msg</td>
+					  </tr>
+					<tr>
+						<td>http501Msg</td>
+						<td>"501 Not Implemented. The server does not support the functionality required to fulfill the request."</td>
+						<td>string</td>
+						<td>uploader.http501Msg</td>
+					  </tr>
+					<tr>
+						<td>http502Msg</td>
+						<td>"502 Bad Gateway. The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request."</td>
+						<td>string</td>
+						<td>uploader.http502Msg</td>
+					  </tr>
+					<tr>
+						<td>http503Msg</td>
+						<td>"503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading or maintenance of the server."</td>
+						<td>string</td>
+						<td>uploader.http503Msg</td>
+					  </tr>
+					<tr>
+						<td>http504Msg</td>
+						<td>"504 Gateway Timeout. The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request."</td>
+						<td>string</td>
+						<td>uploader.http504Msg</td>
+					  </tr>
+					<tr>
+						<td>http505Msg</td>
+						<td>"505 HTTP Version Not Supported. The server does not support, or refuses to support, the HTTP protocol version that was used in the request message."</td>
+						<td>string</td>
+						<td>uploader.http505Msg</td>
+					</tr>
+				</table>
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.http500Msg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">500 Internal Server Error.</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+    
+	  <br />
+      <a name="resizedFilenamePattern"></a>
+      <p><b>resizedFilenamePattern</b></p>
+      <p>
+      	<i>Default value: </i>"resized_#FILE_NAME#"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.resizedFilenamePattern"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Gets or set pattern for names of resized images which will be uploaded to the server. Formatting constants are supported.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.resizedFilenamePattern</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">resized_#FILE_NAME#</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="uploadResizedImages"></a>
+      <p><b>uploadResizedImages</b></p>
+      <p>
+      	<i>Default value: </i>false (<b>true</b> if ImageView.swf is used).
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"uploader.uploadResizedImages"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Determines whether resized images should be uploaded to the server.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadResizedImages</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>  
+        
+      <br />
+      <a name="uploadOriginalImages"></a>
+      <p><b>uploadOriginalImages</b></p>
+      <p>
+      	<i>Default value: </i>false (<b>true</b> if ImageView.swf is used).
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"uploader.uploadOriginalImages"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Determines whether original images should be uploaded to the server.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadOriginalImages</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>  
+        
+      <br />
+      <a name="increaseOriginalImageSize"></a>
+      <p><b>increaseOriginalImageSize</b></p>
+      <p>
+      	<i>Default value: </i>false
+      	<br />
+        <i>Type: </i>Boolean
+        <br />
+        <i>String reference: </i>"uploader.increaseOriginalImageSize"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Determines component behaviour when original image smaller than required resizing size. If false then original image will not be changed.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.increaseOriginalImageSize</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+        
+      <br />
+      <a name="resizedImageMaxWidth"></a>
+      <p><b>resizedImageMaxWidth</b></p>
+      <p>
+      	<i>Default value: </i>160
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"uploader.resizedImageMaxWidth"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the maximum width of resized image. All images are resized with saving proportions therefore the final width of resized image will be lower or equal to defined value.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.resizedImageMaxWidth</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">3</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="resizedImageMaxHeight"></a>
+      <p><b>resizedImageMaxHeight</b></p>
+      <p>
+      	<i>Default value: </i>160
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"uploader.resizedImageMaxHeight"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the maximum height of resized image. All images are resized with saving proportions therefore the final height of resized image will be lower or equal to defined value.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.resizedImageMaxHeight</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">3</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="resizedImageType"></a>
+      <p><b>resizedImageType</b></p>
+      <p>
+      	<i>Default value: </i>"jpg"
+      	<br />
+        <i>Type: </i>string
+        <br />
+        <i>String reference: </i>"uploader.resizedImageType"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Indicates the type of resized image. The possible values are: "jpg"(recommended), "png".
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.resizedImageType</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">jpg</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>
+      
+      <br />
+      <a name="resizedJpgQuality"></a>
+      <p><b>resizedJpgQuality</b></p>
+      <p>
+      	<i>Default value: </i>90 (Possible value range: 0 - 100)
+      	<br />
+        <i>Type: </i>int
+        <br />
+        <i>String reference: </i>"uploader.resizedJpgQuality"
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	This propety allows to set the &quot;quality&quot; setting for JPEG images. Defined value is applied for resized images.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The value of property is assigned via <i>flashvars</i> object of SWFObject:
+                <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.resizedJpgQuality</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">90</span><span style="color: #000000;">;</span></div></pre>
+            </p>
+      </p>    
+      
+            
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

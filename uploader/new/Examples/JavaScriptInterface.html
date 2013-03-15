@@ -1,0 +1,327 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Upload files with JavaScript/DHTML interface</title>
+<style type="text/css">
+
+.FilesContainer
+{
+	width: 400px;
+	height: 350px;
+	overflow:auto;
+	border: 1px solid #cccccc;
+}
+
+.Unuploaded
+{
+	 padding-top: 5px; 
+	 padding-bottom: 5px;
+	 padding-left: 5px;
+	 padding-right: 5px;
+	 height: 50px;
+	 background-color: #FFFFCC;
+	 border-bottom: 1px solid #000000;
+}
+
+.Uploaded
+{
+	padding-top: 5px; 
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 50px; 
+	border-bottom: 1px solid #000000;
+	background-color: #33FF66;
+}
+
+.Error
+{
+	padding-top: 5px; 
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 50px; 
+	border-bottom: 1px solid #000000;
+	background-color: #FF0000;
+}
+
+.Progress
+{
+	display:none;
+	width: 300px;
+	font: 5px;
+}
+
+.Progress DIV
+{
+	width: 0%;
+	background-color: #33FF33;
+	height: 5px;
+}
+</style>
+
+<script type="text/javascript">
+
+function EAFlashUpload_onFilesAdded(filesId)
+{
+	for(var i = 0; i < filesId.length; i++)
+	{
+		createFileNode(filesId[i]);
+	}
+	
+	if(document.getElementById("UploadImmediately").checked)
+	{
+		uploadFiles();
+	}
+}
+
+function createFileNode(fileId)
+{
+	var fileNode = document.getElementById("file_template").cloneNode(true);
+	var fileObj = EAFlashUpload.getFiles(fileId);
+	
+	try
+	{	
+		fileNode.setAttribute("id", fileId);
+		
+		var nameElement = getNameTD(getChildByTagName(fileNode, "TABLE"));
+		nameElement.setAttribute("id", "name_" + fileId);
+		nameElement.innerHTML = fileObj.name + " (" + EAFlashUpload.getFormattedSize(fileObj.size) + ")";
+		
+		getChildByTagName(fileNode, "DIV").setAttribute("id", "progress_" + fileId);
+				
+		fileNode.style.display = "block";
+		
+		document.getElementById("filesList").appendChild(fileNode);	
+	}
+	catch(ex)
+	{
+		alert(ex.message);
+	}
+}
+
+// In FireFox childNodes array contain empty text nodes, therefore in our case Node.lastChild doesn't work properly.
+// So we need to iterate through child nodes array and determine type of node.
+function getChildByTagName(obj, tagName)
+{
+	for(var i = 0; i < obj.childNodes.length; i++)
+	{
+		if(obj.childNodes[i].tagName == tagName)
+			return obj.childNodes[i];
+	}
+}
+
+function getNameTD(obj)
+{
+	for(var i = 0; i < obj.childNodes.length; i++)
+	{
+		if(obj.childNodes[i].nodeType != obj.childNodes[i].TEXT_NODE)
+		{
+			if(obj.childNodes[i].tagName == "TD")
+			{
+				return obj.childNodes[i];
+			}
+			else if(obj.childNodes[i].hasChildNodes)
+			{
+				var tdObj = getNameTD(obj.childNodes[i]);
+				
+				return tdObj;			
+			}
+		}
+	}
+		
+}
+
+function clearList()
+{
+	var filesListNode = document.getElementById("filesList");
+	if(!filesListNode.hasChildNodes)
+		return;	
+	
+	if(EAFlashUpload.getProperty("queue.length") > 0)
+		EAFlashUpload.removeFiles();	
+	
+	var length = filesListNode.childNodes.length;
+	for(var i = length - 1; i >= 0; i--)
+	{
+		if(filesListNode.childNodes[i].tagName == "DIV")
+			filesListNode.removeChild(filesListNode.childNodes[i]);
+	}
+	
+}
+
+function deleteFile(obj)
+{
+	document.getElementById("filesList").removeChild(obj);
+}
+
+function uploadFiles()
+{
+	document.getElementById("Upload").style.display = "none";
+	document.getElementById("Cancel").style.display = "block";
+	
+	var filesListNode = document.getElementById("filesList");
+	for(var i = 0; i < filesListNode.childNodes.length; i++)
+	{
+		if(filesListNode.childNodes[i].tagName == "DIV")
+			filesListNode.childNodes[i].className = "Unuploaded";
+	}
+	
+	EAFlashUpload.uploadFiles();
+}
+
+function cancelUpload()
+{
+	EAFlashUpload.cancelUpload();
+	
+	document.getElementById("Cancel").style.display = "none";
+	document.getElementById("Upload").style.display = "inline";
+}
+
+function EAFlashUpload_onFileLoadStart(fileObj)
+{
+	// some useful action
+}
+
+function EAFlashUpload_onFileLoadEnd(fileObj)
+{
+	document.getElementById(fileObj.id).className = "Uploaded";
+	var propressBar = document.getElementById("progress_" + fileObj.id).firstChild;
+	
+	propressBar.style.width = "100%";
+	propressBar.style.backgroundColor = "#0000ff";
+}
+
+function EAFlashUpload_onUploadEnd()
+{
+	if(EAFlashUpload.getProperty("queue.deleteUploadedFiles"))
+	{
+		clearList();
+	}
+	
+	document.getElementById("Cancel").style.display = "none";
+	document.getElementById("Upload").style.display = "inline";
+	
+	alert("Upload is completed!");
+}
+
+function EAFlashUpload_onUploadProgress(progress)
+{
+	var progressElement = document.getElementById("progress_" + progress.currentFileId);
+	
+	if(progressElement.style.display != "block")
+		progressElement.style.display = "block";
+		
+	getChildByTagName(progressElement, "DIV").style.width = progress.percentsDone + "%";
+	
+}
+
+function EAFlashUpload_onSystemError(msg)
+{		
+	alert(msg);				
+}
+
+function EAFlashUpload_onUploadError(errorObject)
+{		
+	alert(errorObject.message + "\n" + "System message: " + errorObject.systemMessage);	
+	
+	document.getElementById(errorObject.file.id).className = "Error";
+	document.getElementById("progress_" + errorObject.file.id).style.display = "none";
+	
+	EAFlashUpload.continueUpload(false);			
+}
+
+function EAFlashUpload_onQueueError(msg)
+{
+	alert(msg);
+}
+
+</script>
+</head>
+<body>
+<p>
+ This example demonstrate how to use EAFlashUpload JavaScrip API to upload files on the server and display progress information.
+</p>
+<p>
+	Because of security restriction, in the Flash Player 10 open "browse dialog" via JavaScript is not possible without user interaction with flash object. Therefore EAFlashUpload has overlay mode: flash object is placed over hmtl object specified by "overlayModePlaceholder" property and handles mouse click events. This small trick allows you to create custom DHTML + JavaScript interface.
+</p>
+<div style="border: 1px solid #000000; padding: 10px;">
+<b>Before running this example</b> set an appropriate URL for uploadUrl property in the code of the current html page (for ASP.NET: "ServerScripts/ASP.NET/uploadfiles.aspx"; or for PHP: ServerScripts/PHP/uploadfiles.php).
+
+<br /><br />
+
+<b>Note:</b> Trial version has two limitiations: maximum files count is 10 and size of each file cannot be larger than 50 MB.
+</div>
+
+<noscript>
+<h3>JavaScript should be enabled in your browser for successful work of this example.</h3>
+</noscript>
+
+<div id="EAFlashUpload_holder">
+You need at least Adobe Flash Player 10 for successful work. Download the latest version from here:
+<br />
+<a href="http://www.adobe.com/support/flashplayer/downloads.html">Adobe Flash Player</a>
+</div>
+<br />
+
+<input type="checkbox" name="UploadImmediately" id="UploadImmediately" />Upload files immediately after addition<br />
+<br />
+<div style="width: 400px; padding-bottom: 5px;">	
+    	<div style="float: right; padding-right: 10px;">
+        	<a href="javascript:clearList();" >Clear list</a>
+        </div>
+		<div style="padding-left: 10px;">
+        	<a href="" id="FlashOverlay">Select files</a>
+        </div>     
+</div>
+
+
+<div class="FilesContainer" id="filesList">        
+</div>
+<!-- Files list item template -->
+<div id="file_template" class="Unuploaded" style="display:none;">
+	<table style="width: 100%; vertical-align: middle;"><tr>
+		<td id="name_"></td>
+		<td style="text-align:right;"><img onClick="deleteFile(this.parentNode.parentNode.parentNode.parentNode.parentNode);" style="border:none; cursor:pointer;" src="Images/deleteIcon.gif" /></td>
+	</tr></table>        
+	<div id="progress_" class="Progress"><div></div></div>       
+</div>
+<!-- Files list item template -->
+
+<a id="Upload" href="javascript:uploadFiles();" >Upload files</a>
+<a id="Cancel" style="display:none;" href="javascript:cancelUpload();" >Cancel upload</a>         
+
+<br />
+<hr />
+<div style="padding: 10px; font-weight: bold;">
+Note: If you have questions regarding this example please let us know <a href="mailto:support%40easyalgo.com?Subject=JavaScriptInterface">support@easyalgo.com</a>. Any assistance is provided for free.
+</div>
+<a href="default.html">Other examples</a>
+
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+	var params = {  
+		BGcolor: "#ffffff",
+		wmode: "transparent" // Required parameter for overlay mode
+	};
+	
+	var attributes = {  
+		data: "EAFUpload.swf",
+		id: "EAFlashUpload",  
+		name: "EAFlashUpload",
+		style: "position:absolute"								
+	};
+	
+	var flashvars = new Object();
+	  
+	  //Note: & symbol should be encoded to %26 for query string values. Ex: http://www.somesite.com/uploader.php?field1=value1%26field2=value2
+	  flashvars["uploader.uploadUrl"] = ""; // you should specify an appropriate URL of script that will receive files.
+	  flashvars["overlayModePlaceholder"] = "FlashOverlay"; // Required property for overlay mode
+	  flashvars["queue.filesCountLimit"] = "10";
+	  flashvars["queue.fileSizeLimit"] = "10485760"  // Value in bytes. 10 MB.
+
+	swfobject.embedSWF("EAFUpload.swf", "EAFlashUpload_holder", "100", "100", "10.0.0", "expressInstall.swf", flashvars, params, attributes);	
+	
+</script>
+</body>
+</html>

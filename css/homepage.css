@@ -1,0 +1,41 @@
+/* tab_headline */
+#tab_headline {background:url(../images/bg_line.gif) bottom left repeat-x; height:34px;}
+#tab_headline ul {float:left; width:480px; list-style:none; font-size:14px;}
+#tab_headline ul li {float:left;}
+#tab_headline ul li a {float:left; padding:9px; margin-left:3px; color:#003366;}
+#tab_headline ul li.first {margin-left:10px;}
+#tab_headline ul li a:hover {text-decoration:none;}
+#tab_headline ul .current a {text-decoration:none; border-right:1px solid #dddddd; border-left:1px solid #dddddd; background-color:#ffffff; color:#22349d;}
+#tab_headline #arrow {float:right; width:35px; text-align:right; margin-top:8px; margin-right:8px;}
+
+/* headline */
+#headline {padding:20px 0px 20px 13px;}
+#headline ul {float:left; width:170px; margin-right:10px;}
+#headline li {list-style:none;}
+#headline .title {color:#22349d; margin:10px 0;}
+#headline .title a{color:#22349d;}
+#headline .text {color:#666666; font-size:11px;}
+#headline .more {color:#1f59a7; font-size:10px; line-height:24px; font-weight:bold;}
+#headline .more a {color:#1f59a7;}
+.mg {margin:0 12px;}
+
+/* picture */
+#picture {margin-bottom:15px;}
+#picture .img {margin-right:12px;}
+
+/* box_today */
+.box_today {margin-bottom:15px;}
+.box_today .wrap_title {padding-bottom:10px; border-bottom:1px solid #dddddd;}
+.box_today .news_con {padding:10px 0px; border-bottom:1px solid #dddddd;}
+.box_today .news_con img {margin-right:10px;}
+.box_today .news_con .date {font-size:10px; color:#777; margin-bottom:5px;}
+.box_today .news_con a {color:#333;}
+.box_today .see {background:url(../images/icon_arrow.gif) center left no-repeat; color:#1f59a7; padding:10px;}
+.box_today .see a {color:#1f59a7;}
+
+/* box_newsletter */
+#box_newsletter {background:url(../images/bg_newsletter.gif) no-repeat bottom right; padding:10px; color:#666; font-size:10px;}
+#box_newsletter .title {margin-bottom:10px;}
+#box_newsletter .form_subscribe {border:1px solid #b9b9b9; margin-right:5px; color:#b9b9b9; font-size:14px; font-weight:bold; padding:5px; width:190px; margin-bottom:5px;}
+#box_newsletter .bt_subscribe {background-color:#00a9d0; width:75px; height:29px; border:none; color:#FFF; font-size:12px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; margin-bottom:5px;}
+

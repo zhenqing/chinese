@@ -1,0 +1,330 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>EAFlashUpload configuration</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">EAFlashUpload configuration</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a>
+	 <p>
+     The EAFlashUpload provides a height level of customization. There are many properties allows to define a various behavior of the component. Almost all graphical elements can be fully customized. Size, position, colors for different state, gradient colors, borders, texts, visibility etc is changeable.
+     </p> 
+     <p>
+     The component can be configured by three ways: via XML, via html code, via JavaScript API. The main point of configuration is a string reference to the objects properties. If configuration is defined via XML then an object name acts as a XML node and the object properties act as attributes of the XML node. If configuration is defined via JavaScrip API reference to the object propeerties may be as follows: "objName.objProp". Let's see examples of various configuration types:
+         <ul style="list-style::none;">
+         	<li><i>via XML file</i> - to link to this file set <a href="objects.core.html#configFile">configFile</a> property.
+            	<br /><br />
+            	<pre class="code"><div><span style="color: #0000FF;">&lt;?</span><span style="color: #FF00FF;">xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;</span><span style="color: #0000FF;">?&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">EAFlashUpload </span><span style="color: #FF0000;">activeLanguage</span><span style="color: #0000FF;">=&quot;eng&quot;</span><span style="color: #FF0000;"> viewFile</span><span style="color: #0000FF;">=&quot;TableView.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">localization</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">eng 
+            </span><span style="color: #FF0000;">....
+            view.addButton.label</span><span style="color: #0000FF;">=&quot;Choose files&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">spanish
+            </span><span style="color: #FF0000;">....
+            view.addButton.label</span><span style="color: #0000FF;">=&quot;Elegir los files&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">localization</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+    
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">uploader </span><span style="color: #FF0000;">uploadUrl</span><span style="color: #0000FF;">=&quot;uploadfiles.aspx&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">queue </span><span style="color: #FF0000;">filesCountLimit</span><span style="color: #0000FF;">=&quot;30&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+    
+    </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">view</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">filesList</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+            </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">columnsStyle                
+                </span><span style="color: #FF0000;">headerBackgroundUpColor   </span><span style="color: #0000FF;">=&quot;#fdfdfe|#BCC8CF&quot;</span><span style="color: #FF0000;"> 
+                headerBackgroundOverColor </span><span style="color: #0000FF;">=&quot;#fdfdfe|#BCC8CF&quot;</span><span style="color: #FF0000;">
+                headerBackgroundDownColor </span><span style="color: #0000FF;">=&quot;#6dbdd1|#f4f8fc&quot;</span><span style="color: #FF0000;">                    
+                    
+                cellFontColor     </span><span style="color: #0000FF;">= &quot;#000000&quot;</span><span style="color: #FF0000;">
+                cellFontSize      </span><span style="color: #0000FF;">= &quot;12&quot;</span><span style="color: #FF0000;">
+                cellFontName      </span><span style="color: #0000FF;">= &quot;_sans&quot;</span><span style="color: #FF0000;">
+                cellFontBold      </span><span style="color: #0000FF;">= &quot;false&quot;</span><span style="color: #FF0000;">
+                cellFontItalic    </span><span style="color: #0000FF;">= &quot;false&quot;</span><span style="color: #FF0000;">
+                cellFontUnderline </span><span style="color: #0000FF;">= &quot;false&quot;</span><span style="color: #FF0000;">
+                cellTextAlign     </span><span style="color: #0000FF;">= &quot;left&quot;</span><span style="color: #FF0000;">
+            </span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">filesList</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+        
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">addButton    </span><span style="color: #FF0000;">enabled</span><span style="color: #0000FF;">=&quot;true&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">uploadButton </span><span style="color: #FF0000;">enabled</span><span style="color: #0000FF;">=&quot;false&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        </span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">cancelButton </span><span style="color: #FF0000;">enabled</span><span style="color: #0000FF;">=&quot;true&quot;</span><span style="color: #FF0000;"> visible</span><span style="color: #0000FF;">=&quot;false&quot;</span><span style="color: #0000FF;">/&gt;</span><span style="color: #000000;">
+        
+        ...
+        
+    </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">view</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">EAFlashUpload</span><span style="color: #0000FF;">&gt;</span></div>
+</pre>            
+            </li>
+            <li>
+            	<i>via flashvars object</i> of <a href="technotes.gettingstarted.html#SWFObject">SWFObject</a> object:
+                <br /><br />
+                <pre class="code"><div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">EAFlashUpload example</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload_holder&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> Alternative content. </span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #FF0000;"> src</span><span style="color: #0000FF;">=&quot;swfobject.js&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;"> 
+ 
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> params </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> { BGcolor: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">#ffffff</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, wmode: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">window</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">  }; 
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> attributes </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> { id: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, name: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;"> }; 
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> flashvars </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">new</span><span style="background-color: #F5F5F5; color: #000000;"> Object();
+    
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">configFile</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">configuration.xml</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">activeLanguage</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">eng</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+        
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">viewFile</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">TableView.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploader.uploadUrl</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploadfiles.aspx</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">;
+         
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">queue.filesCountLimit</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">30</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">view.filesList.columnsStyle.headerBackgroundUpColor</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">#fdfdfe|#BCC8CF</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+        ... 
+        flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">view.addButton.label</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">Choose files</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+    
+    swfobject.embedSWF(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFUpload.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload_holder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">450</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">350</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">9.0.0</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">expressInstall.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, flashvars, params, attributes);
+
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span></div>
+</pre>
+            </li>
+            <li style="margin-top: 20px;">
+            	<i>via FlashVars parameter</i> of &lt;object&gt; and &lt;embed&gt; tag:
+                <br />
+                <pre class="code">
+                <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html </span><span style="color: #FF0000;">xmlns</span><span style="color: #0000FF;">=&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">EAFlashUpload example</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">OBJECT </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload&quot;</span><span style="color: #FF0000;">
+codeBase</span><span style="color: #0000FF;">=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0&quot;</span><span style="color: #FF0000;">
+width</span><span style="color: #0000FF;">=&quot;450&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;350&quot;</span><span style="color: #FF0000;"> classid</span><span style="color: #0000FF;">=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;</span><span style="color: #FF0000;"> VIEWASTEXT</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Replace symbols &quot;&amp;&quot; with the &quot;%26&quot; at URL values!
+The same parameters values should be set for EMBED object below. </span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;FlashVars&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl=uploadfiles.php&amp;viewFile=TableView.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;BGColor&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;#FFFFFF&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Movie&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;EAFUpload.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Src&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot; EAFUpload.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;WMode&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;Window&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Play&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Loop&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Quality&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;High&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SAlign&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Menu&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Base&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;AllowScriptAccess&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;always&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Scale&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;ShowAll&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;DeviceFont&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;EmbedMovie&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SWRemote&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;MovieData&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SeamlessTabbing&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Profile&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;ProfileAddress&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;ProfilePort&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Embed for Netscape,Mozilla/FireFox browsers support. Flashvars parameters are the same.</span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Replace symbols &quot;&amp;&quot; with the &quot;%26&quot; at URL values! </span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">embed </span><span style="color: #FF0000;">bgcolor</span><span style="color: #0000FF;">=&quot;#FFFFFF&quot;</span><span style="color: #FF0000;"> id</span><span style="color: #0000FF;">=&quot;EmbedThumbnailsViewer&quot;</span><span style="color: #FF0000;"> 
+src</span><span style="color: #0000FF;">=&quot; EAFUpload.swf&quot;</span><span style="color: #FF0000;"> quality</span><span style="color: #0000FF;">=&quot;high&quot;</span><span style="color: #FF0000;">
+pluginspage</span><span style="color: #0000FF;">=&quot;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot;</span><span style="color: #FF0000;">
+type</span><span style="color: #0000FF;">=&quot;application/x-shockwave-flash&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;450&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;350&quot;</span><span style="color: #FF0000;">
+
+flashvars</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl=uploadfiles.php&amp;viewFile=TableView.swf&quot;</span><span style="color: #FF0000;"> </span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">embed</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">OBJECT</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span></div>
+                </pre>
+            </li>
+            <li>
+            The component can be configured dinamicaly at the runtime by EAFlashUpload JavaScript API:
+            <pre class="code">
+            <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">EAFlashUpload example</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #FF0000;"> src</span><span style="color: #0000FF;">=&quot;swfobject.js&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload_holder&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+Alternative content.
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> params </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {  
+        BGcolor: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">#ffffff</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">,
+        wmode: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">window</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">
+    };
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> attributes </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {  
+        id: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">,  
+        name: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">                                
+    };
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> flashvars </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">new</span><span style="background-color: #F5F5F5; color: #000000;"> Object();      
+    flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">viewFile</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">TableView.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+         
+    swfobject.embedSWF(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFUpload.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload_holder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">450</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">350</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">9.0.0</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">expressInstall.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, flashvars, params, attributes);
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">function</span><span style="background-color: #F5F5F5; color: #000000;"> EAFlashUpload_onMovieLoad(errors)
+    {
+        EAFlashUpload.setProperty(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">activeLanguage</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">eng</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);      
+          
+        EAFlashUpload.setProperty(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploader.uploadUrl</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploadfiles.aspx</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);      
+        EAFlashUpload.setProperty(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">queue.filesCountLimit</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #000000;">30</span><span style="background-color: #F5F5F5; color: #000000;">);
+          
+        EAFlashUpload.setProperty(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">view.filesList.columnsStyle.headerBackgroundUpColor</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, [</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">#fdfdfe</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">#BCC8CF</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">]);
+          
+        ...
+          
+        EAFlashUpload.setProperty(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">view.addButton.label</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">Choose files</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">);
+    }
+    
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span></div>
+            </pre>
+            </li>
+         </ul>
+     </p>
+     <p>
+     You can to specify part of configuration on the page and part in the XML configuration file, in this case property defined on the page has more priority and overloads value that defined in the XML configuration file.
+     <br />
+     <br />
+     <b>We recomend using SWFObject for embedding the EAFlashUpload on the page instead of using standard &lt;object&gt; and &lt;embed&gt; tags.</b>
+     </p>
+     
+     <br />
+     <br />
+     <a name="DataTypes"></a>
+     <p><b>Data types:</b></p>
+     <p>
+     The following table describes data type usage for different ways of configuration.
+     <table style="width: auto;">
+     	<tr>
+        	<th>Data type</th>
+            <th>XML file</th>
+            <th>SWFObject</th>
+            <th>&lt;object&gt; tag</th>
+            <th>JavaScript API</th>
+        </tr>
+        <tr>
+        	<td>String</td>
+            <td>String</td>
+            <td>String</td>
+            <td>String</td>
+            <td>String</td>
+        </tr>
+        <tr>
+        	<td>Integer</td>
+            <td>String.<br /> Ex: &lt;queue filesCountLimit="30" /&gt; </td>
+            <td>Integer.<br /> Ex: flashvars["queue.filesCountLimit"] = 30</td>
+            <td>String.<br /> Ex: &lt;param name="FlashVars" value="queue.filesCountLimit=30"/&gt;</td>
+            <td>Integer.<br /> Ex: EAFlashUpload.setProperty("queue.filesCountLimit", 30);</td>
+        </tr>
+        <tr>
+        	<td>Boolean</td>
+            <td>String.<br /> Ex: &lt;queue filteredFileSelection="true" /&gt; </td>
+            <td>Boolean.<br /> Ex: flashvars["queue.filteredFileSelection"] = true</td>
+            <td>String.<br /> Ex: &lt;param name="FlashVars" value="queue.filteredFileSelection=30"/&gt;</td>
+            <td>Boolean.<br /> Ex: EAFlashUpload.setProperty("queue.filesCountLimit", 30);</td>
+        </tr>
+        <tr>
+        	<td>Array</td>
+            <td>String.<br /> Ex: &lt;queue allowedExtentions="All files:*.*|Images (*.gif, *.jpg, *.png):*.jpg;*.gif;*.png" /&gt; </td>
+            <td>String.<br /> Ex: flashvars["queue.allowedExtentions"] = "All files:*.*|Images (*.gif, *.jpg, *.png):*.jpg;*.gif;*.png"</td>
+            <td>String.<br /> Ex: &lt;param name="FlashVars" value="queue.allowedExtentions=All files:*.*|Images (*.gif, *.jpg, *.png):*.jpg;*.gif;*.png"/&gt;</td>
+            <td>Array.<br />Ex: EAFlashUpload.setProperty("queue.allowedExtentions", ["All files:*.*", "Images (*.gif, *.jpg, *.png):*.jpg;*.gif;*.png"];</td>
+        </tr>
+     </table>
+     <br />
+     <br />
+         <i>Requirements related to assigning values:</i>
+         <ul>
+         	<li>Array spicified as a string - different value should be delimited by pipe "|" as follows: "somevalue1|somavalue2" </li>
+            <li>
+            	Colors - standard HTML RGB codes in hexidecimal with "#" prefix. Almost all elements of UI support a gradient fill. 
+            	You can define gradient vestro as follows: "#ffffff|#ffff00|#181818". The colors array may contain 15 different colors.
+            </li>
+            <li><a href="objects.core.customprop.html" >customFileProperties</a> - some of characters should be encoded in values as follows: 
+            | to %7C , : to %3A , &amp; to %26 , = to %3D</li>
+            <li>other string values - &amp; should be encoded to %26</li>
+         </ul>     
+     </p>
+     
+      
+    
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

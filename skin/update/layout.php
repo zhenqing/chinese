@@ -1,0 +1,5 @@
+<?
+
+    require(MDConfig::ROOTPATH.'/'.$pagepath);
+    
+?>

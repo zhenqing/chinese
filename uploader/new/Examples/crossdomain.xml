@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<!-- 
+Put a policy file on the file server if the content initiating the upload doesn't 
+come from the same domain as the file server.
+See "Web site controls (policy file)" section of EAFlashUpload's documentation.	
+-->
+<cross-domain-policy>
+  <allow-access-from domain="*" />
+</cross-domain-policy>
+

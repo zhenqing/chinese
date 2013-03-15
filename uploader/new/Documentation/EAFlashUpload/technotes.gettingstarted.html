@@ -1,0 +1,358 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>Getting started</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">Getting started</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	<a name="BeginOfThePage"></a>
+    
+    <a name="whatis"></a>
+	<b>What is EAFlashUpload?</b>
+	<p>
+        The EAFlashUpload is a set of Flash movie files:  EAFUpload.swf, TableView.swf, ShortView.swf, ListView.swf
+        <ul>
+        	<li>EAFUpload.swf – core of component. It manages upload process, loads user interface and provides JavaScript API at the container page;</li>
+            <li>TableView.swf, ShortView.swf, ListView.swf – various representations of user interface;</li>
+        </ul>
+		<br />
+		For successesful work you just need two files: EAFUpload.swf and swf file of apropriate user interface. Also if you want to implement your own DHTML/JavaScript interface then you just need EAFUpload.swf file (see also <a href="objects.core.html#overlayModePlaceholder">overlayModePlaceholder</a> property). It provides advanced JavaScript API for component management.
+		
+    </p>
+	
+	<br />
+	<br />
+	<a name="simplesolution"></a>
+	<p><b>Create simple upload solution</b>
+		<br />
+		<br />
+		Summary:
+		<ul style="list-style:decimal;">
+			<li><a href="#createpage">Create simple html page.</a></li>
+			<li><a href="#embed">Embed EAFlashUpload to just created page.</a></li>
+			<li><a href="#configure">Configure EAFlashUpload to sending files to appropriate script.</a></li>
+			<li><a href="#serverside">Server side scripts example.</a></li>						
+		</ul>	
+	</p>
+	
+    <a name="createpage"></a>
+	<i>1. Create simple html page.</i>
+	<p>
+		Let's begin. Create a blank html page as follows:
+		<pre class="code">
+		<div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">html </span><span style="color: #FF0000;">xmlns</span><span style="color: #0000FF;">=&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">Test upload page</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000FF;">&gt;</span></div>
+		</pre>
+		
+		The EAFlashUpload is a client-side control, so it doesn't matter what platform you are using on the server (ASP.NET, PHP, ASP etc). Below example describes how to integrate EAFlashUpload at the HTML page but the same code you can use to integrate EAFlashUpload to ASP.NET page, PHP page etc.
+	</p>
+	
+	<a name="embed"></a>
+	<i>2. Embed EAFlashUpload to html page.</i>
+    <p>
+		The EAFlashUpload is a flash movie so it can be integrated into page by using standart method. The basic way how to integrate swf movie into page is usage of &lt;OBJECT&gt; &lt;EMBED&gt; html tags. But there is more handy solution: SWFObject JavaScript library (<b>recommended</b>). It allows to integrate flash movie with minimum html code, so your page will have more structured logic. Below we will demonstrate the both methods but in other documentation all code snippets provided with assumption that SWFObject is used for integration.
+    <br />
+	<br />
+    <ul style="list-style: lower-alpha;">
+    	<li>
+        <a name="SWFObject"></a>
+        <b>SWFObject.</b> Place below code inside &lt;body&gt; tag:
+        <br />
+            <pre class="code">
+            <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">div </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">="EAFlashUpload_placeholder"</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #FF0000;"> src</span><span style="color: #0000FF;">=&quot;swfobject.js&quot;</span><span style="color: #0000FF;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">script </span><span style="color: #FF0000;">type</span><span style="color: #0000FF;">=&quot;text/javascript&quot;</span><span style="color: #0000FF;">&gt;</span><span style="background-color: #F5F5F5; color: #000000;">
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> params </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {  
+        wmode: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">window</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">
+    };
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> attributes </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> {  
+        id: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">,  
+        name: </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">                            
+    };
+    
+    </span><span style="background-color: #F5F5F5; color: #0000FF;">var</span><span style="background-color: #F5F5F5; color: #000000;"> flashvars </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #0000FF;">new</span><span style="background-color: #F5F5F5; color: #000000;"> Object();      
+     flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploader.uploadUrl</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">uploadfiles.aspx</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">;
+     flashvars[</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">viewFile</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">] </span><span style="background-color: #F5F5F5; color: #000000;">=</span><span style="background-color: #F5F5F5; color: #000000;"> </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">TableView.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">; 
+    
+    swfobject.embedSWF(</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFUpload.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">EAFlashUpload_placeholder</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">450</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">350</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">9.0.0</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, </span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #FF0000;">expressInstall.swf</span><span style="background-color: #F5F5F5; color: #FF0000;">&quot;</span><span style="background-color: #F5F5F5; color: #000000;">, flashvars, params, attributes);
+
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span></div>
+            </pre>
+            <br />
+            <b>swfobject.embedSWF</b>(swfUrl, id, width, height, version, expressInstallSwfurl, flashvars, params, attributes) has five required and four optional arguments:
+            <ul style="list-style:decimal;"> 
+              <li><i>swfUrl (String, required)</i> specifies the URL of your SWF </li>
+              <li><i>id (String, required)</i> specifies the id of the HTML element (containing your alternative content) you would like to have replaced by your Flash content </li>
+              <li><i>width (String, required)</i> specifies the width of your SWF </li>
+              <li><i>height (String, required)</i> specifies the height of your SWF </li>
+              <li><i>version (String, required)</i> specifies the Flash player version your SWF is published for (format is: &quot;major.minor.release&quot;) </li>
+              <li><i>expressInstallSwfurl (String, optional)</i> specifies the URL of your express install SWF and activates Adobe express install [ <a href="http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75">http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75</a> ]. Please note that express install will only fire once (the first time that it is invoked), that it is only supported by Flash Player 6.0.65 or higher on Win or Mac platforms, and that it requires a minimal SWF size of 310x137px. </li>
+              <li><i style="font-weight: bold;">flashvars (Object)</i> The main point of EAFlashUpload configuration. This object is used to specify EAFlashUpload properties value on the initialization stage. <a href="#configure">See below</a> for more explanation.</li>
+              <li><i>params (Object, optional)</i> specifies your nested object element params with name:value pairs </li>        
+            </ul>
+            More information about SWFObject you can find here: <a href="http://code.google.com/p/swfobject/">http://code.google.com/p/swfobject/</a>.
+            <br />
+            <br />            
+        </li>
+        <li>
+        	<br />
+            <b>&lt;OBJECT&gt; and &lt;EMBED&gt; tags.</b>
+            <br />
+            <pre class="code">
+            <div><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">OBJECT </span><span style="color: #FF0000;">id</span><span style="color: #0000FF;">=&quot;EAFlashUpload&quot;</span><span style="color: #FF0000;"> codeBase</span><span style="color: #0000FF;">=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0&quot;</span><span style="color: #FF0000;">
+width</span><span style="color: #0000FF;">=&quot;450&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;350&quot;</span><span style="color: #FF0000;"> classid</span><span style="color: #0000FF;">=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot;</span><span style="color: #FF0000;"> VIEWASTEXT</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Replace symbols &quot;&amp;&quot; with the &quot;%26&quot; at URL values!
+The same parameters values should be set for EMBED object below. </span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;FlashVars&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl =uploadfiles.php&amp;viewFile=TableView.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;BGColor&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;#FFFFFF&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Movie&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;EAFUpload.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Src&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot; EAFUpload.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;WMode&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;Window&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Play&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Loop&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Quality&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;High&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SAlign&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Menu&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;-1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Base&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;AllowScriptAccess&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;always&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Scale&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;ShowAll&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;DeviceFont&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;EmbedMovie&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;"> 
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SWRemote&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;MovieData&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;SeamlessTabbing&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;1&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;Profile&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;ProfileAddress&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">PARAM </span><span style="color: #FF0000;">NAME</span><span style="color: #0000FF;">=&quot;ProfilePort&quot;</span><span style="color: #FF0000;"> VALUE</span><span style="color: #0000FF;">=&quot;0&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Embed for Netscape,Mozilla/FireFox browsers support. Flashvars parameters are the same.</span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> Replace symbols &quot;&amp;&quot; with the &quot;%26&quot; at URL values! </span><span style="color: #008000;">--&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;</span><span style="color: #800000;">embed </span><span style="color: #FF0000;">bgcolor</span><span style="color: #0000FF;">=&quot;#FFFFFF&quot;</span><span style="color: #FF0000;"> id</span><span style="color: #0000FF;">=&quot;EmbedThumbnailsViewer&quot;</span><span style="color: #FF0000;"> 
+src</span><span style="color: #0000FF;">=&quot; EAFUpload.swf&quot;</span><span style="color: #FF0000;"> quality</span><span style="color: #0000FF;">=&quot;high&quot;</span><span style="color: #FF0000;">
+pluginspage</span><span style="color: #0000FF;">=&quot;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot;</span><span style="color: #FF0000;">
+type</span><span style="color: #0000FF;">=&quot;application/x-shockwave-flash&quot;</span><span style="color: #FF0000;"> width</span><span style="color: #0000FF;">=&quot;450&quot;</span><span style="color: #FF0000;"> height</span><span style="color: #0000FF;">=&quot;350&quot;</span><span style="color: #FF0000;">
+flashvars</span><span style="color: #0000FF;">=&quot;uploader.uploadUrl=uploadfiles.php&amp;viewFile=TableView.swf&quot;</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">embed</span><span style="color: #0000FF;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000FF;">&lt;/</span><span style="color: #800000;">OBJECT</span><span style="color: #0000FF;">&gt;</span></div>
+            </pre>
+        </li>
+    </ul>
+    Above example supposes that EAFUpload.swf, TableView.swf, .html, uploadfiles.aspx and swfobject.js files are placed inside the same virtual path on your web server (ex: http://localhost/EAFlashUpload/).
+    </p>
+    
+	<br />	
+    <a name="configure"></a>
+	<i>3. EAFlashUpload configuration.</i>
+	<p>
+        Take a look to part of above example:
+		<pre class="code">
+		<div><span style="color: #0000FF;">var</span><span style="color: #000000;"> attributes </span><span style="color: #000000;">=</span><span style="color: #000000;"> {  
+id: </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFlashUpload</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">,  
+name: </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">EAFlashUpload</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">                            
+};
+    
+</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> flashvars </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();      
+flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploadfiles.aspx</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">viewFile</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">TableView.swf</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;</span></div>
+		</pre>		
+	<i>flashvars</i> - JavaScript object is used for specifying demanded values for EAFlashUpload properties. Actually you create a new field inside <i>flashvars</i> with name and value of appropriate property and then SWFObject pass this value to flash movie. EAFlashUpload using object reference string as a property name. "uploader.uploadUrl" means that you set "uploadUrl" property of "uploader" object inside EAFUpload.swf. More about objects structure you can read here: <a href="objects.structure.html">Objects structure</a>.
+	<br />
+	Initialization of <a href="objects.core.uploader.html#uploadUrl">uploader.uploadUrl</a> and <a href="objects.core.html#viewFile">viewFile</a> properties is minimum requirements for successful work.
+	<ul>
+		<li><i>uploader.uploadUrl</i> – URL to receiver script that process uploading files on the server. The script should be configured to receiving POST request with "multipart/form-data" MIME type. In other words the script should have a possibility to receive files that is submitted as part of html form (&lt;input type="file" /&gt; form element)</li>
+		<li>viewFile – name of .swf file that contains demanded user interface. EAFUpload.swf loads specified swf file and retrieve UI from it. There are three different user interfaces(<a href="tableview.intro.html">TableView.swf</a>, <a href="listview.intro.html">ListView.swf</a>, <a href="shortview.intro.html">ShortView.swf</a>).</li>
+	</ul>
+	A couple words about <i>id and name</i> fields of attributes object. Here we specify identifier of EAFlashUpload JavaScript DOM element. The value of this fields is used for referencing to EAFlashUpload JavaScript API. You can specify any name as you like (ex: FlashUploader then to call some EAFlashUpload javascript method you should use the following code: FlashUploader.&lt;method name&gt;. Ex: FlashUploader.uploadFiles().).
+	<br /> 
+	<br />
+	There are several ways how EAFlashUpload can be configured (<i>flashvars</i> object, XML, via JavaScript at the runtime). Read more here <a href="technotes.configuration.html">EAFlashUpload configuration</a>.       
+	</p>
+	
+	<br />
+	<a name="serverside"></a>
+    <p><i>4. Example of server side scripts.</i></p>
+    <p>
+		Here we provide a posible variant of server side scripts for receiving files.
+        <br /><br />
+		<i>ASP.NET:</i>
+        <br />
+        <pre class="code">
+        <div><span style="color: #000000;">&lt;%</span><span style="color: #000000;">@ Page language</span><span style="color: #000000;">=</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">c#</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">%&gt;</span><span style="color: #000000;">
+</span><span style="color: #000000;">&lt;%</span><span style="color: #000000;">        
+        
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Define a  location on the server where uploaded file will be stored.         </span><span style="color: #008000;">
+</span><span style="color: #0000FF;">string</span><span style="color: #000000;"> FolderToSave </span><span style="color: #000000;">=</span><span style="color: #000000;"> Server.MapPath(</span><span style="color: #800000;">&quot;&quot;</span><span style="color: #000000;">) </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">\\UploadedFiles\\</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">;  
+                            
+</span><span style="color: #0000FF;">if</span><span style="color: #000000;">(Request.Files </span><span style="color: #000000;">!=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">null</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> Request.Files.Count </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> </span><span style="color: #800080;">0</span><span style="color: #000000;">)    
+{
+    HttpPostedFile uploadeFile </span><span style="color: #000000;">=</span><span style="color: #000000;"> Request.Files[</span><span style="color: #800080;">0</span><span style="color: #000000;">];
+    
+uploadeFile.SaveAs(FolderToSave </span><span style="color: #000000;">+</span><span style="color: #000000;"> System.IO.Path.GetFileName(uploadeFile.FileName));
+    Response.Write(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">File </span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> uploadeFile.FileName </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;"> is succesfully uploaded.</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
+}    
+</span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+Response.Write(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">You have not selected any file!</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);                
+            
+</span><span style="color: #000000;">%&gt;</span></div>
+        </pre>
+        <i>PHP:</i>
+        <pre class="code">
+        <div><span style="color: #000000;">&lt;?PHP</span><span style="color: #000000;">
+</span><span style="color: #800080;">$uploaddir</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">C:\\UploadedFiles\\</span><span style="color: #000000;">'</span><span style="color: #000000;">;
+</span><span style="color: #800080;">$target_encoding</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">ISO-8859-1</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+
+</span><span style="color: #0000FF;">if</span><span style="color: #000000;"> ( </span><span style="color: #008080;">count</span><span style="color: #000000;">(</span><span style="color: #800080;">$_FILES</span><span style="color: #000000;">) </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">0</span><span style="color: #000000;"> )
+        {
+            </span><span style="color: #0000FF;">foreach</span><span style="color: #000000;">(</span><span style="color: #800080;">$_FILES</span><span style="color: #000000;"> </span><span style="color: #0000FF;">as</span><span style="color: #000000;"> </span><span style="color: #800080;">$fileName</span><span style="color: #000000;">=&gt;</span><span style="color: #800080;">$file</span><span style="color: #000000;">)
+            {
+                </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> ( </span><span style="color: #800080;">$file</span><span style="color: #000000;">[</span><span style="color: #000000;">'</span><span style="color: #000000;">error</span><span style="color: #000000;">'</span><span style="color: #000000;">] </span><span style="color: #000000;">!=</span><span style="color: #000000;"> UPLOAD_ERR_OK )
+                {
+                    </span><span style="color: #0000FF;">switch</span><span style="color: #000000;">( </span><span style="color: #800080;">$file</span><span style="color: #000000;">[</span><span style="color: #000000;">'</span><span style="color: #000000;">error</span><span style="color: #000000;">'</span><span style="color: #000000;">] )
+                    {
+                        </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> UPLOAD_ERR_INI_SIZE</span><span style="color: #000000;">:</span><span style="color: #000000;">
+                            </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">PHP Settings doesn't allow such file size</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                            </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+                        </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> UPLOAD_ERR_FORM_SIZE</span><span style="color: #000000;">:</span><span style="color: #000000;">
+                            </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Uploader didn't allow such file size</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                            </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+                        </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> UPLOAD_ERR_PARTIAL</span><span style="color: #000000;">:</span><span style="color: #000000;">
+                            </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Uploaded file hasn't been complete uploaded</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                            </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+                        </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> UPLOAD_ERR_NO_FILE</span><span style="color: #000000;">:</span><span style="color: #000000;">
+                            </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">File hasn't been uploaded</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                            </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+                    }
+                    </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+                }
+                </span><span style="color: #800080;">$uploadfile</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">$uploaddir</span><span style="color: #000000;"> </span><span style="color: #000000;">.</span><span style="color: #000000;"> mb_convert_encoding( </span><span style="color: #008080;">basename</span><span style="color: #000000;">(</span><span style="color: #800080;">$file</span><span style="color: #000000;">[</span><span style="color: #000000;">'</span><span style="color: #000000;">name</span><span style="color: #000000;">'</span><span style="color: #000000;">])</span><span style="color: #000000;">,</span><span style="color: #000000;"> </span><span style="color: #800080;">$target_encoding</span><span style="color: #000000;"> </span><span style="color: #000000;">,</span><span style="color: #000000;"> </span><span style="color: #000000;">'</span><span style="color: #000000;">UTF-8</span><span style="color: #000000;">'</span><span style="color: #000000;"> );
+                </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> ( </span><span style="color: #008080;">move_uploaded_file</span><span style="color: #000000;">( </span><span style="color: #800080;">$file</span><span style="color: #000000;">[</span><span style="color: #000000;">'</span><span style="color: #000000;">tmp_name</span><span style="color: #000000;">'</span><span style="color: #000000;">]</span><span style="color: #000000;">,</span><span style="color: #000000;"> </span><span style="color: #800080;">$uploadfile</span><span style="color: #000000;"> ) )
+                {
+                    </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Upload was successful</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                }
+                </span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+                {
+                    </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Can't move file from temporary directory to destination</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;
+                }
+            }
+        }
+        </span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+        {
+            </span><span style="color: #0000FF;">echo</span><span style="color: #000000;"> </span><span style="color: #000000;">&quot;</span><span style="color: #000000;">Request didn't contain the file</span><span style="color: #000000;">&quot;</span><span style="color: #000000;">;            
+        }
+
+</span><span style="color: #000000;">?&gt;</span></div>
+        </pre> 
+    </p>	
+
+	<br />
+	<br />
+	<a name="existingsolution"></a>
+	<p><b>Add EAFlashUpload to existing solution.</b>
+		<br />
+		<br />
+		The EAFlashUpload is a client-side control, so it doesn't matter what platform you are using on the server (ASP.NET, PHP, ASP etc). If you have a solution that allows upload files to the server via form element &lt;INPUT type="file" /&gt; then it can be easy modified to using EAFlashUpload. You don't need to change server-side code, just embed EAFlashUpload to your html code and follow instructions in <a href="#simplesolution">Create simple upload solution</a> section with one exception: you don't need to create additional page just add embedding code of EAFlashUpload to your existing page(html, aspx, php, cfm etc.). 
+		<br /><br />
+		If you need to send some form fields values with file then you can use <a href="objects.core.uploader.html#formToSend">uploader.fromToSend</a> property. EAFlashUpload automatically parse specified form and sends values with files. 
+	</p>
+	
+	<br />
+	<br />
+	<a name="javascript"></a>
+	<p><b>Work with JavaScript API.</b>
+		<br />
+		<br />
+		The EAFlashUpload provides flexible way to manage component at the runtime. It is JavaScript API. There are a lot of methods and events that allows you control upload process, receive progress information, manage files in the upload queue. You can find more related information in the JavaScript API reference:
+		<ul>
+			<li><a href="javascript.api.html">Methods</a></li>
+			<li><a href="javascript.api.events.html">Events</a></li>
+			<li><a href="javascript.api.file.html">File object</a></li>
+			<li><a href="javascript.api.progress.html">Progress object</a></li>
+		</ul>
+		
+		The EAFlashUpload provides possibility to hide a control. It may be very usfull if you want to build your own DHTML/JavaScript user interface. See description of <a href="objects.core.html#overlayModePlaceholder">overlayModePlaceholder</a> property to get more information.
+	</p>
+	
+	<br />
+	<br />
+	<a name="understanding"></a>
+	<p><b>Understanding of upload process.</b>
+		<br />
+		<br />
+		The files are sent to the server via POST request with "multipart/form-data" MIME type. The upload request is performed in compliance with RFC 1867 ("Form-based File Upload in HTML". <a href="http://www.ietf.org/rfc/rfc1867.txt">http://www.ietf.org/rfc/rfc1867.txt</a>).
+		<br />
+		<br />
+		All files is sent one by one in separate requests. It is Flash API singularity. Keep in mind that the server script which receives files is executed for each file in the upload queue. If you define a HTML Form for parsing(<a href="objects.core.uploader.html#formToSend">uploader.fromToSend</a> property) then form fields values will be sent as many times how many files in the upload queue. You can change this behaviour by handling events via JavaScript API(see also "UploadDescription.html" example in the distribution package).
+		<br />
+		<br />
+		All request are performed via asynchronous requests without page reload. The upload can be initialized by pressing "Upload" button inside user interface(see description of appropriate UI) or by calling <a href="javascript.api.html#uploadFiles">uploadFiles()</a> method of JavaScript API.
+	</p>
+	
+          
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

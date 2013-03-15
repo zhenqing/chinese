@@ -1,0 +1,604 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>contMenu object</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">contMenu object</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">    	 
+	 <a name="BeginOfThePage"></a>
+	  <p>
+      	This section desribes <i>contMenu</i> object, its properties and child objects. The <i>contMenu</i> is a child object of <a href="tableview.filesList.html" >filesList</a>. It represents an available by right click context menu. 
+        <br /><br />    
+        Structure of section:
+        <ul style="list-style: none;">
+            <li><a style="font-weight: bold" href="#contMenu" >Properties of contMenu object</a><br /><br /></li>
+            <li><a style="font-weight: bold" href="#Objects" >Objects of contMenu object</a><br /><br /></li>
+        </ul> 
+      </p>	  
+	  <br />	  
+	  
+	<a name="contMenu" />
+    <p><b>List of properties</b></p>
+    <table style="width: auto;">
+        <tr>
+            <th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td><a name="hideBuiltInItems"></a>hideBuiltInItems</td>
+            <td>Boolean</td>
+            <td>Indicates whether flash built-in menu items (except Settings) are displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td><a name="hideSortItems"></a>hideSortItems</td>
+            <td>Boolean</td>
+            <td>Indicates whether sorting menu items are displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+     </table>
+     <i>Examples:</i>
+        <p>
+            The property of the contMenu is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.hideBuiltInItems</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+     
+     
+     <br /><br />
+     <a name="Objects"></a>
+     <p>The <i>contMenu</i> has the following <i>menuItem</i> objects:</p>     
+     
+     <br />     
+     <a name="addItem"></a>
+     <p>
+     	<b>addItem</b> - shows a "Browse file" dialog.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Add files"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the addItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.addItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+     
+     <br /><br />
+     <a name="removeItem"></a>
+     <p>
+     	<b>removeItem</b> - removes all selected files in the files list.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Remove"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the removeItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.removeItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+     
+     <br /><br />
+     <a name="clearItem"></a>
+     <p>
+     	<b>clearItem</b> - removes all files in the files list.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Clear"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the clearItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.clearItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+     
+     
+     <br /><br />
+     <a name="editItem"></a>
+     <p>
+     	<b>editItem</b> - shows a custom property edit dialog(<a href="tableview.dialogs.html#filePropDlg">filePropDlg</a>).
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Edit file properties"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the editItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.editItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="uploadItem"></a>
+     <p>
+     	<b>uploadItem</b> - initiates an upload operation. Only unuploaded files will be uploaded.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Upload"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the uploadItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.uploadItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortAscendingItem"></a>
+     <p>
+     	<b>sortAscendingItem</b> - applies ascending order to a current sorting.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort ascending"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortAscendingItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortAscendingItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortDescendingItem"></a>
+     <p>
+     	<b>sortDescendingItem</b> - applies descending order to the current sorting.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort descending"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortDescendingItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortDescendingItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortNameItem"></a>
+     <p>
+     	<b>sortNameItem</b> - sorts files in the upload queue by the "name" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by name"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortNameItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortNameItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortTypeItem"></a>
+     <p>
+     	<b>sortTypeItem</b> - sorts files in the upload queue by the "type" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by type"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortTypeItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortTypeItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortSizeItem"></a>
+     <p>
+     	<b>sortSizeItem</b> - sorts files in the upload queue by the "size" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by size"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortSizeItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortSizeItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortCreDateItem"></a>
+     <p>
+     	<b>sortCreDateItem</b> - sorts files in the upload queue by the "creation date" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by creation date"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortCreDateItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortCreDateItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortModDateItem"></a>
+     <p>
+     	<b>sortModDateItem</b> - sorts files in the upload queue by the "modofication date" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by mod. date"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortModDateItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortModDateItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+        
+     <br /><br />     
+     <a name="sortStatusItem"></a>
+     <p>
+     	<b>sortStatusItem</b> - sorts files in the upload queue by the "status" field.
+     </p>
+     <p>List of properties:</p>
+     <table style="width: auto;">
+     	<tr>
+        	<th> Property name </th>
+            <th> Type </th>
+            <th> Description </th>
+            <th> Default value </th>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is displayed in the context menu.</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>Boolean</td>
+            <td>Indicates whether menu item is enabled.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>caption</td>
+            <td>String</td>
+            <td>Gets or sets name of menu item that is displayed to the user.</td>
+            <td>"Sort by status"</td>
+        </tr>
+     </table>
+    <i>Examples:</i>
+        <p>
+            The property of the sortStatusItem is assigned via <i>flashvars</i> object of SWFObject on the html page:
+            <pre class="codeInLine"><div><span style="color: #000000;">flashvars[</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.contMenu.sortStatusItem.visible</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;</span></div></pre>
+        </p>
+    
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

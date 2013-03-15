@@ -1,0 +1,1 @@
+<a title="Image" class="thickbox" href="http://img.ibtimes.com/www/thumb/mainpage/5648-380240-cyber-crime.jpg"><img alt="Cyber Crime" src="http://img.ibtimes.com/www/thumb/mainpage/5648-380240-cyber-crime.jpg"></a>

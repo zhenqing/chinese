@@ -1,0 +1,20 @@
+<?
+    if(!class_exists('MDconfig')){
+       require(dirname(__FILE__).'/../base.php');
+       $header_script  = '';
+       define('PAGESTATUS',"COMMON");                                         
+    }
+    require_once(MDconfig::CLASSPATH."/sections.class.php");
+    $Sections   = new Sections();
+    $skin       = 'main';
+
+    
+    $curfolder = dirname(__FILE__).'/';
+    require($curfolder."main_setting.php");
+    $maininner      = 'body_main.php';
+    
+    //$header_script  = '';
+    require_once(MDconfig::SKINPATH.'/'.$skin.'/layout.php');
+    
+
+?>

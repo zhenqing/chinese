@@ -1,0 +1,816 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<META NAME="save" CONTENT="history" />
+<title>JavaScript methods</title>
+<link rel="stylesheet" type="text/css" href="../styles/presentation.css" />
+<link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+<script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+<script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+<script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+<script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+<meta name="container" content="EasyAlgo.EAFlashUpload" />
+</head>
+<body>
+<input type="hidden" id="userDataCache" class="userDataStyle" />
+<input type="hidden" id="hiddenScrollOffset" />
+
+<div id="header">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" style="width: 1px; padding: 0px"><img src="../images/ea-logo-circle-62.gif" alt="EasyAlgo Software" /></td>
+      <td><table id="topTable" cellspacing="0" cellpadding="0">
+          <tr>
+            <td></td>
+          </tr>
+        </table>        
+        <table id="bottomTable" cellpadding="0" cellspacing="0">
+          <tr id="headerTableRow1">
+            <td align="left"><span id="runningHeaderText">The EAFlashUpload v 2.4 Component Documentation</span></td>
+          </tr>
+          <tr id="headerTableRow2">
+            <td align="left"><span id="nsrTitle">JavaScript methods</span></td>
+          </tr>
+          <tr id="headerTableRow3">
+            <td align="left"><span id="headfeedbackarea" class="feedbackhead"> <a href="javascript:SubmitFeedback('support@easyalgo.com','EAFlashUpload v 2.4','','','','');"> Send Feedback </a> </span> <span style="padding-left: 30px;"><a href="#BeginOfThePage">Back to top</a></span></td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <table id="gradientTable">
+    <tr>
+      <td class="nsrBottom" background="../images/gradient.gif" />
+    </tr>
+  </table>
+</div>
+<div id="mainSection">
+  <div id="mainBody" style="padding-right: 50px;">
+    	 
+	 <a name="BeginOfThePage"></a>
+	  
+      <p> 
+	  	The EAFlashUpload provides a number of JavaScript methods for component management.
+	  </p>
+	  
+	  <p><b>List of methods</b></p>
+      <table style="width: auto;">
+        <tr>
+          <th> Method name </th>
+          <th> Description </th>
+        </tr>
+        <tr>
+          <td> <a href="#getProperty">getProperty</a> </td>          
+          <td> Gets the value of required property. </td>
+        </tr>
+		<tr>
+          <td> <a href="#setProperty">setProperty</a> </td>          
+          <td> Sets the value of required property. </td>
+        </tr>
+		<tr>
+          <td> <a href="#getCustomProperty">getCustomProperty</a> </td>          
+          <td> Gets the value of required custom property of the file. </td>
+        </tr>
+		<tr>
+          <td> <a href="#setCustomProperty">setCustomProperty</a> </td>          
+          <td> Sets the value of required custom property of the file. </td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		  </tr>
+		<tr>
+          <td> <a href="#getFormattedString">getFormattedString</a> </td>          
+          <td> Accepts a string with fromatting constants and returns a formatted value. </td>
+        </tr>
+		<tr>
+          <td> <a href="#getFormattedDate">getFormattedDate</a> </td>          
+          <td> Accepts a Date object and returns formatted date string. </td>
+        </tr>
+		<tr>
+          <td> <a href="#getFormattedSize">getFormattedSize</a> </td>          
+          <td> Accepts an integer value and returns formatted size string. </td>
+        </tr>
+		<tr>
+          <td> <a href="#getFormattedTime">getFormattedTime</a> </td>          
+          <td> Accepts an integer value of seconds and returns formatted time string. </td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>		
+		<tr>
+          <td> <a href="#sendAsyncRequest">sendAsyncRequest</a> </td>          
+          <td> Sends asynchronous request (POST or GET) to the server without page reload. </td>
+        </tr>
+		<tr>
+          <td> <a href="#urlVarsToObject">urlVarsToObject</a> </td>          
+          <td> Returns an object representation of specified QueryString. </td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+          <td> <a href="#getFiles">getFiles</a> </td>          
+          <td> Gets file or list of files from the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#removeFiles">removeFiles</a> </td>          
+          <td> Removes file or list of files from the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#sortFilesList">sortFilesList</a> </td>          
+          <td> Sorts files in the upload queue by specified field and order. </td>
+        </tr>
+        <tr>
+          <td> <a href="#setFileStatus">setFileStatus</a> </td>          
+          <td> Sets <a href="javascript.api.file.html#status">status</a> for the specific file. </td>
+        </tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+          <td> <a href="#uploadFiles">uploadFiles</a> </td>          
+          <td> Initiates an upload to the defined URL. </td>
+        </tr>
+		<tr>
+          <td> <a href="#continueUpload">continueUpload</a> </td>          
+          <td> Resume an upload from the current or next file in the upload queue. </td>
+        </tr>
+		<tr>
+          <td> <a href="#cancelUpload">cancelUpload</a> </td>          
+          <td> Cancels the current upload. </td>
+        </tr>		
+	  </table>
+	  
+	  <br />
+      <br />
+      
+      <a name="getProperty"></a>
+      <p><b>getProperty(name:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>name:String - a string reference to a appropriate property</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>Object        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Gets the value of required property. The EAFlashUpload uses a string reference to get an access to property, you can find more information here <a href="objects.structure.html" >Object structure overview</a>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to retrieve a property value:
+                <pre class="code">
+				<div><span style="color: #000000;">EAFlashUpload.getProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">uploader.uploadUrl</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="setProperty"></a>
+      <p><b>setProperty(name:String, value:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>name:String - a string reference to a appropriate property</li>
+				<li>value:String - a new value of the property</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Sets the value of specified property. The EAFlashUpload uses a string reference to get an access to property, you can find more information here <a href="objects.structure.html" >Object structure overview</a>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example shows how to define a new property value:
+                <pre class="code">
+				<div><span style="color: #000000;">EAFlashUpload.setProperty(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">view.filesList.columnStyle.headerBackgroundUpColor</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, [</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#000000</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">#ffffff</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">]);
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> You can also define an array as a string: &quot;#000000|#ffffff&quot;</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getCustomProperty"></a>
+      <p><b>getCustomProperty(propertyObject:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>
+				propertyObject:Object - a dynamic JavaScript object with the following properties:
+					<ul style="list-style: none;">
+						<li>name:string - a name of custom property</li>
+						<li>isPublic:Boolean - <i>true</i> if property is public; otherwise <i>false</i>. Default value is <i>false</i></li>
+						<li>fileId:string - an unique identifier of file. Default value is <i>null</i> </li>						
+					</ul>				
+				</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>Object        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Gets the specified custom property object. The EAFlashUpload provides a possibility to define some additional text properties for each file or for all files in the upload queue. These propeties are sent as separate fields in a multipart/form-data post. The retrieving values on the server side is the same as for HTML Form fields. The method returns specified as the parameter object with additional property <i>value</i>. If no one custom property have found the <i>value</i> contains <i>null</i>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates how to retrieve the custom property of the first file in the upload queue:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> getProp()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> propertyObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    propertyObject.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Description</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;    
+    propertyObject.isPublic </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+    propertyObject.fileId </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getFiles(</span><span style="color: #000000;">0</span><span style="color: #000000;">).id;
+    
+    propertyObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getCustomProperty(propertyObject);
+    
+    alert(propertyObject.value);
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="setCustomProperty"></a>
+      <p><b>setCustomProperty(propertyObject:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>
+				propertyObject:Object - a dynamic JavaScript object with the following properties:
+					<ul style="list-style: none;">
+						<li>name:string - a name of custom property</li>
+						<li>value:string - a value of custom property</li>
+						<li>isPublic:Boolean - <i>true</i> if property is public; otherwise <i>false</i>. Default value is <i>false</i></li>
+						<li>fileId:string - an unique identifier of file. Default value is <i>null</i> </li>						
+					</ul>
+				</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>Boolean       
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Sets the value of specified custom property. The EAFlashUpload provides a possibility to define some additional text properties for each file or for all files in the upload queue. These propeties are sent as separate fields in a multipart/form-data post. The retrieving values on the server side is the same as for HTML Form fields. If you want to set up the same custom properties for all files in the upload queue omite <i>fileId</i> property. <i>isPublic</i> property indicates whether installable custom property will be available to editing via EAFlashUpload user interface. If property with specified <i>name</i> doesn't exist the new custom property is created. The method returns <i>true</i> if property have been successfully set; otherwise <i>false</i>.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstartes how to set the custom property and retrieve it on the server:
+                <pre class="code">
+					<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> setProp()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> propertyObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    propertyObject.name </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Description</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObject.value </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">Personal information</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    propertyObject.isPublic </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+    
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Here we omitted fileId property and custom property will apply to all files.</span><span style="color: #008000;">
+</span><span style="color: #000000;">    </span><span style="color: #008000;">//</span><span style="color: #008000;"> propertyObject.fileId</span><span style="color: #008000;">
+</span><span style="color: #000000;">    
+    EAFlashUpload.setCustomProperty(propertyObject);
+}</span></div>
+<div><span style="color: #008000;">//</span><span style="color: #008000;"> possible C# code on the server side</span><span style="color: #008000;">
+</span><span style="color: #000000;">String descriptionOfFile </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;&quot;</span><span style="color: #000000;">;
+
+descriptionOfFile </span><span style="color: #000000;">=</span><span style="color: #000000;"> Request.Form(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Description</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);</span></div>
+<div><span style="color: #008000;">//</span><span style="color: #008000;"> possible PHP code on the server side</span><span style="color: #008000;">
+</span><span style="color: #800080;">$descriptionOfFile</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">$_REQUEST</span><span style="color: #000000;">[</span><span style="color: #000000;">'</span><span style="color: #000000;">Description</span><span style="color: #000000;">'</span><span style="color: #000000;">];</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getFormattedString"></a>
+      <p><b>getFormattedString(formString:String, fileId:Object = null)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>formString:String - the string containing formatting constants to converting</li>
+				<li>fileId:Object - an unique identifier of the file. Default value is <i>null</i></li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>string        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Converts the string containing formatting constants to the formatted text. You can find more information related to string formatting here <a href="technotes.stringformatting.html">String formatting</a>. If you specify a string containing constants related to file then <i>fileId</i> parameter should be defined.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates the string formatting:
+                <pre class="code">
+				<div><span style="color: #0000FF;">var</span><span style="color: #000000;"> fileObj </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.getFiles(</span><span style="color: #000000;">0</span><span style="color: #000000;">);
+</span><span style="color: #0000FF;">var</span><span style="color: #000000;"> pattern </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The file size is #FILE_SIZE#</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+
+EAFlashUpload.getFormattedString(pattern, fileObj.id);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> the output may be as follows:</span><span style="color: #008000;">
+//</span><span style="color: #008000;"> The file size is 15 MB</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getFormattedDate"></a>
+      <p><b>getFormattedDate(formDate:Date)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>formDate:Date - a Date object to converting</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>string        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Converts a Date object to the formatted string. The formatting is based on <a href="objects.core.html#dateFormatString" >dateFormatString</a> property. This method may be usefull if you want to create JavaScript interface and display user friendly information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates Date object formatting:
+                <pre class="code">
+				<div><span style="color: #0000FF;">var</span><span style="color: #000000;"> date </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Date(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">October 12, 2008 13:14:00</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+
+alert(EAFlashUpload.getFormattedDate(date));
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> if dateFormatString is &quot;d/M/Y H:i&quot; then output will be as follows:</span><span style="color: #008000;">
+//</span><span style="color: #008000;"> 12/Oct/2008 13:14</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getFormattedSize"></a>
+      <p><b>getFormattedSize(formSize:Integer)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>formSize:Integer - a size in bytes to converting.</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>string        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Converts a size in bytes to the formatted string. The formatting is based on <a href="objects.core.html#sizeAbbrev" >sizeAbbrev</a> property. This method may be usefull if you want to create JavaScript interface and display user friendly propgress information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates formatting of a different size value:
+                <pre class="code">
+				<div><span style="color: #000000;">EAFlashUpload.getFormattedSize(</span><span style="color: #000000;">1610612736</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 1.5 GB</span><span style="color: #008000;">
+</span><span style="color: #000000;">
+EAFlashUpload.getFormattedSize(</span><span style="color: #000000;">536870912</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 512 MB</span><span style="color: #008000;">
+</span><span style="color: #000000;">
+EAFlashUpload.getFormattedSize(</span><span style="color: #000000;">262144</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 256 KB</span><span style="color: #008000;">
+</span><span style="color: #000000;">
+EAFlashUpload.getFormattedSize(</span><span style="color: #000000;">536</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 536 B</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getFormattedTime"></a>
+      <p><b>getFormattedTime(formTime:Integer)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>formTime:Integer - a time in secondes to converting.</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>string        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Converts an integer value of seconds to the formatted string. The formatting is based on <a href="objects.core.html#timeAbbrev" >timeAbbrev</a> property. This method may be usefull if you want to create JavaScript interface and display user friendly propgress information.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates formatting of a different time value:
+                <pre class="code">
+				<div><span style="color: #000000;">EAFlashUpload.getFormattedTime(</span><span style="color: #000000;">8580</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 2 h 23 m</span><span style="color: #008000;">
+</span><span style="color: #000000;">
+EAFlashUpload.getFormattedTime(</span><span style="color: #000000;">332</span><span style="color: #000000;">); </span><span style="color: #008000;">//</span><span style="color: #008000;"> output is 5 m 32 s</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="sendAsyncRequest"></a>
+      <p><b>sendAsyncRequest(requestObject:Object)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>
+					requestObject:Object - a dynamic JavaScript object with the following properties:
+					<ul style="list-style: none;">
+						<li>url:string - an URL of the server script configured to receive a request. The value should be non empty string, otherwise an error will occur.</li>
+						<li>method:stirng - a http method name (POST or GET) that will be used for request sending. The value sholud be non empty string, otherwise an error will occur.</li>
+						<li>data:object - a set of data that should be sent to the server.</li>
+					</ul>				
+				</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Sends asynchronous request (POST or GET) to the server without page reload. If <i>method</i> is GET then all <i>data</i> will be sent in the query string of specified <i>url</i>. If POST method is used then Content-Type request header is "application/x-www-form-urlencoded".
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example describes how to send async request to the server and receive a response:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> sendData()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> requestObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">new</span><span style="color: #000000;"> Object();
+    
+    requestObject.url </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">http://www.myhost.com/receiver.php</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    requestObject.mwthod </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">POST</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">;
+    requestObject.data </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.urlVarsToObject(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">name=Jhon Smit&amp;position=CEO</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+    
+    EAFlashUpload.sendAsyncRequest(requestObject);
+    
+}
+
+</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onAsyncRequestEnd(response)
+{
+    alert(response);
+}
+
+</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onAsyncRequestError(message)
+{
+    alert(message);
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="urlVarsToObject"></a>
+      <p><b>urlVarsToObject(varsString:String)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>varsString:String - a string for converting.</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>object        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method accepts url variables string(key=value pairs delimited with a semicolon) and returns an object.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	In the following examples url variables string is converted to the object:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> convertQueryString()
+{
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> varObject </span><span style="color: #000000;">=</span><span style="color: #000000;"> EAFlashUpload.urlVarsToObject(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">name=Jhon Smit&amp;position=CEO</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+    </span><span style="color: #0000FF;">var</span><span style="color: #000000;"> output </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;&quot;</span><span style="color: #000000;">;
+    
+    output </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">name: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> varObject.name;
+    output </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">; </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">
+    output </span><span style="color: #000000;">+=</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">position: </span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> varObject.position;
+    
+}
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> the output will contain</span><span style="color: #008000;">
+</span><span style="color: #000000;">name: Jhon Smit; position: CEO</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="getFiles"></a>
+      <p style="line-height: 120%;">
+	  	<b>getFiles()</b><br />
+		<b>getFiles(fileIndex:int)</b><br />
+		<b>getFiles(fileId:String)</b><br />
+		<b>getFiles(filesIndexes:Array)</b><br />		
+		<b>getFiles(filesIds:Array)</b>  	
+	  </p>	  
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fileIndex:int - an index of a file in the upload queue. </li>
+				<li>fileId:String - an unique identifier of a file in the upload queue. </li>
+				<li>filesIndexes:Array - an array of indexes of files in the upload queue. </li>
+				<li>filesIds:Array - an array of unique identifiers of files in the upload queue. </li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i><a href="javascript.api.file.html" >File</a> or an Array of <a href="javascript.api.file.html" >File</a> objects.        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	Returns files from the upload queue by specified identifiers. If the method is called without parameters then all file of the upload queue is returned. The files are reperesented as the <a href="javascript.api.file.html" >File</a> object instances.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates various calls of <i>getFiles</i> method:
+                <pre class="code">
+				<div><span style="color: #008000;">//</span><span style="color: #008000;"> Get all files contained in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.getFiles();
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Get the first file in the upload queue</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.getFiles(</span><span style="color: #000000;">0</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Get the file with the specific identifier.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.getFiles(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">6959483923458790</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Get the first five files in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.getFiles([</span><span style="color: #000000;">0</span><span style="color: #000000;">, </span><span style="color: #000000;">1</span><span style="color: #000000;">, </span><span style="color: #000000;">2</span><span style="color: #000000;">, </span><span style="color: #000000;">3</span><span style="color: #000000;">, </span><span style="color: #000000;">4</span><span style="color: #000000;">]);</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="removeFiles"></a>
+      <p style="line-height: 120%;">
+	  	<b>removeFiles()</b><br />
+		<b>removeFiles(fileIndex:int)</b><br />
+		<b>removeFiles(fileId:String)</b><br />
+		<b>removeFiles(filesIndexes:Array)</b><br />	
+		<b>removeFiles(filesIds:Array)</b>	  	
+	  </p>
+	  <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fileIndex:int - an index of a file in the upload queue. </li>
+				<li>fileId:String - an unique identifier of a file in the upload queue. </li>
+				<li>filesIndexes:Array - an array of indexes of files in the upload queue. </li>
+				<li>filesIds:Array - an array of unique identifiers of files in the upload queue. </li>				
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method removes files from the upload queue by the specified identifiers. If files identifiers is not specified all files will be removed. If <i>fileIndex</i> or <i>filesIndexes</i> contains the value that is out of the queue range an error will occur.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates various calls of <i>removeFiles</i> method:
+                <pre class="code">
+				<div><span style="color: #008000;">//</span><span style="color: #008000;"> Remove all files contained in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.removeFiles();
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Remove the first file in the upload queue</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.removeFiles(</span><span style="color: #000000;">0</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Remove the file with the specific identifier.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.removeFiles(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">6959483923458790</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Remove the first five files in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.removeFiles([</span><span style="color: #000000;">0</span><span style="color: #000000;">, </span><span style="color: #000000;">1</span><span style="color: #000000;">, </span><span style="color: #000000;">2</span><span style="color: #000000;">, </span><span style="color: #000000;">3</span><span style="color: #000000;">, </span><span style="color: #000000;">4</span><span style="color: #000000;">]);</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="sortFilesList"></a>
+      <p><b>sortFilesList(fieldName:String, isSortDescending:Boolean = false)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fieldName:String - the name of the <a href="javascript.api.file.html">File</a> object property.</li>
+				<li>isSortDescending:Boolean - determines an order of sorting. Default value is <i>false</i></li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method sorts the files in the upload queue by the specified field and in the specified order.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	In the following example files are sorted by size:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> sortBySize()
+{
+    EAFlashUpload.sortFilesList(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">size</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">, </span><span style="color: #0000FF;">true</span><span style="color: #000000;">);    
+}</span></div>
+				</pre>
+            </p>
+      </p>
+      
+      <br />
+	  <a name="setFileStatus"></a>
+      <p><b>setFileStatus(id:String, status:int)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>id:String - the unique identifier of the specific file.</li>
+				<li>status:int - status of the file. The value is within a range 0 - 5:
+                	<ul style="list-style:none;">
+                        <li>0 - READY</li>
+                        <li>1 - UPLOADING</li>
+                        <li>2 - UPLOADED</li>
+                        <li>3 - ERROR</li>
+                        <li>4 - CANCELED</li>
+                        <li>5 - CUSTOM</li>
+                    </ul>
+                </li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method sets <a href="javascript.api.file.html#status">status</a> for the specific file.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example sets custom status for each file that exists on the server. Here we assume that server script returns the following code:<eaferror>The file already exists</eaferror>:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> EAFlashUpload_onUploadError(errorObject)
+{
+    </span><span style="color: #0000FF;">if</span><span style="color: #000000;">(errorObject.type </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">SERVER_CUSTOM_ERROR</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> errorObject.message </span><span style="color: #000000;">==</span><span style="color: #000000;"> </span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">The file already exists</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">)
+    {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> sets a custom status for the file</span><span style="color: #008000;">
+</span><span style="color: #000000;">        EAFlashUpload.setFileStatus(errorObject.file.id, </span><span style="color: #000000;">5</span><span style="color: #000000;">);
+        
+        EAFlashUpload.continueUpload(</span><span style="color: #0000FF;">false</span><span style="color: #000000;">);
+    }
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="uploadFiles"></a>
+      <p style="line-height: 120%;">
+	  	<b>uploadFiles(null, uploadUrl:String = "")</b><br />
+	  	<b>uploadFiles(fileIndex:int, uploadUrl:String = "")</b><br />
+		<b>uploadFiles(fileId:String, uploadUrl:String = "")</b><br />
+		<b>uploadFiles(filesIndexes:Array, uploadUrl:String = "")</b><br />		
+		<b>uploadFiles(filesIds:Array, uploadUrl:String = "")</b>	  	
+	  </p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>fileIndex:int - an index of a file in the upload queue. </li>
+				<li>fileId:String - an unique identifier of a file in the upload queue. </li>
+				<li>filesIndexes:Array - an array of indexes of files in the upload queue. </li>
+				<li>filesIds:Array - an array of unique identifiers of files in the upload queue. </li>
+				<li>uploadUrl:String - an alternative URL of the server script configured to handle upload through HTTP POST calls. Default value is empty string.</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method initiates an upload of files which identifiers are specified as a parameter. The <i>uploadUrl</i> is optional and allows to define an alternative url for upload. Use this parameter if you wish to upload files to the location different from <a href="objects.core.uploader.html#uploadUrl">uploader.uploadUrl</a> property value. If <i>fileIndex</i> or <i>filesIndexes</i> contains the value that is out of the queue range an error will occur.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	The following example demonstrates various calls of <i>uploadFiles</i> method:
+                <pre class="code">
+				<div><span style="color: #008000;">//</span><span style="color: #008000;"> Upload all files that are being contained in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.uploadFiles();
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Upload the first file in the upload queue</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.uploadFiles(</span><span style="color: #000000;">0</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Upload a file with the specific identifier.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.uploadFiles(</span><span style="color: #FF0000;">&quot;</span><span style="color: #FF0000;">6959483923458790</span><span style="color: #FF0000;">&quot;</span><span style="color: #000000;">);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> Upload the first five files in the upload queue.</span><span style="color: #008000;">
+</span><span style="color: #000000;">EAFlashUpload.uploadFiles([</span><span style="color: #000000;">0</span><span style="color: #000000;">, </span><span style="color: #000000;">1</span><span style="color: #000000;">, </span><span style="color: #000000;">2</span><span style="color: #000000;">, </span><span style="color: #000000;">3</span><span style="color: #000000;">, </span><span style="color: #000000;">4</span><span style="color: #000000;">]);</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="continueUpload"></a>
+      <p><b>continueUpload(retryCurrent:Boolean = false)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>retryCurrent:Boolean - determines whether an upload should be renewed from the file where it was stopped. Default value is <i>false</i></li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method renew an upload that was stopped by calling <a href="#cancelUpload">cancelUpload</a> method or due to some error. The EAFlashUpload doesn't supports uploading of part of the file.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	In the following example an upload is canceled and after timeout renewed again:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> cancelUpload()
+{
+    EAFlashUpload.cancelUpload();
+    
+    setTimeout(</span><span style="color: #FF0000;">'</span><span style="color: #FF0000;">renewUpload</span><span style="color: #FF0000;">'</span><span style="color: #000000;">, </span><span style="color: #000000;">1000</span><span style="color: #000000;">);
+}
+
+</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> renewUpload()
+{
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Renew the upload from the file where it was stopped.</span><span style="color: #008000;">
+</span><span style="color: #000000;">    EAFlashUpload.continueUpload(</span><span style="color: #0000FF;">true</span><span style="color: #000000;">);
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	  <br />
+	  <a name="cancelUpload"></a>
+      <p><b>cancelUpload(immediately:Boolean = true)</b></p>
+      <p>
+      	<i>Parameters: </i>
+			<ul>
+				<li>immediately:Boolean - determines whether an upload should be canceled immediately or after current file will be uploaded. Default value is <i>true</i>.</li>
+			</ul>
+      	<br />
+        <i>Returned value type: </i>void        
+        <br />
+      	<br />
+      	<i>Description:</i>
+        	<p>
+            	The method cancels an upload. Cancellation is achieved immediately or with a timeout. The canceled uploads may be renewed by using <a href="#continueUpload">continueUpload</a> method.
+        	</p>
+         <br />
+         <i>Examples:</i>
+         	<p>
+            	In the following example an upload is canceled and after timeout renewed again:
+                <pre class="code">
+				<div><span style="color: #0000FF;">function</span><span style="color: #000000;"> cancelUpload()
+{
+    EAFlashUpload.cancelUpload();
+    
+    setTimeout(</span><span style="color: #FF0000;">'</span><span style="color: #FF0000;">renewUpload</span><span style="color: #FF0000;">'</span><span style="color: #000000;">, </span><span style="color: #000000;">1000</span><span style="color: #000000;">);
+}
+
+</span><span style="color: #0000FF;">function</span><span style="color: #000000;"> renewUpload()
+{
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Renew the upload from the file where it was stopped.</span><span style="color: #008000;">
+</span><span style="color: #000000;">    EAFlashUpload.continueUpload(</span><span style="color: #0000FF;">true</span><span style="color: #000000;">);
+}</span></div>
+				</pre>
+            </p>
+      </p>
+	  
+	      
+  </div>
+  <div id="footer">
+    <div class="footerLine"><img width="100%" height="3px" src="../images/footer.gif" title="Footer image" /></div>
+    <A NAME="feedback"></A><span id="fb" class="feedbackcss" style="display: none;"> </span>
+    <p>
+    Send comments on this topic to <a id="HT_MailLink" href="mailto:support%40easyalgo.com?Subject=The EAFlashUpload Component Documentation">support@easyalgo.com</a>
+    <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title;
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script>
+    <p />
+    <a href="http://www.easyalgo.com">Copyright © 2010, EasyAlgo Software, All rigths reserved.</a></div>
+</div>
+</body>
+</html>

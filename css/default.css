@@ -1,0 +1,63 @@
+/* Default */
+* {margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;}
+body {font-size:12px; background:#e9eff3 url(../images/bg.gif) top left repeat-x; padding-bottom:60px;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+.clear {clear: both; display: block; visibility: hidden; line-height:0px;}
+img {border:0;}
+
+/* layout */
+#wrap {width:994px; margin:0 auto; background-color:#FFF;}
+#content {width:954px; padding:20px; margin-top:450px;}
+#content #main_content {float:left; width:560px;}
+#content #main_sidebar {float:right; width:372px;} 
+#wrap_ft {width:994px; margin:0 auto; background-color:#FFF; padding-bottom:30px;}
+#footer {border-top:1px solid #eaeff3; margin-top:15px; padding:0 15px 30px 15px;}
+
+/* header */
+#header {padding:30px 10px 20px 10px;} 
+#header #logo {float:left; width:400px;}
+#header #logo h1 {background:url(../images/logo.gif) no-repeat top left; width:354px; height:27px;}
+#header #logo h1 span {display:none;}
+#header #logo h1:hover {cursor:pointer;}
+
+/* header - box_search */
+#box_search {float:right; width:500px; padding-top:5px; color:#575757;}
+#box_search ul {list-style:none; float:left; width:320px;}
+#box_search ul li {display:inline; padding-right:10px; margin-right:10px; background:url(../images/icon_arrow2.gif) right center no-repeat;}
+#box_search ul li a {color:#575757;}
+#box_search ul li a:hover {color:#1f59a7; text-decoration:none;}
+#box_search .map {background:url(../images/s_map.gif) no-repeat top right; padding:3px 40px 3px 0px;}
+#box_search #search {float:left; width:170px;}
+#box_search .form_sch {font-family:Arial, Helvetica, sans-serif; background:url(../images/bg_search.gif) top left repeat-x; border:1px solid #e5e5e5; padding:3px; color:#c2c2c2; width:140px; font-size:11px;}
+#box_search .bt_go {background:url(../images/bt_go.gif) top left no-repeat; width:22px; height:22px; padding-bottom:0px; overflow:hidden; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#fff; border:none;}
+
+/* main_img */
+#main_img {position:relative;}
+#main_img #img {position:absolute; z-index:1; top:0; left:0;}
+#main_img #nav {position:absolute; z-index:2;}
+#main_img #nav{ margin:20px 0 0 20px; } 
+#main_img #nav li {float:left; list-style:none; background:url(../images/navi_off.gif) repeat-x top left; margin-right:1px; font-size:14px; font-family:Arial, Helvetica, sans-serif;}
+#main_img #nav li a{float:left;  padding:19px 48px 9px 14px; color:#000;}
+#main_img #nav li a:hover , #aboutus #nav #nav01 a, #ministry #nav #nav02 a, #pulse #nav #nav03 a, #news #nav #nav04 a, #resources #nav #nav05 a, #trainings #nav #nav06 a, #location #nav #nav07 a, #support #nav #nav08 a {background:url(../images/navi_on.gif) repeat-x top left; text-decoration:none; color:#fff;}
+#main_img #map {position:absolute; z-index:3;margin:97px 0 0 713px;}
+
+/* resources */
+#wrap_resources {border:1px solid #dddddd; background:url(../images/bg_resources.gif) repeat-x bottom left; margin-bottom:15px; height:290px; overflow:hidden;}
+
+/* footer */
+
+#footer li {list-style:none; font-size:11px; text-transform:uppercase;}
+#footer li a {color:#6b6b6b;}
+#footer .title {color:#333333; font-weight:bold; margin-bottom:10px;}
+#footer #footer_info {float:left; width:760px;}
+#footer #footer_info ul {float:left; width:130px; padding-left:20px; padding-top:15px; background:url(../images/bg_footer.gif) no-repeat top right;}
+#footer #tool {float:right; width:190px;  padding-top:15px;}
+#footer #tool #icon_tool {clear:both; margin-top:15px;}
+#footer #tool #icon_tool li {float:left; margin-right:5px;}
+#footer #tool .made {color:#6b6b6b; font-size:10px; line-height:12px; margin-top:15px;}
+#icon_tool .icon01 {background:url(../images/tool_facebook.gif) top left no-repeat; width:44px; height:47px;}
+#icon_tool .icon02 {background:url(../images/tool_twitter.gif) top left no-repeat; width:40px; height:47px;}
+#icon_tool .icon03 {background:url(../images/tool_rss.gif) top left no-repeat; width:40px; height:47px;}
+#icon_tool .icon04 {background:url(../images/tool_email.gif) top left no-repeat; width:40px; height:47px;}
+#icon_tool li span {display:none;}

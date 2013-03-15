@@ -1,0 +1,152 @@
+/*sub_layout*/
+#cont {width:954px; padding:20px; margin-top:290px; float:left}
+#sub_sidebar {float:left; width:272px;}
+#main_cont {float:right; width:642px; padding:15px 10px 5px 30px;}
+
+/*sub_sidebar*/
+#sub_sidebar h2 {font-size:20px; color:#142797; padding:15px 0 25px 0; border-bottom:1px solid #dddddd; }
+#sub_sidebar {margin-bottom:20px;}
+#sub_sidebar li {list-style:none; border-bottom:1px solid #dddddd; height:35px; line-height:35px; font-size:14px; }
+#sub_sidebar li a {color:#333333; text-decoration:none;}
+#sub_sidebar li a:hover {color:#3065ae;}
+#sub_sidebar li.current a {color:#3065ae;}
+
+/*explore*/
+#explore {margin:30px 0;}
+#explore_differ {margin:15px 0 30px 0;}
+
+/* wrap_subbox */
+#wrap_subbox {background:url(../images/bg_subnewsletter.gif) no-repeat top left; width:272px; height:140px; }
+#wrap_subbox .title_submenu {text-align:right; margin-bottom:10px;}
+#subbox {float:right; width:190px; padding:10px; color:#666; font-size:10px;}
+#subbox.title {margin-bottom:10px;}
+#subbox .form_subscribe {border:1px solid #b9b9b9; margin-right:5px; color:#b9b9b9; font-size:14px; font-weight:bold; padding:5px; width:90px; margin-bottom:5px;}
+#subbox .bt_subscribe {background-color:#00a9d0; width:75px; height:29px; border:none; color:#FFF; font-size:12px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; margin-bottom:5px;}
+
+
+/* wrap_subtitle */
+#wrap_subtitle {width:640px; }
+#wrap_subtitle .title {float:left; width:300px; font-size:20px; color:#2e64ad; margin-bottom:25px; font-weight:normal; } 
+#wrap_subtitle .page {float:right; text-align:right; width:340px; color:#666666; padding-top:10px; font-size:11px;}
+#wrap_subtitle .page a {color:#666666;}
+#wrap_subtitle .page .over a {color:#2e64ad;}
+
+/* main_cont */
+#aboutus h3, #ministry h3, #trainings h3, #support h3, #news h3 {font-size:14px; color:#3065ae; padding-bottom:15px; margin-top:20px; font-weight:normal; background:
+url(../images/icon_arrow3.gif) no-repeat 0px 0px; padding-left:25px;}
+#aboutus p, #ministry p, #trainings p, #support p {margin-bottom:30px;}
+#wrap_logo {width:630px; padding:none; margin:none;}
+#wrap_logo #logo_left { float:left; width:400px; line-height:24px; margin-bottom:0px;}
+#wrap_logo #logo_right { float:right; width:200px;}
+#cont #main_cont .phrase {color:#00a9d0;}
+
+#map_aboutus {padding-bottom:20px;}
+#map_aboutus img {float:left; margin-right:15px;}
+#map_aboutus #address {float:right; width:220px; line-height:20px; margin-top:50px;}
+#cont #main_cont .mail{color:#666666;} 
+#cont #main_cont .address {line-height:20px; margin-top:30px; }
+#cont #main_cont .point01 {font-weight:bold; font-style:italic; color:#3065ae;}
+#wrap_paragragh {margin-bottom:20px;}
+#wrap_paragragh p {border-bottom:15px; font-weight:bold;}
+#paragragh {padding-left:30px;  }
+#paragragh li {padding:10px 0;}
+
+#paragragh01 {padding-left:30px;  }
+#paragragh01 li {padding:4px 0; list-style:none;}
+.bold {font-weight:bold;}
+.italic {font-style:italic;}
+/* subbox */
+#subbox {padding:10px; color:#666; font-size:10px;}
+#subbox.title {margin-bottom:10px;}
+#subbox .form_subscribe {border:1px solid #b9b9b9; margin-right:5px; color:#b9b9b9; font-size:14px; font-weight:bold; padding:5px; width:90px; margin-bottom:5px;}
+#subbox .bt_subscribe {background-color:#00a9d0; width:75px; height:29px; border:none; color:#FFF; font-size:12px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; margin-bottom:5px;}
+
+/* pulse */
+#pulse .wrap_headline {padding-bottom:20px; border-bottom:1px dotted #888888;}
+#pulse .wrap_headline img {float:left; margin-right:15px;}
+#pulse .wrap_headline h2 {font-size:18px; font-weight:normal; margin-bottom:10px;}
+#pulse .wrap_headline h2 a {color:#3065ae;}
+#pulse .wrap_headline p {color:#666; padding:0px;}
+#pulse .wrap_headline .date {color:#000; padding-bottom:5px;}
+
+#pulse .wrap_article {padding:15px; border-bottom:1px dotted #888888;}
+#pulse .wrap_article h4 {font-size:14px; font-weight:normal; margin-bottom:5px;}
+#pulse .wrap_article h4 a {color:#3065ae;}
+#pulse .wrap_article p {color:#666;  padding:0px;}
+#pulse .wrap_article .date {color:#000;}
+
+#page {padding:15px; text-align:center; color:#666;}
+#page a {padding:0px 3px; color:#0083a1;}
+#page .bd_r {border-right:1px dotted #a3a4a7; padding-right:7px;}
+
+/* news pulse */ 
+.box_news {padding:10px 0 0 0; margin-bottom:10px;}
+#news .wrap_headline {padding-bottom:20px; border-bottom:1px dotted #888888;}
+#news .wrap_headline img {float:left; margin-right:15px;}
+#news .wrap_headline h2 {font-size:18px; font-weight:normal; margin-bottom:5px;}
+#news .wrap_headline h2 a {color:#3065ae;}
+#news .wrap_headline h1 {font-size:22px; font-weight:bold; margin-bottom:5px;color:#3065ae;}
+#news .wrap_headline p {color:#666; padding:0px;}
+#news .wrap_headline .column {color:#000; padding-bottom:5px;}
+#news .wrap_headline .writer {color:#00a9d0; text-transform:uppercase; font-size:10px; margin-bottom:20px;}
+#news .wrap_headline .writer .date {color:#969696; }
+.wrap_news .writer {color:#00a9d0; text-transform:uppercase; font-size:10px; margin-top:15px;}
+.wrap_news .writer .date {color:#969696; }
+.wrap_news img { float:left; margin-right:15px; border:1px solid #dddddd; padding:4px; background-color:#eeeeee;}
+.wrap_news {padding:5px; color:#666}
+.wrap_news h4 {font-size:14px; font-weight:normal; margin-bottom:5px;}
+.wrap_news h4 a {color:#3065ae;}
+
+.wrap_news_content p {padding:7px 0; color:#666}
+.wrap_news_content img {float:left; margin-right:15px;}
+
+.click_bg {background-color:#f4f7f9; padding:10px 20px; border-bottom:1px dotted #888888;}
+.click {color:#294fab; background:url(../images/icon_arrow4.gif) no-repeat 3px 3px; padding-left:15px;}
+.click a {color:#294fab; text-decoration:none;}
+ 
+/* Resources */ 
+#wrap_resources {margin-bottom:10px;}
+#wrap_resources a img { border:none;}
+#wrap_resources_left {float:left; width:300px;}
+#wrap_resources_right {float:right; width:320px;}
+.wrap_resources {margin:10px 0;}
+.wrap_resources img { float:left; margin-right:15px; margin-bottom:10px;} 
+#resource h3 {font-size:14px; color:#3065ae; padding:10px; font-weight:normal; background:url(../images/icon_arrow3.gif) no-repeat 0px 10px; padding-left:25px; border-top:1px dotted #888888; border-bottom:1px dotted #888888;}
+#resource h4 a{color:#3065ae;}
+#resource .writer {color:#00a9d0; text-transform:uppercase; font-size:10px; margin-bottom:20px;}
+#resource .writer .date {color:#969696; }
+.mat10 {margin-top:10px;}
+
+
+/* book */
+#book {background-color:#f4f7f9; padding-bottom:10px;}
+#wrap_booktitle h3 {float:left; width:120px; font-size:14px; color:#3065ae; padding:10px; font-weight:normal; background:url(../images/icon_arrow3.gif) no-repeat 0px 10px; padding-left:25px; border:none;}
+#wrap_booktitle p {float:right; width:80px; background:url(../images/icon_arrow4.gif) no-repeat 5px 18px; padding-left:15px; color:#294fab; padding-top:15px;}
+#wrap_bookbox img { float:left; margin-right:15px; border:1px solid #dddddd; padding:4px; background-color:#eeeeee;}
+#wrap_bookbox { padding:10px; color:#969696;}
+#wrap_resources_right h4 a {color:#3065ae; font-size:12px;}
+#wrap_resources_right .author {color:#00a9d0; font-size:10px; margin-bottom:20px;}
+#wrap_resources_right .kind {color:#00a9d0; font-size:10px; margin-bottom:5px; padding-top:5px;}
+#banner {margin:20px 0;}
+#resources_tool {background-color:#f4f7f9; }
+#resources_tool a img {padding:5px 2px 5px 4px;}
+
+/* location */
+#wrap_location {width:954px; margin-top:20px; }
+#wrap_location .title {float:left; width:300px; font-size:20px; color:#2e64ad; margin-bottom:25px; font-weight:normal; } 
+#wrap_location .page {float:right; text-align:right; width:340px; color:#666666; padding-top:10px; font-size:11px;}
+#wrap_location .page a {color:#666666;}
+#wrap_location .page .over a {color:#2e64ad;}
+
+/* location */
+#map {text-align:center;}
+#contry ul { float:left;  width:160px; margin:10px 0px 30px 20px; list-style:none;} 
+#contry .title {float:left; width:120px; font-size:14px; color:#3065ae; padding:10px 10px 5px 10px; font-weight:normal; background:url(../images/icon_arrow3.gif) no-repeat 0px 10px; padding-left:25px; border:none;}
+#contry ul li { padding-left:15px; margin-bottom:10px;}
+#contry ul li a {font-size:14px; color:#666666;}
+
+
+
+
+
+

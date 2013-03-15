@@ -1,0 +1,57 @@
+<?
+    require_once("../base.php");
+    require_once(MDconfig::CLASSPATH."/sections.class.php");
+    $Sections   = new Sections();
+    $skin       = 'common';
+
+    
+    $curfolder = dirname(__FILE__).'/';
+    require($curfolder."news_setting.php");
+    
+
+    $toptpl         = "img_news.tpl";
+    $leftinner      = 'news_section_left.php';
+    $maininner      = 'news_section.php';
+    
+    
+    //$header_script  = '';
+    $specialid      = 70;
+    $section_title  = '国际新闻';
+    $subtitle				= '<a href="/chinese/news/">新闻</a>';
+	$special_title			= '<a href="'.$_SEVER['PHP_SELF'].'">'.$section_title.'</a>';
+ 
+     $page                   = isset($_GET['page']) ? $_GET['page'] : 1;
+     //"output = 'P' and
+    $ctrow                  = $Sections -> getdata(" specialcatid = '{$specialid}'",
+                                                    array('fields' => array('count(a.id) as ct',),
+                                                    'join' => " inner join md_specialcats_index s on a.id =  s.article_id ",
+                                                    'table'  => 'md_articles a',
+        ));
+        
+    $Sections ->totalrow    = $ctrow[0]['ct'];
+    $Sections ->limitlist   = 15;
+    $Sections ->page        = $page;
+    $pagedata               = $Sections ->paging();
+    
+    $limit                  = ($pagedata['current'] - 1)*$Sections ->limitlist.','.$Sections ->limitlist;
+    
+    
+    //output = 'P' and
+    $data = $Sections -> getarticles(" specialcatid = '{$specialid}'", array( 'limit' => $limit,
+                                                    'fields' => array('a.id','title','keywords','summary','registerdate','reportername','category'),
+                                                    'join'   => " inner join md_specialcats_index s on a.id =  s.article_id ",
+                                                    'order'  => 'registerdate DESC',
+                                                    'table'  => 'md_articles a',
+                                                    'image'  => 'Y',
+                                                    'category'=>'Y',
+                                                    'cut_str_min' => 100,
+                                                    'cut_str_max' => 300));
+                                                    
+    
+       
+    require_once(MDconfig::SKINPATH.'/'.$skin.'/layout.php');
+ 
+    
+    
+
+?>
