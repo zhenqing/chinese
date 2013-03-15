@@ -18,7 +18,7 @@
     <li><a href="/ministry/press.htm">耶青出版社</a></li>
     </ul>
     <ul>
-    <li class="title">耶青动向</li>
+    <li class="title">耶青动态</li>
     <li><a href="/pulse/index.htm">发展</a></li>
     <li><a href="/pulse/outreach.htm">校园拓展</a></li>
     <li><a href="/pulse/ydtoday.htm">今日耶青</a></li>

@@ -1,6 +1,6 @@
 <div id="sub_sidebar">
             <div id="sub_sidebar">
-            <h2 class="title">耶青动向</h2>
+            <h2 class="title">耶青动态</h2>
             <!-- side_menu start-->
             <ul id="side_menu"> 
                 <li <?=$specialid ==81 ? 'class="current"' : '' ?>><a href="/chinese/pulse/index.htm">发展</a></li>
